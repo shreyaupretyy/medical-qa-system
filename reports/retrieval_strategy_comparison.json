@@ -1,0 +1,114 @@
+{
+  "timestamp": "2025-12-09 21:38:10",
+  "num_cases": 100,
+  "dataset_path": "data/processed/questions/questions_1.json",
+  "results": [
+    {
+      "strategy_name": "Single-Stage FAISS",
+      "description": "Pure semantic search using dense embeddings (MiniLM-L6-v2)",
+      "map_score": 0.21099611696465245,
+      "mrr": 0.4219922339293049,
+      "precision_at_1": 0.0,
+      "precision_at_3": 0.2533333333333333,
+      "precision_at_5": 0.17599999999999993,
+      "recall_at_1": 0.0,
+      "recall_at_3": 0.38,
+      "recall_at_5": 0.44,
+      "avg_query_time_ms": 8.583245277404785,
+      "total_time_seconds": 0.8645603656768799,
+      "num_cases": 100
+    },
+    {
+      "strategy_name": "Single-Stage BM25",
+      "description": "Pure keyword-based search using BM25 algorithm",
+      "map_score": 0.20722960811118704,
+      "mrr": 0.4144592162223741,
+      "precision_at_1": 0.0,
+      "precision_at_3": 0.23999999999999996,
+      "precision_at_5": 0.17399999999999996,
+      "recall_at_1": 0.0,
+      "recall_at_3": 0.36,
+      "recall_at_5": 0.435,
+      "avg_query_time_ms": 1.3998913764953613,
+      "total_time_seconds": 0.13998913764953613,
+      "num_cases": 100
+    },
+    {
+      "strategy_name": "Hybrid Linear",
+      "description": "Linear combination of FAISS (0.65) and BM25 (0.35)",
+      "map_score": 0.21062643350801247,
+      "mrr": 0.42125286701602493,
+      "precision_at_1": 0.0,
+      "precision_at_3": 0.24666666666666662,
+      "precision_at_5": 0.17799999999999994,
+      "recall_at_1": 0.0,
+      "recall_at_3": 0.37,
+      "recall_at_5": 0.445,
+      "avg_query_time_ms": 8.325040340423584,
+      "total_time_seconds": 0.8325040340423584,
+      "num_cases": 100
+    },
+    {
+      "strategy_name": "Multi-Stage (3-stage)",
+      "description": "Stage 1: FAISS (k=150) -> Stage 2: BM25 filter (k=100) -> Stage 3: Cross-encoder rerank (k=25)",
+      "map_score": 0.20416295721187028,
+      "mrr": 0.40832591442374055,
+      "precision_at_1": 0.0,
+      "precision_at_3": 0.2433333333333333,
+      "precision_at_5": 0.16999999999999993,
+      "recall_at_1": 0.0,
+      "recall_at_3": 0.365,
+      "recall_at_5": 0.425,
+      "avg_query_time_ms": 2878.1001448631287,
+      "total_time_seconds": 287.81001448631287,
+      "num_cases": 100
+    },
+    {
+      "strategy_name": "Concept-First",
+      "description": "BM25 keyword filter followed by FAISS semantic refinement",
+      "map_score": 0.21214898989898992,
+      "mrr": 0.42429797979797984,
+      "precision_at_1": 0.0,
+      "precision_at_3": 0.24999999999999997,
+      "precision_at_5": 0.17999999999999994,
+      "recall_at_1": 0.0,
+      "recall_at_3": 0.375,
+      "recall_at_5": 0.45,
+      "avg_query_time_ms": 11.620626449584961,
+      "total_time_seconds": 1.162062644958496,
+      "num_cases": 100
+    },
+    {
+      "strategy_name": "Semantic-First",
+      "description": "FAISS semantic search followed by BM25 keyword refinement",
+      "map_score": 0.2125936988936989,
+      "mrr": 0.4251873977873978,
+      "precision_at_1": 0.0,
+      "precision_at_3": 0.2533333333333333,
+      "precision_at_5": 0.17799999999999996,
+      "recall_at_1": 0.0,
+      "recall_at_3": 0.38,
+      "recall_at_5": 0.445,
+      "avg_query_time_ms": 9.648230075836182,
+      "total_time_seconds": 0.9648230075836182,
+      "num_cases": 100
+    }
+  ],
+  "summary": {
+    "best_map": {
+      "strategy": "Semantic-First",
+      "score": 0.2125936988936989
+    },
+    "best_recall": {
+      "strategy": "Concept-First",
+      "score": 0.45
+    },
+    "fastest": {
+      "strategy": "Single-Stage BM25",
+      "time_ms": 1.3998913764953613
+    }
+  },
+  "recommendations": [
+    "Single-Stage BM25 offers excellent speed for real-time applications."
+  ]
+}

@@ -1,0 +1,123 @@
+# Urinary Tract Infections
+Category: Infectious Disease
+Keywords: urinary tract infection, UTI, cystitis, pyelonephritis, dysuria
+
+---
+
+**Urinary Tract Infections**
+**Category:** Infectious Disease
+
+### 1. Definition and Epidemiology
+Acute cystitis is an acute inflammation of the bladder, primarily affecting women due to their shorter urethra compared to men. Women are affected 10 times more than men.
+
+* Prevalence: 40-50% of all women will develop cystitis in their lifetime.
+* Risk factors:
+	+ Urethral catheterization
+	+ Diabetes
+
+### 2. Clinical Presentation
+Signs and symptoms:
+
+* Low-grade fever
+* Frequency
+* Nocturia
+* Urgency
+* Dysuria
+* Haematuria
+* Cloudy and foul-smelling urine
+* Low back and suprapubic pain
+
+History findings:
+
+* Previous episodes of UTI
+* Recent instrumentation (catheterization, surgery)
+* Diabetes mellitus
+
+Physical examination findings:
+
+* Suprapubic tenderness
+* Haematuria
+
+### 3. Diagnostic Criteria and Workup
+Diagnostic criteria:
+* Presence of symptoms (fever, frequency, dysuria, etc.)
+* Urinalysis showing >10 WBCs/HPF or positive nitrite test
+
+Laboratory tests:
+
+* Urinalysis: to confirm the presence of infection
+* Urine culture: to identify the causative organism and antibiotic sensitivity
+
+Imaging studies:
+* Not typically required for uncomplicated UTI, but may be necessary in complicated cases (e.g., pyelonephritis)
+
+Other investigations:
+* None mentioned in source material
+
+### 4. Treatment Algorithm
+**First-line treatment**
+
+* For uncomplicated cystitis: trimethoprim-sulfamethoxazole (TMP-SMX) 160/800 mg PO BID for 3 days or nitrofurantoin macrocrystals 100 mg PO BID for 5-7 days
+
+**Second-line options**
+
+* Ciprofloxacin 250-500 mg PO BID for 3-7 days
+* Levofloxacin 250-500 mg PO QD for 3-7 days
+
+**Treatment modifications based on severity**
+* Complicated UTI: adjust treatment according to local guidelines and consider consultation with an infectious disease specialist.
+
+### 5. Management and Follow-up
+Monitoring parameters:
+
+* Symptoms resolution
+* Urine culture results
+* Renal function (creatinine, electrolytes)
+
+Follow-up schedule:
+* 1-2 weeks after completion of treatment for uncomplicated UTI
+
+Patient education:
+
+* Importance of completing full treatment course
+* Prevention measures (e.g., good hygiene, urinate when needed)
+* Recognition of warning signs (e.g., fever, flank pain)
+
+Lifestyle modifications:
+
+* Encourage patients to drink plenty of fluids
+* Avoidance of certain medications that may exacerbate UTI symptoms
+
+### 6. Contraindications and Precautions
+**Drug contraindications**
+
+* TMP-SMX: pregnancy (category C), renal impairment (creatinine >2 mg/dL)
+* Nitrofurantoin: pregnancy (category B3), renal impairment (creatinine >2 mg/dL)
+
+**Special populations**
+
+* Elderly: consider dose adjustment for renal impairment
+* Pregnancy: avoid TMP-SMX and nitrofurantoin; use alternative antibiotics (e.g., amoxicillin-clavulanate)
+* Renal impairment: adjust treatment according to local guidelines
+
+### 7. Key Clinical Pearls
+Important clinical tips:
+
+* Consider using a urine culture to guide antibiotic selection, especially in complicated cases.
+* Be aware of potential drug interactions and contraindications.
+
+Common pitfalls to avoid:
+
+* Inadequate treatment duration or dosage
+* Failure to consider underlying conditions (e.g., diabetes, renal impairment)
+
+Red flags:
+* Fever >38°C
+* Flank pain
+* Nausea/vomiting
+* Abdominal tenderness
+
+**Note:** Specific protocols should be verified with local guidelines. This guideline is intended as a general framework for managing urinary tract infections and may not reflect the most up-to-date recommendations in all regions.
+
+---
+Generated from source PDF. Source content available: True

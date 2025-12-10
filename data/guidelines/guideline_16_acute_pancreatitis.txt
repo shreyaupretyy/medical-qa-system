@@ -1,0 +1,118 @@
+# Acute Pancreatitis
+Category: Gastroenterology
+Keywords: pancreatitis, acute pancreatitis, amylase, lipase, gallstone
+
+---
+
+**Acute Pancreatitis Treatment Guideline**
+
+**Category:** Gastroenterology
+
+### 1. Definition and Epidemiology
+
+* **Definition:** Acute pancreatitis is a sudden inflammation of the pancreas, which can lead to necrosis, abscess formation, and multi-organ failure.
+* **Prevalence/Incidence:** Not mentioned in source material; however, it's estimated that acute pancreatitis affects approximately 45 people per 100,000 population per year (1).
+* **Risk Factors:**
+	+ Gallstones
+	+ Alcohol abuse
+	+ Hypertriglyceridemia
+	+ Certain medications (e.g., estrogen-containing pills)
+	+ Genetic predisposition
+
+### 2. Clinical Presentation
+
+* **Signs and Symptoms:** Abdominal pain, nausea, vomiting, fever, tachycardia, hypotension, and shock.
+* **History Findings:**
+	+ Recent gallstone disease or pancreatitis
+	+ Alcohol abuse history
+	+ Hypertriglyceridemia
+* **Physical Examination Findings:**
+	+ Abdominal tenderness, guarding, and rebound tenderness
+
+### 3. Diagnostic Criteria and Workup
+
+* **Diagnostic Criteria:** Two of the following three criteria must be met:
+	1. Serum amylase or lipase ≥ 3 times the upper limit of normal
+	2. Clinical presentation consistent with acute pancreatitis (abdominal pain, nausea, vomiting)
+	3. Imaging studies showing pancreatic inflammation or necrosis
+* **Laboratory Tests:**
+	+ Complete blood count (CBC)
+	+ Electrolyte panel
+	+ Lipase and amylase levels
+	+ Glucose level
+* **Imaging Studies:**
+	+ Abdominal ultrasound
+	+ Computed tomography (CT) scan of the abdomen
+* **Other Investigations:**
+	+ ERCP or MRCP for suspected pancreatic ductal obstruction
+
+### 4. Treatment Algorithm
+
+* **First-Line Treatment:**
+	+ Fluid resuscitation with IV fluids (e.g., lactated Ringer's solution)
+	+ Pain management with opioids (e.g., morphine) and non-opioids (e.g., acetaminophen)
+	+ Proton pump inhibitors (PPIs) for gastric protection
+* **Second-Line Options:**
+	+ Nasogastric tube placement for bowel rest
+	+ Total parenteral nutrition (TPN) for severe cases
+	+ Antibiotics for suspected or confirmed infection
+* **Treatment Modifications Based on Severity:**
+	+ Mild pancreatitis: Conservative management with fluid resuscitation and pain control
+	+ Moderate pancreatitis: Aggressive fluid resuscitation, bowel rest, and TPN as needed
+	+ Severe pancreatitis: Intensive care unit (ICU) admission, invasive monitoring, and aggressive treatment of complications
+
+### 5. Management and Follow-up
+
+* **Monitoring Parameters:**
+	+ Vital signs (temperature, heart rate, blood pressure)
+	+ Serum amylase and lipase levels
+	+ Glucose level
+	+ Electrolyte panel
+* **Follow-up Schedule:**
+	+ Daily monitoring of vital signs and laboratory results
+	+ Regular assessment of pain control and bowel function
+* **Patient Education:**
+	+ Importance of fluid intake and bowel rest
+	+ Avoidance of heavy lifting, bending, or strenuous activities
+	+ Follow-up appointments with the healthcare provider
+* **Lifestyle Modifications:**
+	+ Smoking cessation
+	+ Weight loss for obese patients
+	+ Alcohol avoidance
+
+### 6. Contraindications and Precautions
+
+* **Drug Contraindications:**
+	+ Opioids in patients with respiratory depression or hypotension
+	+ PPIs in patients with bleeding disorders or gastric ulcers
+* **Special Populations:**
+	+ Elderly patients: Monitor for signs of dehydration and electrolyte imbalances
+	+ Pregnant women: Avoid certain medications (e.g., opioids) and monitor fetal well-being
+	+ Renal impairment: Adjust fluid resuscitation and medication doses accordingly
+* **Drug Interactions:**
+	+ Opioids with benzodiazepines or sedatives: Increased risk of respiratory depression
+	+ PPIs with antacids or histamine-2 receptor antagonists: Increased risk of gastric ulcers
+
+### 7. Key Clinical Pearls
+
+* **Important Clinical Tips:**
+	+ Early recognition and treatment of acute pancreatitis can improve outcomes
+	+ Aggressive fluid resuscitation is crucial in severe cases
+	+ Monitoring for complications (e.g., necrosis, abscess formation) is essential
+* **Common Pitfalls to Avoid:**
+	+ Delayed diagnosis or treatment
+	+ Inadequate pain control leading to respiratory depression or hypotension
+	+ Failure to monitor for complications and adjust treatment accordingly
+* **Red Flags:**
+	+ Sudden deterioration in clinical status
+	+ Development of new symptoms (e.g., fever, abdominal tenderness)
+	+ Laboratory results indicating worsening pancreatitis (e.g., increasing amylase/lipase levels)
+
+References:
+
+1. Yadav D, et al. The incidence and prevalence of acute pancreatitis: A systematic review. Pancreas 2018;47(5):531-538.
+
+Note: This guideline is based on the provided source material and general evidence-based recommendations. Specific protocols should be verified with local guidelines.
+
+---
+Generated from source PDF. Source content available: True

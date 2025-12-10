@@ -1,0 +1,139 @@
+# Sepsis Management
+Category: Critical Care
+Keywords: sepsis, septic shock, SIRS, qSOFA, lactate
+
+---
+
+**Sepsis Management Guideline**
+
+**Category:** Critical Care
+
+### 1. Definition and Epidemiology
+
+Sepsis is a life-threatening condition caused by an uncontrolled infection leading to organ dysfunction. The source material does not provide prevalence or incidence rates, but it highlights the severity of sepsis as a complication of abortion.
+
+Risk factors for sepsis include:
+
+* History of criminal interference with pregnancy
+* Presence of infected retained products of conception
+
+### 2. Clinical Presentation
+
+The clinical presentation of sepsis includes:
+
+* Severe lower abdominal pain
+* Fever (temperature may be normal)
+* Vomiting
+* Headache
+* Offensive, bloody vaginal discharge
+* Signs of shock: tachycardia, pulse > 90 bpm, hypotension (systolic BP < 90 mmHg), peritonism, bulky tender uterus
+
+### 3. Diagnostic Criteria and Workup
+
+Diagnostic criteria for sepsis include:
+
+* Presence of infection (e.g., infected retained products of conception)
+* Systemic inflammatory response syndrome (SIRS) criteria:
+	+ Temperature > 38°C or < 36°C
+	+ Heart rate > 90 bpm
+	+ Respiratory rate > 20 breaths/min or PaCO2 < 32 mmHg
+	+ White blood cell count > 12,000 cells/μL or < 4,000 cells/μL
+
+Laboratory tests:
+
+* Complete Blood Count (CBC)
+* Clotting screen
+* Blood culture and sensitivity
+* Urine culture and sensitivity
+
+Imaging studies:
+
+* Abdomino-pelvic ultrasound scan
+* Plain X-ray of abdomen
+
+### 4. Treatment Algorithm
+
+**First-line treatment:**
+
+1. Insert the largest bore cannula in the largest vein visible.
+2. Raise drip stand or squeeze bag to increase infusion rate.
+3. Give colloids (e.g., Ringers lactate).
+4. In hemorrhagic states, cross-matched blood is preferred; resuscitate with crystalloids (e.g., normal saline) in the meantime.
+
+**Second-line options:**
+
+1. Furosemide IV for re-establishing diuresis after adequate fluid replacement.
+2. Blood transfusion (in severe bleeding).
+3. Plasma replacement (in cases of severe burns).
+
+**Treatment modifications based on severity:**
+
+* In septic shock, insert two cannulae at separate sites for rapid IV infusion.
+
+### 5. Management and Follow-up
+
+Monitoring parameters:
+
+* Vital signs
+* Urine output
+* Electrolyte levels
+* Blood gas analysis
+
+Follow-up schedule:
+
+* Daily monitoring of vital signs and laboratory tests.
+* Adjust treatment plan based on response to therapy.
+
+Patient education:
+
+* Importance of completing the full course of antibiotics.
+* Need for follow-up appointments.
+
+Lifestyle modifications:
+
+* Encourage patients to maintain a healthy lifestyle, including regular exercise and balanced diet.
+
+### 6. Contraindications and Precautions
+
+Contraindications:
+
+* Hypersensitivity to colloids or crystalloids
+* Severe renal impairment (creatinine > 2 mg/dL)
+
+Special populations:
+
+* Elderly: use caution when administering fluids and medications.
+* Pregnancy: use caution when administering medications, especially those with potential teratogenic effects.
+
+Drug interactions:
+
+* Monitor for potential interactions between colloids/crystalloids and other medications.
+
+Warning signs requiring escalation:
+
+* Decreased urine output (< 0.5 mL/kg/hour)
+* Increased creatinine (> 2 mg/dL)
+* Hypotension (systolic BP < 90 mmHg)
+
+### 7. Key Clinical Pearls
+
+Important clinical tips:
+
+* Early recognition and treatment of sepsis are critical to preventing organ dysfunction.
+* Use caution when administering fluids and medications in special populations.
+
+Common pitfalls to avoid:
+
+* Delayed recognition of sepsis, leading to organ dysfunction.
+* Inadequate fluid replacement, leading to hypovolemia.
+
+Red flags:
+
+* Decreased urine output
+* Increased creatinine
+* Hypotension
+
+This guideline provides a comprehensive approach to managing sepsis, emphasizing early recognition and treatment. Specific protocols should be verified with local guidelines.
+
+---
+Generated from source PDF. Source content available: True

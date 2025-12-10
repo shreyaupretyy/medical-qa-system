@@ -1,0 +1,88 @@
+{
+  "timestamp": "2025-12-10 20:22:35",
+  "num_cases": 50,
+  "results": [
+    {
+      "method_name": "Chain-of-Thought",
+      "description": "Standard LLM reasoning with step-by-step prompting",
+      "accuracy": 0.34,
+      "avg_reasoning_time_ms": 4954.734697341919,
+      "total_time_seconds": 247.73973488807678,
+      "num_cases": 50,
+      "correct_predictions": 17,
+      "brier_score": 0.42393981381797075,
+      "ece": 0.2663503756622089,
+      "answer_distribution": {
+        "B": 23,
+        "C": 7,
+        "A": 17,
+        "D": 2,
+        "Cannot answer from the provided context.": 1
+      },
+      "avg_reasoning_length": 98.06,
+      "avg_evidence_usage": 10.64,
+      "reasoning_coherence": 0.32666666666666666
+    },
+    {
+      "method_name": "Tree-of-Thought",
+      "description": "Structured multi-branch reasoning with explicit thought paths",
+      "accuracy": 0.52,
+      "avg_reasoning_time_ms": 41366.63206100464,
+      "total_time_seconds": 2068.350494861603,
+      "num_cases": 50,
+      "correct_predictions": 26,
+      "brier_score": 0.3442,
+      "ece": 0.3099999999999999,
+      "answer_distribution": {
+        "C": 14,
+        "A": 18,
+        "B": 14,
+        "D": 2,
+        "Cannot answer from the provided context.": 2
+      },
+      "avg_reasoning_length": 525.04,
+      "avg_evidence_usage": 3.9,
+      "reasoning_coherence": 0.43333333333333335
+    },
+    {
+      "method_name": "Structured Medical",
+      "description": "5-step clinical reasoning: feature extraction → differential → evidence → treatment → selection",
+      "accuracy": 0.44,
+      "avg_reasoning_time_ms": 26990.508499145508,
+      "total_time_seconds": 1349.5254249572754,
+      "num_cases": 50,
+      "correct_predictions": 22,
+      "brier_score": 0.29472068743289254,
+      "ece": 0.28264520580952374,
+      "answer_distribution": {
+        "C": 9,
+        "A": 13,
+        "D": 5,
+        "B": 21,
+        "Cannot answer from the provided context.": 2
+      },
+      "avg_reasoning_length": 40.96,
+      "avg_evidence_usage": 6.72,
+      "reasoning_coherence": 0.32
+    }
+  ],
+  "summary": {
+    "best_accuracy": {
+      "method": "Tree-of-Thought",
+      "score": 0.52
+    },
+    "best_calibration": {
+      "method": "Structured Medical",
+      "brier_score": 0.29472068743289254
+    },
+    "fastest": {
+      "method": "Chain-of-Thought",
+      "time_ms": 4954.734697341919
+    }
+  },
+  "recommendations": [
+    "Tree-of-Thought achieves the highest accuracy for medical MCQs.",
+    "Structured Medical provides the best-calibrated confidence scores.",
+    "Chain-of-Thought is recommended for time-sensitive applications."
+  ]
+}

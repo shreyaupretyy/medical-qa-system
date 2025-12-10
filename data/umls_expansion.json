@@ -1,0 +1,115 @@
+{
+  "terms": [
+    {
+      "canonical": "acute coronary syndrome",
+      "aliases": ["acs", "stemi", "nstemi", "unstable angina", "st elevation mi", "non st elevation mi", "heart attack"],
+      "categories": ["cardiology"]
+    },
+    {
+      "canonical": "stemi",
+      "aliases": ["st elevation myocardial infarction", "st-elevation mi", "st segment elevation", "new lbbb with ischemia"],
+      "categories": ["cardiology"]
+    },
+    {
+      "canonical": "nstemi",
+      "aliases": ["non st elevation myocardial infarction", "non-st-elevation mi", "nste-acs"],
+      "categories": ["cardiology"]
+    },
+    {
+      "canonical": "pulmonary embolism",
+      "aliases": ["pe", "pulmonary thromboembolism", "saddle embolus"],
+      "categories": ["pulmonology", "hematology"]
+    },
+    {
+      "canonical": "deep vein thrombosis",
+      "aliases": ["dvt", "venous thrombosis", "leg clot"],
+      "categories": ["hematology", "vascular"]
+    },
+    {
+      "canonical": "stroke",
+      "aliases": ["cva", "cerebrovascular accident", "ischemic stroke", "brain attack"],
+      "categories": ["neurology"]
+    },
+    {
+      "canonical": "acute limb ischemia",
+      "aliases": ["pulseless limb", "cold limb", "limb ischemia", "6 ps ischemia"],
+      "categories": ["vascular"]
+    },
+    {
+      "canonical": "sepsis",
+      "aliases": ["septicemia", "septic shock", "blood infection"],
+      "categories": ["infectious"]
+    },
+    {
+      "canonical": "pneumonia",
+      "aliases": ["lung infection", "cap", "community acquired pneumonia"],
+      "categories": ["infectious", "pulmonology"]
+    },
+    {
+      "canonical": "urinary tract infection",
+      "aliases": ["uti", "cystitis", "pyelonephritis"],
+      "categories": ["infectious", "nephrology"]
+    },
+    {
+      "canonical": "acute kidney injury",
+      "aliases": ["aki", "acute renal failure"],
+      "categories": ["nephrology"]
+    },
+    {
+      "canonical": "chronic kidney disease",
+      "aliases": ["ckd", "chronic renal failure"],
+      "categories": ["nephrology"]
+    },
+    {
+      "canonical": "atrial fibrillation",
+      "aliases": ["afib", "af", "irregularly irregular rhythm"],
+      "categories": ["cardiology"]
+    },
+    {
+      "canonical": "heart failure",
+      "aliases": ["hf", "congestive heart failure", "chf"],
+      "categories": ["cardiology"]
+    },
+    {
+      "canonical": "diabetic ketoacidosis",
+      "aliases": ["dka", "ketoacidosis", "diabetic crisis"],
+      "categories": ["endocrine"]
+    },
+    {
+      "canonical": "neutropenic fever",
+      "aliases": ["fever with neutropenia", "oncology fever"],
+      "categories": ["infectious", "oncology"]
+    },
+    {
+      "canonical": "gi bleed",
+      "aliases": ["gastrointestinal bleeding", "upper gi bleed", "lower gi bleed", "hematemesis", "melena", "hematochezia"],
+      "categories": ["gastroenterology"]
+    },
+    {
+      "canonical": "asthma exacerbation",
+      "aliases": ["acute asthma", "status asthmaticus"],
+      "categories": ["pulmonology"]
+    },
+    {
+      "canonical": "copd exacerbation",
+      "aliases": ["acute copd", "bronchitis flare"],
+      "categories": ["pulmonology"]
+    },
+    {
+      "canonical": "rheumatoid arthritis",
+      "aliases": ["ra", "inflammatory arthritis"],
+      "categories": ["rheumatology"]
+    },
+    {
+      "canonical": "osteoporosis",
+      "aliases": ["low bone density", "fragility fracture risk"],
+      "categories": ["endocrine"]
+    },
+    {
+      "canonical": "depression",
+      "aliases": ["major depressive disorder", "mdd"],
+      "categories": ["psychiatry"]
+    }
+  ]
+}
+

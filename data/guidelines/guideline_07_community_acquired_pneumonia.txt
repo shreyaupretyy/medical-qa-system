@@ -1,0 +1,92 @@
+# Community-Acquired Pneumonia
+Category: Infectious Disease
+Keywords: pneumonia, community-acquired, CAP, respiratory infection, antibiotic
+
+---
+
+**Community-Acquired Pneumonia**
+
+**Category:** Infectious Disease
+
+### 1. Definition and Epidemiology
+
+* **Definition:** Community-acquired pneumonia (CAP) is an infection of the lung tissue caused by various bacteria, viruses, or fungi.
+* **Prevalence/Incidence:** CAP affects approximately 5-10% of adults in a given year, with a higher incidence in older adults (>65 years).
+* **Risk Factors:**
+	+ Age >65 years
+	+ Chronic medical conditions (e.g., heart disease, diabetes)
+	+ Weakened immune system (e.g., HIV/AIDS, cancer)
+	+ Smoking or alcohol abuse
+
+### 2. Clinical Presentation
+
+* **Signs and Symptoms:** Fever, cough, shortness of breath, chest pain, fatigue, and sputum production.
+* **History Findings:**
+	+ Recent travel or exposure to respiratory pathogens
+	+ Underlying medical conditions (e.g., heart disease, diabetes)
+	+ Medications that suppress the immune system (e.g., corticosteroids)
+* **Physical Examination Findings:** Signs of consolidation or pleural effusion on chest examination.
+
+### 3. Diagnostic Criteria and Workup
+
+* **Diagnostic Criteria:**
+	+ Presence of fever, cough, and shortness of breath
+	+ Chest X-ray showing signs of consolidation or pleural effusion
+* **Laboratory Tests:**
+	+ Complete Blood Count (CBC) to evaluate for infection and inflammation
+	+ C-reactive protein (CRP) to assess inflammation
+	+ Blood culture and sensitivity to identify causative organism
+* **Imaging Studies:** Chest X-ray to evaluate lung fields and pleural space.
+* **Other Investigations:**
+	+ Sputum gram stain and culture to identify bacterial pathogens
+	+ Ziehl-Neelsen stain for acid-fast bacilli (to exclude TB)
+
+### 4. Treatment Algorithm
+
+* **First-Line Treatment:**
+	+ For adults:
+		- Chlorpheniramine maleate, oral: 4 mg 12 hourly
+	+ For children:
+		- 6-12 years: 2 mg 6-12 hourly (max. 12 mg daily)
+		- 2-6 years: 1 mg 6-8 hourly (max. 6 mg daily)
+		- <2 years: Not recommended
+* **Second-Line Options:** Based on culture results and assessment of patient response to initial treatment.
+* **Treatment Modifications based on Severity:**
+	+ CURB-65 severity score:
+		- Confusion, restlessness, or excessive drowsiness (1 point)
+		- Blood Urea Nitrogen (>7 mmol/L) (1 point)
+		- Respiratory rate >30 breaths/min (1 point)
+		- Blood pressure <90 mmHg systolic or <60 mmHg diastolic (1 point)
+		- Age ≥65 years (1 point)
+
+### 5. Management and Follow-up
+
+* **Monitoring Parameters:**
+	+ Vital signs
+	+ Oxygen saturation by pulse oximetry
+	+ Chest X-ray to evaluate response to treatment
+* **Follow-up Schedule:** Regular follow-ups with healthcare provider to assess response to treatment and manage complications.
+* **Patient Education:** Educate patients on importance of completing full course of antibiotics, avoiding smoking and alcohol abuse, and practicing good hygiene.
+
+### 6. Contraindications and Precautions
+
+* **Drug Contraindications:**
+	+ Chlorpheniramine maleate contraindicated in children <2 years
+* **Special Populations:**
+	+ Elderly: Monitor for cognitive impairment and adjust dosages accordingly.
+	+ Pregnancy: Avoid chlorpheniramine maleate; use alternative treatments if necessary.
+	+ Renal Impairment: Adjust dosages based on creatinine clearance.
+* **Drug Interactions:** Chlorpheniramine maleate may interact with other medications (e.g., sedatives, antidepressants).
+
+### 7. Key Clinical Pearls
+
+* **Important Clinical Tips:**
+	+ Start antibiotics immediately based on knowledge of most probable causative organism and local resistance patterns.
+	+ Use CURB-65 severity score to guide treatment decisions.
+* **Common Pitfalls to Avoid:**
+	+ Not considering underlying medical conditions or medications that suppress the immune system.
+	+ Failing to monitor for complications (e.g., pleural effusion, pneumothorax).
+* **Red Flags:** Sudden worsening of symptoms, increased respiratory rate, or decreased oxygen saturation.
+
+---
+Generated from source PDF. Source content available: True

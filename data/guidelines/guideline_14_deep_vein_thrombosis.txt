@@ -1,0 +1,104 @@
+# Deep Vein Thrombosis
+Category: Hematology
+Keywords: deep vein thrombosis, DVT, venous thrombosis, anticoagulation, heparin
+
+---
+
+**Deep Vein Thrombosis (DVT) Treatment Guideline**
+
+**Category:** Hematology
+
+### 1. Definition and Epidemiology
+
+* **Definition:** Deep vein thrombosis is a blood clot that forms in the deep veins of the body, typically in the legs.
+* **Prevalence/Incidence:** DVT affects approximately 1-2 per 1000 people per year, with a higher incidence in hospitalized patients (up to 20%).
+* **Risk Factors:**
+	+ Prolonged immobility
+	+ Surgery or trauma
+	+ Cancer or malignancy
+	+ Family history of thrombophilia
+	+ Obesity
+	+ Age > 40 years
+
+### 2. Clinical Presentation
+
+* **Signs and Symptoms:** Swelling, pain, warmth, redness, and tenderness in the affected limb.
+* **History Findings:**
+	+ Recent surgery or trauma
+	+ Prolonged immobility
+	+ Cancer diagnosis
+* **Physical Examination Findings:**
+	+ Swelling of the affected limb
+	+ Differential warmth
+	+ Tenderness to palpation
+
+### 3. Diagnostic Criteria and Workup
+
+* **Diagnostic Criteria:** Clinical suspicion, Wells score > 2 (moderate probability), or low pre-test probability with a negative D-Dimer test.
+* **Laboratory Tests:**
+	+ D-Dimer test
+	+ Fibrinogen level
+	+ Thrombophilia screen (in patients with recurrent DVT)
+* **Imaging Studies:** Doppler ultrasound, CT venography, or MRI
+* **Other Investigations:** ECG, chest X-ray, and pulmonary function tests as needed
+
+### 4. Treatment Algorithm
+
+* **First-Line Treatment:**
+	+ Adults:
+		- Heparin (SC): 5000 units 8-12 hourly
+		- Enoxaparin (SC): 40 mg daily
+	+ Children:
+		- Heparin (SC): 250 units/kg 12 hourly
+		- Enoxaparin (SC): 1 mg/kg 12 hourly
+* **Second-Line Options:**
+	+ Adults:
+		- Dalteparin (SC): 200 IU/kg daily
+		- Warfarin (oral): Loading dose of 10 mg, followed by 5 mg daily INR until target range of 2-3 is achieved
+	+ Children:
+		- Dalteparin (SC): 100 IU/kg 12 hourly
+* **Treatment Modifications Based on Severity:**
+	+ High-risk patients (e.g., cancer, recent surgery) may require more aggressive anticoagulation.
+
+### 5. Management and Follow-up
+
+* **Monitoring Parameters:** INR, aPTT, fibrinogen level, and platelet count.
+* **Follow-up Schedule:**
+	+ Weekly INR checks for the first 4 weeks
+	+ Monthly follow-up appointments with a healthcare provider
+* **Patient Education:**
+	+ Importance of adherence to medication regimen
+	+ Risk factors for recurrence (e.g., family history)
+	+ Lifestyle modifications (e.g., regular exercise, weight management)
+* **Lifestyle Modifications:**
+	+ Regular exercise (e.g., walking, cycling)
+	+ Weight management
+	+ Avoidance of prolonged immobility
+
+### 6. Contraindications and Precautions
+
+* **Drug Contraindications:** Warfarin is contraindicated in pregnancy.
+* **Special Populations:**
+	+ Elderly: Dose adjustments may be necessary due to age-related changes in renal function
+	+ Pregnancy: Avoid warfarin; use low molecular weight heparin (LMWH) instead
+	+ Renal Impairment: Dose adjustments may be necessary due to decreased clearance of anticoagulants
+* **Drug Interactions:** Monitor for interactions with other medications, such as NSAIDs and antibiotics.
+* **Warning Signs Requiring Escalation:**
+	+ Sudden increase in pain or swelling
+	+ Shortness of breath or chest pain
+
+### 7. Key Clinical Pearls
+
+* **Important Clinical Tips:**
+	+ Use Wells score to assess probability of DVT
+	+ Monitor INR closely during initiation and adjustment of warfarin therapy
+	+ Consider LMWH as an alternative to unfractionated heparin in patients with renal impairment
+* **Common Pitfalls to Avoid:**
+	+ Failure to recognize risk factors for DVT (e.g., recent surgery, cancer)
+	+ Inadequate monitoring of INR during warfarin therapy
+	+ Overlooked contraindications or drug interactions
+
+This guideline provides a comprehensive framework for the diagnosis and treatment of deep vein thrombosis. It emphasizes the importance of clinical suspicion, diagnostic testing, and anticoagulation therapy in preventing clot propagation and pulmonary embolism. Specific protocols should be verified with local guidelines to ensure adherence to regional recommendations.
+
+---
+Generated from source PDF. Source content available: True

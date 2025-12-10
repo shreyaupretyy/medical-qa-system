@@ -1,0 +1,97 @@
+# Asthma Management
+Category: Respiratory
+Keywords: asthma, bronchospasm, wheeze, inhaler, bronchodilator
+
+---
+
+**Asthma Management**
+
+**Category:** Respiratory
+
+### 1. Definition and Epidemiology
+
+* **Definition:** Asthma is a chronic inflammatory disease of the airways characterized by recurring episodes of wheezing, breathlessness, chest tightness, and coughing.
+* **Prevalence/Incidence:** Approximately 8.3% of adults and 10.2% of children worldwide suffer from asthma (Source: Global Initiative for Asthma, 2017).
+* **Risk Factors:**
+	+ Family history
+	+ Allergies (e.g., dust mites, pollen)
+	+ Respiratory infections
+	+ Exposure to tobacco smoke
+
+### 2. Clinical Presentation
+
+* **Signs and Symptoms:** Wheezing, breathlessness, chest tightness, coughing, shortness of breath, particularly on exertion.
+* **History Findings:**
+	+ Recurrent episodes of wheezing and coughing
+	+ History of allergies or respiratory infections
+	+ Exposure to triggers (e.g., dust mites, pollen)
+* **Physical Examination Findings:** Wheezing, use of accessory muscles for breathing, barrel chest.
+
+### 3. Diagnostic Criteria and Workup
+
+* **Diagnostic Criteria:**
+	+ Clinical presentation consistent with asthma
+	+ Response to bronchodilator therapy
+* **Laboratory Tests:**
+	+ Full Blood Count (FBC) to rule out anemia or eosinophilia
+	+ Spirometry to measure lung function and reversibility
+* **Imaging Studies:** Chest X-ray to exclude other diagnoses or complications.
+* **Other Investigations:**
+	+ Skin prick test or specific IgE for common allergens
+	+ Stool examination to exclude helminthiasis
+
+### 4. Treatment Algorithm
+
+**Acute Exacerbation of Asthma**
+
+1. Initial Management in the Community:
+	* Salbutamol inhaler (100-200 mcg/puff) using a pressurized metered dose inhaler (pMDI) with a spacer
+	* Give 1-2 puffs via a spacer and mask if needed (e.g., Volumatic)
+2. First-line Treatment:
+	* Salbutamol, inhaled (100 microgram/2 puffs) 4-6 hourly as required
+3. Second-line Options:
+	* Ipratropium bromide inhaler (20 mcg/puff) using a pMDI with a spacer
+	* Corticosteroids (e.g., fluticasone propionate, 250 mcg/2 puffs twice daily)
+
+**Chronic Asthma**
+
+1. First-line Treatment:
+	* Inhaled corticosteroids (e.g., fluticasone propionate, 250 mcg/2 puffs twice daily)
+	* Long-acting beta-agonists (e.g., salmeterol xinafoate, 50 mcg/2 puffs twice daily)
+
+### 5. Management and Follow-up
+
+* **Monitoring Parameters:**
+	+ Peak Expiratory Flow Rate (PEFR)
+	+ Spirometry
+	+ Symptom control
+* **Follow-up Schedule:** Regular follow-ups every 4-6 weeks to adjust treatment as needed.
+* **Patient Education:** Teach patients about asthma self-management, device use and technique, and lifestyle modifications (e.g., avoiding triggers).
+* **Lifestyle Modifications:**
+	+ Avoid known triggers/allergens
+	+ Quit smoking
+
+### 6. Contraindications and Precautions
+
+* **Drug Contraindications:**
+	+ Salbutamol contraindicated in patients with severe asthma or those requiring high doses of corticosteroids.
+* **Special Populations:**
+	+ Elderly: Use caution when prescribing beta-agonists due to increased risk of adverse effects.
+	+ Pregnancy: Avoid using long-acting beta-agonists and corticosteroids unless absolutely necessary.
+	+ Renal impairment: Use caution when prescribing medications that require dose adjustments.
+
+### 7. Key Clinical Pearls
+
+* **Important Clinical Tips:**
+	+ Always use a spacer with inhaled medication to improve delivery and efficacy.
+	+ Monitor PEFR regularly to assess treatment effectiveness.
+	+ Educate patients about asthma self-management and lifestyle modifications.
+* **Common Pitfalls to Avoid:**
+	+ Underdiagnosing or misdiagnosing asthma
+	+ Inadequate treatment of acute exacerbations
+	+ Failure to monitor and adjust treatment as needed
+
+**Red Flags:** Severe symptoms, rapid decline in PEFR, or failure to respond to initial treatment.
+
+---
+Generated from source PDF. Source content available: True

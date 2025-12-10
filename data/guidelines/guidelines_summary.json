@@ -1,0 +1,158 @@
+{
+  "total_guidelines": 20,
+  "guidelines": [
+    {
+      "id": 1,
+      "name": "Cardiovascular Emergencies (ACS)",
+      "category": "Cardiovascular",
+      "has_source_content": true,
+      "content_length": 3841
+    },
+    {
+      "id": 2,
+      "name": "Stroke Management (Ischemic)",
+      "category": "Neurology",
+      "has_source_content": true,
+      "content_length": 4142
+    },
+    {
+      "id": 3,
+      "name": "Diabetes Management (Type 2)",
+      "category": "Endocrine",
+      "has_source_content": true,
+      "content_length": 4556
+    },
+    {
+      "id": 4,
+      "name": "Hypertension Treatment",
+      "category": "Cardiovascular",
+      "has_source_content": true,
+      "content_length": 4993
+    },
+    {
+      "id": 5,
+      "name": "Asthma Management",
+      "category": "Respiratory",
+      "has_source_content": true,
+      "content_length": 3753
+    },
+    {
+      "id": 6,
+      "name": "COPD Exacerbation",
+      "category": "Respiratory",
+      "has_source_content": true,
+      "content_length": 4858
+    },
+    {
+      "id": 7,
+      "name": "Community-Acquired Pneumonia",
+      "category": "Infectious Disease",
+      "has_source_content": true,
+      "content_length": 3877
+    },
+    {
+      "id": 8,
+      "name": "Urinary Tract Infections",
+      "category": "Infectious Disease",
+      "has_source_content": true,
+      "content_length": 3527
+    },
+    {
+      "id": 9,
+      "name": "Sepsis Management",
+      "category": "Critical Care",
+      "has_source_content": true,
+      "content_length": 3831
+    },
+    {
+      "id": 10,
+      "name": "Gastrointestinal Bleeding",
+      "category": "Gastroenterology",
+      "has_source_content": true,
+      "content_length": 4446
+    },
+    {
+      "id": 11,
+      "name": "Acute Kidney Injury",
+      "category": "Nephrology",
+      "has_source_content": true,
+      "content_length": 4132
+    },
+    {
+      "id": 12,
+      "name": "Heart Failure Management",
+      "category": "Cardiovascular",
+      "has_source_content": true,
+      "content_length": 4634
+    },
+    {
+      "id": 13,
+      "name": "Atrial Fibrillation",
+      "category": "Cardiovascular",
+      "has_source_content": true,
+      "content_length": 4025
+    },
+    {
+      "id": 14,
+      "name": "Deep Vein Thrombosis",
+      "category": "Hematology",
+      "has_source_content": true,
+      "content_length": 4025
+    },
+    {
+      "id": 15,
+      "name": "Pulmonary Embolism",
+      "category": "Respiratory",
+      "has_source_content": true,
+      "content_length": 4038
+    },
+    {
+      "id": 16,
+      "name": "Acute Pancreatitis",
+      "category": "Gastroenterology",
+      "has_source_content": true,
+      "content_length": 4725
+    },
+    {
+      "id": 17,
+      "name": "Liver Cirrhosis Complications",
+      "category": "Gastroenterology",
+      "has_source_content": true,
+      "content_length": 4280
+    },
+    {
+      "id": 18,
+      "name": "Rheumatoid Arthritis",
+      "category": "Rheumatology",
+      "has_source_content": true,
+      "content_length": 3955
+    },
+    {
+      "id": 19,
+      "name": "Osteoporosis Management",
+      "category": "Endocrine",
+      "has_source_content": true,
+      "content_length": 4396
+    },
+    {
+      "id": 20,
+      "name": "Depression Treatment",
+      "category": "Psychiatry",
+      "has_source_content": true,
+      "content_length": 4652
+    }
+  ],
+  "categories": [
+    "Rheumatology",
+    "Gastroenterology",
+    "Neurology",
+    "Critical Care",
+    "Infectious Disease",
+    "Psychiatry",
+    "Cardiovascular",
+    "Endocrine",
+    "Nephrology",
+    "Hematology",
+    "Respiratory"
+  ]
+}

@@ -1,0 +1,144 @@
+# Hypertension Treatment
+Category: Cardiovascular
+Keywords: hypertension, blood pressure, antihypertensive, ACE inhibitor, ARB
+
+---
+
+**Hypertension Treatment**
+**Category:** Cardiovascular
+
+### 1. Definition and Epidemiology
+Hypertension, or high blood pressure, is a chronic medical condition characterized by elevated systolic and/or diastolic blood pressure levels. According to the source material, hypertension in children is defined as an average systolic and/or diastolic blood pressure that is ≥ 95th percentile for gender, age, and height on 3 or more separate occasions taken in the right arm.
+
+Prevalence and incidence rates are not mentioned in the provided source material. However, it is essential to note that hypertension is a significant public health concern worldwide, affecting approximately one billion adults (1). Risk factors include:
+
+* Family history of hypertension
+* Obesity
+* Physical inactivity
+* Smoking
+* Excessive sodium intake
+* Age (increasing risk with age)
+* Ethnicity (higher prevalence in African Americans)
+
+### 2. Clinical Presentation
+The clinical presentation of hypertension can vary depending on the underlying cause and severity of the condition. Common signs and symptoms include:
+
+* Chest pain
+* Headaches
+* Dyspnea on exertion
+* Excessive sweating
+* Leg swelling
+* Palpitations
+* Haematuria (blood in urine)
+* Unconsciousness (hypertensive encephalopathy)
+
+History findings may reveal:
+
+* Family history of hypertension or cardiovascular disease
+* Presence of other comorbidities, such as diabetes mellitus or kidney disease
+
+Physical examination findings may include:
+
+* Elevated blood pressure readings
+* Signs of target organ damage, such as left ventricular hypertrophy or retinopathy
+
+### 3. Diagnostic Criteria and Workup
+The diagnostic criteria for hypertension are based on the source material's definition in children: an average systolic and/or diastolic blood pressure that is ≥ 95th percentile for gender, age, and height.
+
+Laboratory tests may include:
+
+* Complete Blood Count (CBC)
+* Electrolyte panel
+* Renal function tests (eGFR)
+* Lipid profile
+
+Imaging studies may be ordered to evaluate target organ damage or underlying causes of secondary hypertension. These may include:
+
+* Echocardiogram
+* Chest X-ray
+* Abdominal ultrasound
+
+Other investigations, such as 24-hour ambulatory blood pressure monitoring, may be used to confirm the diagnosis and assess treatment efficacy.
+
+### 4. Treatment Algorithm
+
+**First-line treatment:**
+
+* For uncomplicated hypertension in adults:
+	+ Thiazide diuretics (e.g., Bendroflumethiazide or Hydrochlorothiazide)
+	+ Calcium Channel Blockers (CCBs) (e.g., Amlodipine)
+	+ Angiotensin Converting Enzyme Inhibitors (ACE-I) (e.g., Lisinopril)
+	+ Angiotensin Receptor Blockers (ARBs) (e.g., Losartan)
+	+ Beta-blockers (e.g., Metoprolol)
+* For uncomplicated hypertension in children:
+	+ Lifestyle modifications (diet, exercise, weight management)
+
+**Second-line options:**
+
+* Add-on medications from the first-line choices
+* Compelling indications for specific antihypertensives (see source material)
+
+**Treatment modifications based on severity:**
+
+* Dual therapy should be started earlier when blood pressure exceeds 180/110 mmHg.
+* Additional anti-hypertensive drugs should be used if target blood pressure levels are not achieved.
+
+### 5. Management and Follow-up
+Monitoring parameters include:
+
+* Blood pressure readings at each visit
+* Renal function tests (eGFR)
+* Lipid profile
+
+Follow-up schedule:
+
+* Initial follow-up: 1-2 weeks after starting treatment
+* Subsequent follow-ups: every 4-6 weeks until blood pressure is controlled
+
+Patient education:
+
+* Importance of lifestyle modifications (diet, exercise, weight management)
+* Adherence to medication regimen
+* Monitoring and reporting symptoms or concerns
+
+Lifestyle modifications:
+
+* Dietary changes (reduced sodium intake, increased potassium intake)
+* Regular physical activity
+* Weight management
+* Smoking cessation
+
+### 6. Contraindications and Precautions
+Contraindications for specific medications include:
+
+* Thiazide diuretics: gout
+* Beta-blockers: asthma, 2nd and 3rd degree AV block
+* CCBs: heart failure
+* ACE-I or ARBs: bilateral renal artery stenosis, hyperkalemia
+
+Special populations:
+
+* Elderly: cautious use of antihypertensive medications due to increased risk of adverse effects
+* Pregnancy: careful selection of antihypertensive medications (see source material)
+* Renal impairment: cautious use of ACE-I or ARBs due to potential for renal dysfunction
+
+### 7. Key Clinical Pearls
+Important clinical tips:
+
+* Regular monitoring of blood pressure and renal function
+* Adherence to medication regimen
+* Lifestyle modifications are essential in the management of hypertension
+
+Common pitfalls to avoid:
+
+* Inadequate treatment of underlying causes of secondary hypertension
+* Failure to monitor and adjust treatment as needed
+
+Red flags requiring escalation:
+
+* Uncontrolled hypertension despite optimal treatment
+* Presence of target organ damage or end-organ dysfunction
+* Development of adverse effects or contraindications to specific medications
+
+---
+Generated from source PDF. Source content available: True

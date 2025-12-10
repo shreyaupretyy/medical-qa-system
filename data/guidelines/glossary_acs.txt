@@ -1,0 +1,13 @@
+# ACS Glossary (plain-language)
+
+STEMI: ST-segment elevation myocardial infarction (full blockage)
+NSTEMI: Non-ST-elevation myocardial infarction (partial blockage)
+Unstable angina: Chest pain at rest or increasing, no troponin rise
+Retrosternal pain: Central chest pain, pressure-like, may radiate to arm/jaw
+Red flags: Hypotension, new ST elevation, cardiogenic shock, arrhythmia, altered mental status
+First-line ACS meds: Aspirin, clopidogrel, nitroglycerin, beta-blocker (if no shock), statin, anticoagulant
+Do not give: Beta-blocker in shock/bradycardia, nitrates in right ventricular infarct or hypotension
+Time-sensitive: Door-to-balloon within 90 minutes (PCI) or thrombolysis if PCI unavailable
+ECG changes: ST elevation, new LBBB (treat as STEMI), ST depression/T inversion (possible NSTEMI/UA)
+Troponin: Cardiac enzyme to confirm MI; repeat if initial negative
+

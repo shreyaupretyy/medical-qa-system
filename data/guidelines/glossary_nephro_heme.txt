@@ -1,0 +1,16 @@
+# Nephrology / Hematology Glossary
+
+AKI: Acute kidney injury; sudden drop in kidney function.
+CKD: Chronic kidney disease.
+Hematuria: Blood in urine.
+Proteinuria: Protein in urine.
+Hyperkalemia: High potassium; risk of arrhythmia.
+Uremia: Toxin buildup in kidney failure.
+Dialysis indications: Refractory hyperkalemia, acidosis, fluid overload, uremic symptoms.
+Thrombocytopenia: Low platelets; bleeding risk.
+Leukopenia: Low white blood cells; infection risk.
+Anemia: Low hemoglobin.
+INR: Clotting measure; high INR → bleeding risk.
+Anticoagulant: Blood thinner (e.g., heparin, warfarin).
+Antiplatelet: Stops platelets (e.g., aspirin, clopidogrel).
+

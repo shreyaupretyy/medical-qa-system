@@ -1,0 +1,4413 @@
+{
+  "detailed_metrics": {
+    "timestamp": "2025-12-11T00:07:14.025879",
+    "total_cases": 50,
+    "accuracy": {
+      "exact_match": 0.54,
+      "correct_count": 27,
+      "incorrect_count": 23,
+      "total_cases": 50
+    },
+    "retrieval": {},
+    "reasoning": {},
+    "error_analysis": {
+      "total_errors": 23,
+      "error_rate": 0.46,
+      "error_types": {
+        "medium_confidence_wrong": 14,
+        "low_confidence_wrong": 8,
+        "high_confidence_wrong": 1
+      },
+      "retrieval_failures": 0,
+      "reasoning_failures": 23,
+      "high_confidence_errors": 1,
+      "retrieval_failure_rate": 0.0,
+      "reasoning_failure_rate": 1.0,
+      "detailed_analysis": {
+        "total_errors": 23,
+        "errors_by_concept": {
+          "cardiovascular": [
+            {
+              "question_id": "Q_036",
+              "concepts": [
+                "cardiovascular",
+                "renal",
+                "infectious",
+                "management"
+              ],
+              "confidence": 0.3335270400000001,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "immediate"
+            },
+            {
+              "question_id": "Q_032",
+              "concepts": [
+                "sign",
+                "cardiovascular",
+                "respiratory",
+                "intervention",
+                "infectious",
+                "vital"
+              ],
+              "confidence": 0.07056000000000001,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "immediate"
+            },
+            {
+              "question_id": "Q_018",
+              "concepts": [
+                "medication",
+                "sign",
+                "cardiovascular",
+                "disease",
+                "symptom",
+                "treatment",
+                "neurological",
+                "gastrointestinal"
+              ],
+              "confidence": 0.947625,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "treatment"
+            },
+            {
+              "question_id": "Q_087",
+              "concepts": [
+                "sign",
+                "cardiovascular",
+                "gastrointestinal",
+                "condition",
+                "vital"
+              ],
+              "confidence": 0.4414021920000002,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "management"
+            },
+            {
+              "question_id": "Q_070",
+              "concepts": [
+                "hematology",
+                "sign",
+                "cardiovascular",
+                "treatment",
+                "diagnosis",
+                "vital"
+              ],
+              "confidence": 0.7129920000000001,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "treatment"
+            },
+            {
+              "question_id": "Q_012",
+              "concepts": [
+                "treatment",
+                "cardiovascular",
+                "endocrine",
+                "vital"
+              ],
+              "confidence": 0.3422361600000001,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "immediate"
+            },
+            {
+              "question_id": "Q_005",
+              "concepts": [
+                "sign",
+                "diagnosis",
+                "cardiovascular",
+                "vital"
+              ],
+              "confidence": 0.04200000000000001,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "diagnosis"
+            },
+            {
+              "question_id": "Q_030",
+              "concepts": [
+                "sign",
+                "cardiovascular",
+                "respiratory",
+                "treatment",
+                "vital"
+              ],
+              "confidence": 0.07434,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "treatment"
+            },
+            {
+              "question_id": "Q_072",
+              "concepts": [
+                "sign",
+                "cardiovascular",
+                "vital"
+              ],
+              "confidence": 0.41273971200000015,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "immediate"
+            },
+            {
+              "question_id": "Q_026",
+              "concepts": [
+                "medication",
+                "sign",
+                "cardiovascular",
+                "respiratory",
+                "treatment",
+                "infectious",
+                "vital"
+              ],
+              "confidence": 0.17036250000000006,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "treatment"
+            },
+            {
+              "question_id": "Q_090",
+              "concepts": [
+                "sign",
+                "cardiovascular",
+                "disease",
+                "symptom",
+                "treatment"
+              ],
+              "confidence": 0.17036250000000006,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "treatment"
+            },
+            {
+              "question_id": "Q_054",
+              "concepts": [
+                "cardiovascular",
+                "renal",
+                "treatment",
+                "endocrine",
+                "vital"
+              ],
+              "confidence": 0.3335270400000001,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "treatment"
+            },
+            {
+              "question_id": "Q_094",
+              "concepts": [
+                "guideline",
+                "cardiovascular",
+                "treatment",
+                "management"
+              ],
+              "confidence": 0.41899386375,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "management"
+            },
+            {
+              "question_id": "Q_058",
+              "concepts": [
+                "disease",
+                "cardiovascular",
+                "treatment",
+                "neurological"
+              ],
+              "confidence": 0.17036250000000006,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "treatment"
+            },
+            {
+              "question_id": "Q_001",
+              "concepts": [
+                "sign",
+                "diagnosis",
+                "cardiovascular",
+                "vital"
+              ],
+              "confidence": 0.04200000000000001,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "diagnosis"
+            },
+            {
+              "question_id": "Q_020",
+              "concepts": [
+                "sign",
+                "cardiovascular",
+                "respiratory",
+                "symptom",
+                "neurological"
+              ],
+              "confidence": 0.47879999999999995,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "immediate"
+            },
+            {
+              "question_id": "Q_068",
+              "concepts": [
+                "sign",
+                "cardiovascular",
+                "vital"
+              ],
+              "confidence": 0.47879999999999995,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "immediate"
+            },
+            {
+              "question_id": "Q_007",
+              "concepts": [
+                "sign",
+                "cardiovascular",
+                "vital",
+                "neurological",
+                "management"
+              ],
+              "confidence": 0.39606336000000003,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "management"
+            },
+            {
+              "question_id": "Q_006",
+              "concepts": [
+                "cardiovascular",
+                "endocrine",
+                "gastrointestinal",
+                "condition",
+                "neurological",
+                "vital"
+              ],
+              "confidence": 0.32826528,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "treatment"
+            },
+            {
+              "question_id": "Q_063",
+              "concepts": [
+                "sign",
+                "cardiovascular",
+                "endocrine",
+                "infectious",
+                "gastrointestinal"
+              ],
+              "confidence": 0.3362042880000001,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "management"
+            },
+            {
+              "question_id": "Q_023",
+              "concepts": [
+                "sign",
+                "cardiovascular",
+                "respiratory",
+                "disease",
+                "management",
+                "vital"
+              ],
+              "confidence": 0.3422361600000001,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "management"
+            },
+            {
+              "question_id": "Q_052",
+              "concepts": [
+                "medication",
+                "sign",
+                "cardiovascular",
+                "renal",
+                "endocrine",
+                "infectious",
+                "neurological",
+                "vital"
+              ],
+              "confidence": 0.39606336000000003,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "immediate"
+            }
+          ],
+          "renal": [
+            {
+              "question_id": "Q_036",
+              "concepts": [
+                "cardiovascular",
+                "renal",
+                "infectious",
+                "management"
+              ],
+              "confidence": 0.3335270400000001,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "immediate"
+            },
+            {
+              "question_id": "Q_054",
+              "concepts": [
+                "cardiovascular",
+                "renal",
+                "treatment",
+                "endocrine",
+                "vital"
+              ],
+              "confidence": 0.3335270400000001,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "treatment"
+            },
+            {
+              "question_id": "Q_052",
+              "concepts": [
+                "medication",
+                "sign",
+                "cardiovascular",
+                "renal",
+                "endocrine",
+                "infectious",
+                "neurological",
+                "vital"
+              ],
+              "confidence": 0.39606336000000003,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "immediate"
+            }
+          ],
+          "infectious": [
+            {
+              "question_id": "Q_036",
+              "concepts": [
+                "cardiovascular",
+                "renal",
+                "infectious",
+                "management"
+              ],
+              "confidence": 0.3335270400000001,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "immediate"
+            },
+            {
+              "question_id": "Q_032",
+              "concepts": [
+                "sign",
+                "cardiovascular",
+                "respiratory",
+                "intervention",
+                "infectious",
+                "vital"
+              ],
+              "confidence": 0.07056000000000001,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "immediate"
+            },
+            {
+              "question_id": "Q_026",
+              "concepts": [
+                "medication",
+                "sign",
+                "cardiovascular",
+                "respiratory",
+                "treatment",
+                "infectious",
+                "vital"
+              ],
+              "confidence": 0.17036250000000006,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "treatment"
+            },
+            {
+              "question_id": "Q_063",
+              "concepts": [
+                "sign",
+                "cardiovascular",
+                "endocrine",
+                "infectious",
+                "gastrointestinal"
+              ],
+              "confidence": 0.3362042880000001,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "management"
+            },
+            {
+              "question_id": "Q_052",
+              "concepts": [
+                "medication",
+                "sign",
+                "cardiovascular",
+                "renal",
+                "endocrine",
+                "infectious",
+                "neurological",
+                "vital"
+              ],
+              "confidence": 0.39606336000000003,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "immediate"
+            }
+          ],
+          "management": [
+            {
+              "question_id": "Q_036",
+              "concepts": [
+                "cardiovascular",
+                "renal",
+                "infectious",
+                "management"
+              ],
+              "confidence": 0.3335270400000001,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "immediate"
+            },
+            {
+              "question_id": "Q_094",
+              "concepts": [
+                "guideline",
+                "cardiovascular",
+                "treatment",
+                "management"
+              ],
+              "confidence": 0.41899386375,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "management"
+            },
+            {
+              "question_id": "Q_007",
+              "concepts": [
+                "sign",
+                "cardiovascular",
+                "vital",
+                "neurological",
+                "management"
+              ],
+              "confidence": 0.39606336000000003,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "management"
+            },
+            {
+              "question_id": "Q_023",
+              "concepts": [
+                "sign",
+                "cardiovascular",
+                "respiratory",
+                "disease",
+                "management",
+                "vital"
+              ],
+              "confidence": 0.3422361600000001,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "management"
+            }
+          ],
+          "sign": [
+            {
+              "question_id": "Q_032",
+              "concepts": [
+                "sign",
+                "cardiovascular",
+                "respiratory",
+                "intervention",
+                "infectious",
+                "vital"
+              ],
+              "confidence": 0.07056000000000001,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "immediate"
+            },
+            {
+              "question_id": "Q_018",
+              "concepts": [
+                "medication",
+                "sign",
+                "cardiovascular",
+                "disease",
+                "symptom",
+                "treatment",
+                "neurological",
+                "gastrointestinal"
+              ],
+              "confidence": 0.947625,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "treatment"
+            },
+            {
+              "question_id": "Q_087",
+              "concepts": [
+                "sign",
+                "cardiovascular",
+                "gastrointestinal",
+                "condition",
+                "vital"
+              ],
+              "confidence": 0.4414021920000002,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "management"
+            },
+            {
+              "question_id": "Q_070",
+              "concepts": [
+                "hematology",
+                "sign",
+                "cardiovascular",
+                "treatment",
+                "diagnosis",
+                "vital"
+              ],
+              "confidence": 0.7129920000000001,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "treatment"
+            },
+            {
+              "question_id": "Q_005",
+              "concepts": [
+                "sign",
+                "diagnosis",
+                "cardiovascular",
+                "vital"
+              ],
+              "confidence": 0.04200000000000001,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "diagnosis"
+            },
+            {
+              "question_id": "Q_030",
+              "concepts": [
+                "sign",
+                "cardiovascular",
+                "respiratory",
+                "treatment",
+                "vital"
+              ],
+              "confidence": 0.07434,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "treatment"
+            },
+            {
+              "question_id": "Q_072",
+              "concepts": [
+                "sign",
+                "cardiovascular",
+                "vital"
+              ],
+              "confidence": 0.41273971200000015,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "immediate"
+            },
+            {
+              "question_id": "Q_026",
+              "concepts": [
+                "medication",
+                "sign",
+                "cardiovascular",
+                "respiratory",
+                "treatment",
+                "infectious",
+                "vital"
+              ],
+              "confidence": 0.17036250000000006,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "treatment"
+            },
+            {
+              "question_id": "Q_090",
+              "concepts": [
+                "sign",
+                "cardiovascular",
+                "disease",
+                "symptom",
+                "treatment"
+              ],
+              "confidence": 0.17036250000000006,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "treatment"
+            },
+            {
+              "question_id": "Q_001",
+              "concepts": [
+                "sign",
+                "diagnosis",
+                "cardiovascular",
+                "vital"
+              ],
+              "confidence": 0.04200000000000001,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "diagnosis"
+            },
+            {
+              "question_id": "Q_020",
+              "concepts": [
+                "sign",
+                "cardiovascular",
+                "respiratory",
+                "symptom",
+                "neurological"
+              ],
+              "confidence": 0.47879999999999995,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "immediate"
+            },
+            {
+              "question_id": "Q_068",
+              "concepts": [
+                "sign",
+                "cardiovascular",
+                "vital"
+              ],
+              "confidence": 0.47879999999999995,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "immediate"
+            },
+            {
+              "question_id": "Q_007",
+              "concepts": [
+                "sign",
+                "cardiovascular",
+                "vital",
+                "neurological",
+                "management"
+              ],
+              "confidence": 0.39606336000000003,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "management"
+            },
+            {
+              "question_id": "Q_063",
+              "concepts": [
+                "sign",
+                "cardiovascular",
+                "endocrine",
+                "infectious",
+                "gastrointestinal"
+              ],
+              "confidence": 0.3362042880000001,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "management"
+            },
+            {
+              "question_id": "Q_023",
+              "concepts": [
+                "sign",
+                "cardiovascular",
+                "respiratory",
+                "disease",
+                "management",
+                "vital"
+              ],
+              "confidence": 0.3422361600000001,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "management"
+            },
+            {
+              "question_id": "Q_052",
+              "concepts": [
+                "medication",
+                "sign",
+                "cardiovascular",
+                "renal",
+                "endocrine",
+                "infectious",
+                "neurological",
+                "vital"
+              ],
+              "confidence": 0.39606336000000003,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "immediate"
+            }
+          ],
+          "respiratory": [
+            {
+              "question_id": "Q_032",
+              "concepts": [
+                "sign",
+                "cardiovascular",
+                "respiratory",
+                "intervention",
+                "infectious",
+                "vital"
+              ],
+              "confidence": 0.07056000000000001,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "immediate"
+            },
+            {
+              "question_id": "Q_030",
+              "concepts": [
+                "sign",
+                "cardiovascular",
+                "respiratory",
+                "treatment",
+                "vital"
+              ],
+              "confidence": 0.07434,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "treatment"
+            },
+            {
+              "question_id": "Q_026",
+              "concepts": [
+                "medication",
+                "sign",
+                "cardiovascular",
+                "respiratory",
+                "treatment",
+                "infectious",
+                "vital"
+              ],
+              "confidence": 0.17036250000000006,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "treatment"
+            },
+            {
+              "question_id": "Q_020",
+              "concepts": [
+                "sign",
+                "cardiovascular",
+                "respiratory",
+                "symptom",
+                "neurological"
+              ],
+              "confidence": 0.47879999999999995,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "immediate"
+            },
+            {
+              "question_id": "Q_023",
+              "concepts": [
+                "sign",
+                "cardiovascular",
+                "respiratory",
+                "disease",
+                "management",
+                "vital"
+              ],
+              "confidence": 0.3422361600000001,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "management"
+            }
+          ],
+          "intervention": [
+            {
+              "question_id": "Q_032",
+              "concepts": [
+                "sign",
+                "cardiovascular",
+                "respiratory",
+                "intervention",
+                "infectious",
+                "vital"
+              ],
+              "confidence": 0.07056000000000001,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "immediate"
+            }
+          ],
+          "vital": [
+            {
+              "question_id": "Q_032",
+              "concepts": [
+                "sign",
+                "cardiovascular",
+                "respiratory",
+                "intervention",
+                "infectious",
+                "vital"
+              ],
+              "confidence": 0.07056000000000001,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "immediate"
+            },
+            {
+              "question_id": "Q_087",
+              "concepts": [
+                "sign",
+                "cardiovascular",
+                "gastrointestinal",
+                "condition",
+                "vital"
+              ],
+              "confidence": 0.4414021920000002,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "management"
+            },
+            {
+              "question_id": "Q_070",
+              "concepts": [
+                "hematology",
+                "sign",
+                "cardiovascular",
+                "treatment",
+                "diagnosis",
+                "vital"
+              ],
+              "confidence": 0.7129920000000001,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "treatment"
+            },
+            {
+              "question_id": "Q_012",
+              "concepts": [
+                "treatment",
+                "cardiovascular",
+                "endocrine",
+                "vital"
+              ],
+              "confidence": 0.3422361600000001,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "immediate"
+            },
+            {
+              "question_id": "Q_005",
+              "concepts": [
+                "sign",
+                "diagnosis",
+                "cardiovascular",
+                "vital"
+              ],
+              "confidence": 0.04200000000000001,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "diagnosis"
+            },
+            {
+              "question_id": "Q_030",
+              "concepts": [
+                "sign",
+                "cardiovascular",
+                "respiratory",
+                "treatment",
+                "vital"
+              ],
+              "confidence": 0.07434,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "treatment"
+            },
+            {
+              "question_id": "Q_072",
+              "concepts": [
+                "sign",
+                "cardiovascular",
+                "vital"
+              ],
+              "confidence": 0.41273971200000015,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "immediate"
+            },
+            {
+              "question_id": "Q_026",
+              "concepts": [
+                "medication",
+                "sign",
+                "cardiovascular",
+                "respiratory",
+                "treatment",
+                "infectious",
+                "vital"
+              ],
+              "confidence": 0.17036250000000006,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "treatment"
+            },
+            {
+              "question_id": "Q_054",
+              "concepts": [
+                "cardiovascular",
+                "renal",
+                "treatment",
+                "endocrine",
+                "vital"
+              ],
+              "confidence": 0.3335270400000001,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "treatment"
+            },
+            {
+              "question_id": "Q_001",
+              "concepts": [
+                "sign",
+                "diagnosis",
+                "cardiovascular",
+                "vital"
+              ],
+              "confidence": 0.04200000000000001,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "diagnosis"
+            },
+            {
+              "question_id": "Q_068",
+              "concepts": [
+                "sign",
+                "cardiovascular",
+                "vital"
+              ],
+              "confidence": 0.47879999999999995,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "immediate"
+            },
+            {
+              "question_id": "Q_007",
+              "concepts": [
+                "sign",
+                "cardiovascular",
+                "vital",
+                "neurological",
+                "management"
+              ],
+              "confidence": 0.39606336000000003,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "management"
+            },
+            {
+              "question_id": "Q_006",
+              "concepts": [
+                "cardiovascular",
+                "endocrine",
+                "gastrointestinal",
+                "condition",
+                "neurological",
+                "vital"
+              ],
+              "confidence": 0.32826528,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "treatment"
+            },
+            {
+              "question_id": "Q_023",
+              "concepts": [
+                "sign",
+                "cardiovascular",
+                "respiratory",
+                "disease",
+                "management",
+                "vital"
+              ],
+              "confidence": 0.3422361600000001,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "management"
+            },
+            {
+              "question_id": "Q_052",
+              "concepts": [
+                "medication",
+                "sign",
+                "cardiovascular",
+                "renal",
+                "endocrine",
+                "infectious",
+                "neurological",
+                "vital"
+              ],
+              "confidence": 0.39606336000000003,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "immediate"
+            }
+          ],
+          "medication": [
+            {
+              "question_id": "Q_018",
+              "concepts": [
+                "medication",
+                "sign",
+                "cardiovascular",
+                "disease",
+                "symptom",
+                "treatment",
+                "neurological",
+                "gastrointestinal"
+              ],
+              "confidence": 0.947625,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "treatment"
+            },
+            {
+              "question_id": "Q_026",
+              "concepts": [
+                "medication",
+                "sign",
+                "cardiovascular",
+                "respiratory",
+                "treatment",
+                "infectious",
+                "vital"
+              ],
+              "confidence": 0.17036250000000006,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "treatment"
+            },
+            {
+              "question_id": "Q_052",
+              "concepts": [
+                "medication",
+                "sign",
+                "cardiovascular",
+                "renal",
+                "endocrine",
+                "infectious",
+                "neurological",
+                "vital"
+              ],
+              "confidence": 0.39606336000000003,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "immediate"
+            }
+          ],
+          "disease": [
+            {
+              "question_id": "Q_018",
+              "concepts": [
+                "medication",
+                "sign",
+                "cardiovascular",
+                "disease",
+                "symptom",
+                "treatment",
+                "neurological",
+                "gastrointestinal"
+              ],
+              "confidence": 0.947625,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "treatment"
+            },
+            {
+              "question_id": "Q_090",
+              "concepts": [
+                "sign",
+                "cardiovascular",
+                "disease",
+                "symptom",
+                "treatment"
+              ],
+              "confidence": 0.17036250000000006,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "treatment"
+            },
+            {
+              "question_id": "Q_058",
+              "concepts": [
+                "disease",
+                "cardiovascular",
+                "treatment",
+                "neurological"
+              ],
+              "confidence": 0.17036250000000006,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "treatment"
+            },
+            {
+              "question_id": "Q_023",
+              "concepts": [
+                "sign",
+                "cardiovascular",
+                "respiratory",
+                "disease",
+                "management",
+                "vital"
+              ],
+              "confidence": 0.3422361600000001,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "management"
+            }
+          ],
+          "symptom": [
+            {
+              "question_id": "Q_018",
+              "concepts": [
+                "medication",
+                "sign",
+                "cardiovascular",
+                "disease",
+                "symptom",
+                "treatment",
+                "neurological",
+                "gastrointestinal"
+              ],
+              "confidence": 0.947625,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "treatment"
+            },
+            {
+              "question_id": "Q_098",
+              "concepts": [
+                "test",
+                "therapy",
+                "guideline",
+                "lab",
+                "symptom",
+                "neurological"
+              ],
+              "confidence": 0.17036250000000006,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "management"
+            },
+            {
+              "question_id": "Q_090",
+              "concepts": [
+                "sign",
+                "cardiovascular",
+                "disease",
+                "symptom",
+                "treatment"
+              ],
+              "confidence": 0.17036250000000006,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "treatment"
+            },
+            {
+              "question_id": "Q_020",
+              "concepts": [
+                "sign",
+                "cardiovascular",
+                "respiratory",
+                "symptom",
+                "neurological"
+              ],
+              "confidence": 0.47879999999999995,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "immediate"
+            }
+          ],
+          "treatment": [
+            {
+              "question_id": "Q_018",
+              "concepts": [
+                "medication",
+                "sign",
+                "cardiovascular",
+                "disease",
+                "symptom",
+                "treatment",
+                "neurological",
+                "gastrointestinal"
+              ],
+              "confidence": 0.947625,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "treatment"
+            },
+            {
+              "question_id": "Q_070",
+              "concepts": [
+                "hematology",
+                "sign",
+                "cardiovascular",
+                "treatment",
+                "diagnosis",
+                "vital"
+              ],
+              "confidence": 0.7129920000000001,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "treatment"
+            },
+            {
+              "question_id": "Q_012",
+              "concepts": [
+                "treatment",
+                "cardiovascular",
+                "endocrine",
+                "vital"
+              ],
+              "confidence": 0.3422361600000001,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "immediate"
+            },
+            {
+              "question_id": "Q_030",
+              "concepts": [
+                "sign",
+                "cardiovascular",
+                "respiratory",
+                "treatment",
+                "vital"
+              ],
+              "confidence": 0.07434,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "treatment"
+            },
+            {
+              "question_id": "Q_026",
+              "concepts": [
+                "medication",
+                "sign",
+                "cardiovascular",
+                "respiratory",
+                "treatment",
+                "infectious",
+                "vital"
+              ],
+              "confidence": 0.17036250000000006,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "treatment"
+            },
+            {
+              "question_id": "Q_090",
+              "concepts": [
+                "sign",
+                "cardiovascular",
+                "disease",
+                "symptom",
+                "treatment"
+              ],
+              "confidence": 0.17036250000000006,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "treatment"
+            },
+            {
+              "question_id": "Q_054",
+              "concepts": [
+                "cardiovascular",
+                "renal",
+                "treatment",
+                "endocrine",
+                "vital"
+              ],
+              "confidence": 0.3335270400000001,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "treatment"
+            },
+            {
+              "question_id": "Q_094",
+              "concepts": [
+                "guideline",
+                "cardiovascular",
+                "treatment",
+                "management"
+              ],
+              "confidence": 0.41899386375,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "management"
+            },
+            {
+              "question_id": "Q_058",
+              "concepts": [
+                "disease",
+                "cardiovascular",
+                "treatment",
+                "neurological"
+              ],
+              "confidence": 0.17036250000000006,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "treatment"
+            }
+          ],
+          "neurological": [
+            {
+              "question_id": "Q_018",
+              "concepts": [
+                "medication",
+                "sign",
+                "cardiovascular",
+                "disease",
+                "symptom",
+                "treatment",
+                "neurological",
+                "gastrointestinal"
+              ],
+              "confidence": 0.947625,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "treatment"
+            },
+            {
+              "question_id": "Q_098",
+              "concepts": [
+                "test",
+                "therapy",
+                "guideline",
+                "lab",
+                "symptom",
+                "neurological"
+              ],
+              "confidence": 0.17036250000000006,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "management"
+            },
+            {
+              "question_id": "Q_058",
+              "concepts": [
+                "disease",
+                "cardiovascular",
+                "treatment",
+                "neurological"
+              ],
+              "confidence": 0.17036250000000006,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "treatment"
+            },
+            {
+              "question_id": "Q_020",
+              "concepts": [
+                "sign",
+                "cardiovascular",
+                "respiratory",
+                "symptom",
+                "neurological"
+              ],
+              "confidence": 0.47879999999999995,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "immediate"
+            },
+            {
+              "question_id": "Q_007",
+              "concepts": [
+                "sign",
+                "cardiovascular",
+                "vital",
+                "neurological",
+                "management"
+              ],
+              "confidence": 0.39606336000000003,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "management"
+            },
+            {
+              "question_id": "Q_006",
+              "concepts": [
+                "cardiovascular",
+                "endocrine",
+                "gastrointestinal",
+                "condition",
+                "neurological",
+                "vital"
+              ],
+              "confidence": 0.32826528,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "treatment"
+            },
+            {
+              "question_id": "Q_052",
+              "concepts": [
+                "medication",
+                "sign",
+                "cardiovascular",
+                "renal",
+                "endocrine",
+                "infectious",
+                "neurological",
+                "vital"
+              ],
+              "confidence": 0.39606336000000003,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "immediate"
+            }
+          ],
+          "gastrointestinal": [
+            {
+              "question_id": "Q_018",
+              "concepts": [
+                "medication",
+                "sign",
+                "cardiovascular",
+                "disease",
+                "symptom",
+                "treatment",
+                "neurological",
+                "gastrointestinal"
+              ],
+              "confidence": 0.947625,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "treatment"
+            },
+            {
+              "question_id": "Q_087",
+              "concepts": [
+                "sign",
+                "cardiovascular",
+                "gastrointestinal",
+                "condition",
+                "vital"
+              ],
+              "confidence": 0.4414021920000002,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "management"
+            },
+            {
+              "question_id": "Q_006",
+              "concepts": [
+                "cardiovascular",
+                "endocrine",
+                "gastrointestinal",
+                "condition",
+                "neurological",
+                "vital"
+              ],
+              "confidence": 0.32826528,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "treatment"
+            },
+            {
+              "question_id": "Q_063",
+              "concepts": [
+                "sign",
+                "cardiovascular",
+                "endocrine",
+                "infectious",
+                "gastrointestinal"
+              ],
+              "confidence": 0.3362042880000001,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "management"
+            }
+          ],
+          "condition": [
+            {
+              "question_id": "Q_087",
+              "concepts": [
+                "sign",
+                "cardiovascular",
+                "gastrointestinal",
+                "condition",
+                "vital"
+              ],
+              "confidence": 0.4414021920000002,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "management"
+            },
+            {
+              "question_id": "Q_006",
+              "concepts": [
+                "cardiovascular",
+                "endocrine",
+                "gastrointestinal",
+                "condition",
+                "neurological",
+                "vital"
+              ],
+              "confidence": 0.32826528,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "treatment"
+            }
+          ],
+          "hematology": [
+            {
+              "question_id": "Q_070",
+              "concepts": [
+                "hematology",
+                "sign",
+                "cardiovascular",
+                "treatment",
+                "diagnosis",
+                "vital"
+              ],
+              "confidence": 0.7129920000000001,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "treatment"
+            }
+          ],
+          "diagnosis": [
+            {
+              "question_id": "Q_070",
+              "concepts": [
+                "hematology",
+                "sign",
+                "cardiovascular",
+                "treatment",
+                "diagnosis",
+                "vital"
+              ],
+              "confidence": 0.7129920000000001,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "treatment"
+            },
+            {
+              "question_id": "Q_005",
+              "concepts": [
+                "sign",
+                "diagnosis",
+                "cardiovascular",
+                "vital"
+              ],
+              "confidence": 0.04200000000000001,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "diagnosis"
+            },
+            {
+              "question_id": "Q_001",
+              "concepts": [
+                "sign",
+                "diagnosis",
+                "cardiovascular",
+                "vital"
+              ],
+              "confidence": 0.04200000000000001,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "diagnosis"
+            }
+          ],
+          "endocrine": [
+            {
+              "question_id": "Q_012",
+              "concepts": [
+                "treatment",
+                "cardiovascular",
+                "endocrine",
+                "vital"
+              ],
+              "confidence": 0.3422361600000001,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "immediate"
+            },
+            {
+              "question_id": "Q_054",
+              "concepts": [
+                "cardiovascular",
+                "renal",
+                "treatment",
+                "endocrine",
+                "vital"
+              ],
+              "confidence": 0.3335270400000001,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "treatment"
+            },
+            {
+              "question_id": "Q_006",
+              "concepts": [
+                "cardiovascular",
+                "endocrine",
+                "gastrointestinal",
+                "condition",
+                "neurological",
+                "vital"
+              ],
+              "confidence": 0.32826528,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "treatment"
+            },
+            {
+              "question_id": "Q_063",
+              "concepts": [
+                "sign",
+                "cardiovascular",
+                "endocrine",
+                "infectious",
+                "gastrointestinal"
+              ],
+              "confidence": 0.3362042880000001,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "management"
+            },
+            {
+              "question_id": "Q_052",
+              "concepts": [
+                "medication",
+                "sign",
+                "cardiovascular",
+                "renal",
+                "endocrine",
+                "infectious",
+                "neurological",
+                "vital"
+              ],
+              "confidence": 0.39606336000000003,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "immediate"
+            }
+          ],
+          "test": [
+            {
+              "question_id": "Q_098",
+              "concepts": [
+                "test",
+                "therapy",
+                "guideline",
+                "lab",
+                "symptom",
+                "neurological"
+              ],
+              "confidence": 0.17036250000000006,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "management"
+            }
+          ],
+          "therapy": [
+            {
+              "question_id": "Q_098",
+              "concepts": [
+                "test",
+                "therapy",
+                "guideline",
+                "lab",
+                "symptom",
+                "neurological"
+              ],
+              "confidence": 0.17036250000000006,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "management"
+            }
+          ],
+          "guideline": [
+            {
+              "question_id": "Q_098",
+              "concepts": [
+                "test",
+                "therapy",
+                "guideline",
+                "lab",
+                "symptom",
+                "neurological"
+              ],
+              "confidence": 0.17036250000000006,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "management"
+            },
+            {
+              "question_id": "Q_094",
+              "concepts": [
+                "guideline",
+                "cardiovascular",
+                "treatment",
+                "management"
+              ],
+              "confidence": 0.41899386375,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "management"
+            }
+          ],
+          "lab": [
+            {
+              "question_id": "Q_098",
+              "concepts": [
+                "test",
+                "therapy",
+                "guideline",
+                "lab",
+                "symptom",
+                "neurological"
+              ],
+              "confidence": 0.17036250000000006,
+              "retrieval_quality": 0.5,
+              "predicted": "",
+              "correct": "",
+              "question_type": "management"
+            }
+          ]
+        },
+        "errors_by_type": {
+          "reasoning_error": 22,
+          "high_confidence_wrong": 1
+        },
+        "concept_confusion_matrix": {
+          "cardiovascular": {
+            "renal": 2,
+            "infectious": 1,
+            "management": 1,
+            "treatment": 1,
+            "endocrine": 2,
+            "vital": 2,
+            "gastrointestinal": 1,
+            "condition": 1,
+            "neurological": 1
+          },
+          "sign": {
+            "cardiovascular": 12,
+            "respiratory": 4,
+            "intervention": 1,
+            "infectious": 2,
+            "vital": 9,
+            "gastrointestinal": 2,
+            "condition": 1,
+            "diagnosis": 2,
+            "treatment": 2,
+            "disease": 2,
+            "symptom": 2,
+            "neurological": 2,
+            "management": 2,
+            "endocrine": 1
+          },
+          "medication": {
+            "sign": 3,
+            "cardiovascular": 3,
+            "disease": 1,
+            "symptom": 1,
+            "treatment": 2,
+            "neurological": 2,
+            "gastrointestinal": 1,
+            "respiratory": 1,
+            "infectious": 2,
+            "vital": 2,
+            "renal": 1,
+            "endocrine": 1
+          },
+          "hematology": {
+            "sign": 1,
+            "cardiovascular": 1,
+            "treatment": 1,
+            "diagnosis": 1,
+            "vital": 1
+          },
+          "treatment": {
+            "cardiovascular": 1,
+            "endocrine": 1,
+            "vital": 1
+          },
+          "test": {
+            "therapy": 1,
+            "guideline": 1,
+            "lab": 1,
+            "symptom": 1,
+            "neurological": 1
+          },
+          "guideline": {
+            "cardiovascular": 1,
+            "treatment": 1,
+            "management": 1
+          },
+          "disease": {
+            "cardiovascular": 1,
+            "treatment": 1,
+            "neurological": 1
+          }
+        },
+        "retrieval_errors": [],
+        "reasoning_errors": [
+          {
+            "question_id": "Q_036",
+            "concepts": [
+              "cardiovascular",
+              "renal",
+              "infectious",
+              "management"
+            ],
+            "confidence": 0.3335270400000001,
+            "retrieval_quality": 0.5,
+            "predicted": "",
+            "correct": "",
+            "question_type": "immediate"
+          },
+          {
+            "question_id": "Q_032",
+            "concepts": [
+              "sign",
+              "cardiovascular",
+              "respiratory",
+              "intervention",
+              "infectious",
+              "vital"
+            ],
+            "confidence": 0.07056000000000001,
+            "retrieval_quality": 0.5,
+            "predicted": "",
+            "correct": "",
+            "question_type": "immediate"
+          },
+          {
+            "question_id": "Q_087",
+            "concepts": [
+              "sign",
+              "cardiovascular",
+              "gastrointestinal",
+              "condition",
+              "vital"
+            ],
+            "confidence": 0.4414021920000002,
+            "retrieval_quality": 0.5,
+            "predicted": "",
+            "correct": "",
+            "question_type": "management"
+          },
+          {
+            "question_id": "Q_070",
+            "concepts": [
+              "hematology",
+              "sign",
+              "cardiovascular",
+              "treatment",
+              "diagnosis",
+              "vital"
+            ],
+            "confidence": 0.7129920000000001,
+            "retrieval_quality": 0.5,
+            "predicted": "",
+            "correct": "",
+            "question_type": "treatment"
+          },
+          {
+            "question_id": "Q_012",
+            "concepts": [
+              "treatment",
+              "cardiovascular",
+              "endocrine",
+              "vital"
+            ],
+            "confidence": 0.3422361600000001,
+            "retrieval_quality": 0.5,
+            "predicted": "",
+            "correct": "",
+            "question_type": "immediate"
+          },
+          {
+            "question_id": "Q_005",
+            "concepts": [
+              "sign",
+              "diagnosis",
+              "cardiovascular",
+              "vital"
+            ],
+            "confidence": 0.04200000000000001,
+            "retrieval_quality": 0.5,
+            "predicted": "",
+            "correct": "",
+            "question_type": "diagnosis"
+          },
+          {
+            "question_id": "Q_098",
+            "concepts": [
+              "test",
+              "therapy",
+              "guideline",
+              "lab",
+              "symptom",
+              "neurological"
+            ],
+            "confidence": 0.17036250000000006,
+            "retrieval_quality": 0.5,
+            "predicted": "",
+            "correct": "",
+            "question_type": "management"
+          },
+          {
+            "question_id": "Q_030",
+            "concepts": [
+              "sign",
+              "cardiovascular",
+              "respiratory",
+              "treatment",
+              "vital"
+            ],
+            "confidence": 0.07434,
+            "retrieval_quality": 0.5,
+            "predicted": "",
+            "correct": "",
+            "question_type": "treatment"
+          },
+          {
+            "question_id": "Q_072",
+            "concepts": [
+              "sign",
+              "cardiovascular",
+              "vital"
+            ],
+            "confidence": 0.41273971200000015,
+            "retrieval_quality": 0.5,
+            "predicted": "",
+            "correct": "",
+            "question_type": "immediate"
+          },
+          {
+            "question_id": "Q_026",
+            "concepts": [
+              "medication",
+              "sign",
+              "cardiovascular",
+              "respiratory",
+              "treatment",
+              "infectious",
+              "vital"
+            ],
+            "confidence": 0.17036250000000006,
+            "retrieval_quality": 0.5,
+            "predicted": "",
+            "correct": "",
+            "question_type": "treatment"
+          },
+          {
+            "question_id": "Q_090",
+            "concepts": [
+              "sign",
+              "cardiovascular",
+              "disease",
+              "symptom",
+              "treatment"
+            ],
+            "confidence": 0.17036250000000006,
+            "retrieval_quality": 0.5,
+            "predicted": "",
+            "correct": "",
+            "question_type": "treatment"
+          },
+          {
+            "question_id": "Q_054",
+            "concepts": [
+              "cardiovascular",
+              "renal",
+              "treatment",
+              "endocrine",
+              "vital"
+            ],
+            "confidence": 0.3335270400000001,
+            "retrieval_quality": 0.5,
+            "predicted": "",
+            "correct": "",
+            "question_type": "treatment"
+          },
+          {
+            "question_id": "Q_094",
+            "concepts": [
+              "guideline",
+              "cardiovascular",
+              "treatment",
+              "management"
+            ],
+            "confidence": 0.41899386375,
+            "retrieval_quality": 0.5,
+            "predicted": "",
+            "correct": "",
+            "question_type": "management"
+          },
+          {
+            "question_id": "Q_058",
+            "concepts": [
+              "disease",
+              "cardiovascular",
+              "treatment",
+              "neurological"
+            ],
+            "confidence": 0.17036250000000006,
+            "retrieval_quality": 0.5,
+            "predicted": "",
+            "correct": "",
+            "question_type": "treatment"
+          },
+          {
+            "question_id": "Q_001",
+            "concepts": [
+              "sign",
+              "diagnosis",
+              "cardiovascular",
+              "vital"
+            ],
+            "confidence": 0.04200000000000001,
+            "retrieval_quality": 0.5,
+            "predicted": "",
+            "correct": "",
+            "question_type": "diagnosis"
+          },
+          {
+            "question_id": "Q_020",
+            "concepts": [
+              "sign",
+              "cardiovascular",
+              "respiratory",
+              "symptom",
+              "neurological"
+            ],
+            "confidence": 0.47879999999999995,
+            "retrieval_quality": 0.5,
+            "predicted": "",
+            "correct": "",
+            "question_type": "immediate"
+          },
+          {
+            "question_id": "Q_068",
+            "concepts": [
+              "sign",
+              "cardiovascular",
+              "vital"
+            ],
+            "confidence": 0.47879999999999995,
+            "retrieval_quality": 0.5,
+            "predicted": "",
+            "correct": "",
+            "question_type": "immediate"
+          },
+          {
+            "question_id": "Q_007",
+            "concepts": [
+              "sign",
+              "cardiovascular",
+              "vital",
+              "neurological",
+              "management"
+            ],
+            "confidence": 0.39606336000000003,
+            "retrieval_quality": 0.5,
+            "predicted": "",
+            "correct": "",
+            "question_type": "management"
+          },
+          {
+            "question_id": "Q_006",
+            "concepts": [
+              "cardiovascular",
+              "endocrine",
+              "gastrointestinal",
+              "condition",
+              "neurological",
+              "vital"
+            ],
+            "confidence": 0.32826528,
+            "retrieval_quality": 0.5,
+            "predicted": "",
+            "correct": "",
+            "question_type": "treatment"
+          },
+          {
+            "question_id": "Q_063",
+            "concepts": [
+              "sign",
+              "cardiovascular",
+              "endocrine",
+              "infectious",
+              "gastrointestinal"
+            ],
+            "confidence": 0.3362042880000001,
+            "retrieval_quality": 0.5,
+            "predicted": "",
+            "correct": "",
+            "question_type": "management"
+          },
+          {
+            "question_id": "Q_023",
+            "concepts": [
+              "sign",
+              "cardiovascular",
+              "respiratory",
+              "disease",
+              "management",
+              "vital"
+            ],
+            "confidence": 0.3422361600000001,
+            "retrieval_quality": 0.5,
+            "predicted": "",
+            "correct": "",
+            "question_type": "management"
+          },
+          {
+            "question_id": "Q_052",
+            "concepts": [
+              "medication",
+              "sign",
+              "cardiovascular",
+              "renal",
+              "endocrine",
+              "infectious",
+              "neurological",
+              "vital"
+            ],
+            "confidence": 0.39606336000000003,
+            "retrieval_quality": 0.5,
+            "predicted": "",
+            "correct": "",
+            "question_type": "immediate"
+          }
+        ],
+        "high_confidence_errors": [
+          {
+            "question_id": "Q_018",
+            "concepts": [
+              "medication",
+              "sign",
+              "cardiovascular",
+              "disease",
+              "symptom",
+              "treatment",
+              "neurological",
+              "gastrointestinal"
+            ],
+            "confidence": 0.947625,
+            "retrieval_quality": 0.5,
+            "predicted": "",
+            "correct": "",
+            "question_type": "treatment"
+          }
+        ],
+        "common_pitfalls": []
+      }
+    },
+    "question_types": {
+      "treatment": {
+        "accuracy": 0.2727272727272727,
+        "correct": 3,
+        "total": 11
+      },
+      "management": {
+        "accuracy": 0.6,
+        "correct": 9,
+        "total": 15
+      },
+      "immediate": {
+        "accuracy": 0.4166666666666667,
+        "correct": 5,
+        "total": 12
+      },
+      "contraindications": {
+        "accuracy": 1.0,
+        "correct": 1,
+        "total": 1
+      },
+      "diagnosis": {
+        "accuracy": 0.8181818181818182,
+        "correct": 9,
+        "total": 11
+      }
+    },
+    "difficulty_breakdown": {
+      "medium": {
+        "accuracy": 0.48,
+        "correct": 12,
+        "total": 25
+      },
+      "hard": {
+        "accuracy": 0.46153846153846156,
+        "correct": 6,
+        "total": 13
+      },
+      "easy": {
+        "accuracy": 0.75,
+        "correct": 9,
+        "total": 12
+      }
+    },
+    "relevance_breakdown": {
+      "high": {
+        "accuracy": 0.4482758620689655,
+        "correct": 13,
+        "total": 29
+      },
+      "low": {
+        "accuracy": 0.5454545454545454,
+        "correct": 6,
+        "total": 11
+      },
+      "medium": {
+        "accuracy": 0.8,
+        "correct": 8,
+        "total": 10
+      }
+    },
+    "category_breakdown": {
+      "Gastroenterology": {
+        "accuracy": 1.0,
+        "correct": 7,
+        "total": 7
+      },
+      "Endocrine": {
+        "accuracy": 0.6666666666666666,
+        "correct": 4,
+        "total": 6
+      },
+      "Cardiovascular": {
+        "accuracy": 0.45454545454545453,
+        "correct": 5,
+        "total": 11
+      },
+      "Infectious Disease": {
+        "accuracy": 0.3333333333333333,
+        "correct": 1,
+        "total": 3
+      },
+      "Respiratory": {
+        "accuracy": 0.5,
+        "correct": 4,
+        "total": 8
+      },
+      "Rheumatology": {
+        "accuracy": 0.3333333333333333,
+        "correct": 1,
+        "total": 3
+      },
+      "Hematology": {
+        "accuracy": 0.3333333333333333,
+        "correct": 1,
+        "total": 3
+      },
+      "Nephrology": {
+        "accuracy": 0.3333333333333333,
+        "correct": 1,
+        "total": 3
+      },
+      "Psychiatry": {
+        "accuracy": 0.6666666666666666,
+        "correct": 2,
+        "total": 3
+      },
+      "Critical Care": {
+        "accuracy": 1.0,
+        "correct": 1,
+        "total": 1
+      },
+      "Neurology": {
+        "accuracy": 0.0,
+        "correct": 0,
+        "total": 2
+      }
+    },
+    "medical_concept_breakdown": {
+      "sign": {
+        "accuracy": 0.5555555555555556,
+        "correct": 20,
+        "total": 36,
+        "avg_confidence": 0.47170327500000003
+      },
+      "cardiovascular": {
+        "accuracy": 0.5416666666666666,
+        "correct": 26,
+        "total": 48,
+        "avg_confidence": 0.42388692257812505
+      },
+      "disease": {
+        "accuracy": 0.6,
+        "correct": 6,
+        "total": 10,
+        "avg_confidence": 0.42047079480000005
+      },
+      "treatment": {
+        "accuracy": 0.3076923076923077,
+        "correct": 4,
+        "total": 13,
+        "avg_confidence": 0.4708262741346154
+      },
+      "gastrointestinal": {
+        "accuracy": 0.7647058823529411,
+        "correct": 13,
+        "total": 17,
+        "avg_confidence": 0.47052249576470595
+      },
+      "condition": {
+        "accuracy": 0.6,
+        "correct": 3,
+        "total": 5,
+        "avg_confidence": 0.49682893680000006
+      },
+      "vital": {
+        "accuracy": 0.5833333333333334,
+        "correct": 21,
+        "total": 36,
+        "avg_confidence": 0.45919873866666666
+      },
+      "endocrine": {
+        "accuracy": 0.375,
+        "correct": 3,
+        "total": 8,
+        "avg_confidence": 0.43467005200000003
+      },
+      "syndrome": {
+        "accuracy": 1.0,
+        "correct": 1,
+        "total": 1,
+        "avg_confidence": 0.47879999999999995
+      },
+      "guideline": {
+        "accuracy": 0.6,
+        "correct": 3,
+        "total": 5,
+        "avg_confidence": 0.29910967275000006
+      },
+      "renal": {
+        "accuracy": 0.5714285714285714,
+        "correct": 4,
+        "total": 7,
+        "avg_confidence": 0.269110944
+      },
+      "infectious": {
+        "accuracy": 0.6153846153846154,
+        "correct": 8,
+        "total": 13,
+        "avg_confidence": 0.4424651461538462
+      },
+      "management": {
+        "accuracy": 0.42857142857142855,
+        "correct": 3,
+        "total": 7,
+        "avg_confidence": 0.3815652262500001
+      },
+      "respiratory": {
+        "accuracy": 0.4444444444444444,
+        "correct": 4,
+        "total": 9,
+        "avg_confidence": 0.37556699422222223
+      },
+      "intervention": {
+        "accuracy": 0.5,
+        "correct": 1,
+        "total": 2,
+        "avg_confidence": 0.5090925000000001
+      },
+      "medication": {
+        "accuracy": 0.5,
+        "correct": 3,
+        "total": 6,
+        "avg_confidence": 0.5028651433333333
+      },
+      "diagnosis": {
+        "accuracy": 0.7,
+        "correct": 7,
+        "total": 10,
+        "avg_confidence": 0.36005570000000003
+      },
+      "symptom": {
+        "accuracy": 0.6363636363636364,
+        "correct": 7,
+        "total": 11,
+        "avg_confidence": 0.5122829545454546
+      },
+      "neurological": {
+        "accuracy": 0.3,
+        "correct": 3,
+        "total": 10,
+        "avg_confidence": 0.4652546288
+      },
+      "hematology": {
+        "accuracy": 0.5,
+        "correct": 1,
+        "total": 2,
+        "avg_confidence": 0.4416772500000001
+      },
+      "test": {
+        "accuracy": 0.0,
+        "correct": 0,
+        "total": 1,
+        "avg_confidence": 0.17036250000000006
+      },
+      "therapy": {
+        "accuracy": 0.75,
+        "correct": 3,
+        "total": 4,
+        "avg_confidence": 0.34952662500000004
+      },
+      "lab": {
+        "accuracy": 0.5,
+        "correct": 1,
+        "total": 2,
+        "avg_confidence": 0.5589937500000001
+      },
+      "disorder": {
+        "accuracy": 1.0,
+        "correct": 1,
+        "total": 1,
+        "avg_confidence": 0.45486000000000004
+      }
+    },
+    "context_relevance": {
+      "avg_relevance": 0.46048996263808983,
+      "avg_max_relevance": 1.0,
+      "total_highly_relevant_docs": 120,
+      "cases_analyzed": 50
+    },
+    "evaluation_time_seconds": 5683.903240442276,
+    "time_per_case_seconds": 113.67806480884552,
+    "condition_confusion_analysis": {
+      "total_questions": 50,
+      "correct_predictions": 27,
+      "incorrect_predictions": 23,
+      "accuracy": 0.54,
+      "error_rate": 0.46,
+      "similar_condition_confusion_rate": 0.0,
+      "unrelated_condition_confusion_rate": 1.0,
+      "similar_condition_errors": 0,
+      "unrelated_condition_errors": 23
+    }
+  },
+  "pipeline_results": {
+    "metadata": {
+      "evaluation_date": "2025-12-11T00:07:03.808402",
+      "total_cases": 50,
+      "split": "all",
+      "evaluation_time_seconds": 5680.237905263901
+    },
+    "retrieval": {
+      "precision_at_k": {
+        "1": 0.0,
+        "3": 0.09333333333333332,
+        "5": 0.10800000000000001,
+        "10": 0.07783333333333334
+      },
+      "recall_at_k": {
+        "1": 0.0,
+        "3": 0.28,
+        "5": 0.54,
+        "10": 0.76
+      },
+      "map_score": 0.2523011891490152,
+      "mrr": 0.2523011891490152,
+      "context_relevance_scores": [
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        1.0,
+        0.0,
+        2.0,
+        0.0,
+        2.0,
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        2.0,
+        0.0,
+        2.0,
+        0.0,
+        2.0,
+        2.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        1.0,
+        2.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        1.0,
+        2.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        2.0,
+        0.0,
+        2.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        2.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        2.0,
+        2.0,
+        0.0,
+        2.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        2.0,
+        2.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        2.0,
+        0.0,
+        2.0,
+        1.0,
+        1.0,
+        1.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        1.0,
+        2.0,
+        0.0,
+        2.0,
+        1.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        2.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        2.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        2.0,
+        0.0,
+        2.0,
+        0.0,
+        1.0,
+        0.0,
+        2.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        2.0,
+        2.0,
+        2.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        2.0,
+        2.0,
+        0.0,
+        0.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        1.0,
+        0.0,
+        0.0,
+        2.0,
+        2.0,
+        0.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        2.0,
+        1.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        2.0,
+        2.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        2.0,
+        1.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        2.0,
+        2.0,
+        0.0,
+        2.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        1.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        2.0,
+        2.0,
+        0.0,
+        2.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        2.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        2.0,
+        2.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        2.0,
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        2.0,
+        1.0,
+        0.0,
+        0.0,
+        2.0,
+        2.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        2.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        2.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        2.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        2.0,
+        2.0,
+        1.0,
+        1.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        2.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        2.0,
+        2.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        2.0,
+        2.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        2.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        2.0,
+        0.0,
+        2.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        2.0,
+        0.0,
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        1.0,
+        1.0,
+        2.0,
+        2.0,
+        1.0,
+        0.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        2.0,
+        2.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        2.0,
+        2.0,
+        1.0,
+        2.0,
+        2.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        2.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        2.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        2.0,
+        2.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        2.0,
+        0.0,
+        2.0,
+        2.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        2.0,
+        2.0,
+        2.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        2.0,
+        2.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        1.0,
+        0.0,
+        1.0,
+        2.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        2.0,
+        2.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        2.0,
+        2.0,
+        2.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        2.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        1.0,
+        2.0,
+        0.0,
+        0.0,
+        2.0,
+        1.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        2.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        0.0,
+        2.0,
+        1.0,
+        0.0,
+        1.0,
+        2.0,
+        2.0,
+        0.0,
+        1.0,
+        2.0,
+        2.0,
+        0.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        0.0,
+        2.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        2.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        2.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        2.0,
+        2.0,
+        2.0
+      ],
+      "medical_concept_coverage": 0.746923824474845,
+      "guideline_coverage": 1.0
+    },
+    "reasoning": {
+      "exact_match_accuracy": 0.54,
+      "semantic_accuracy": 0.54,
+      "partial_credit_accuracy": 0.14,
+      "brier_score": 0.251074762582917,
+      "expected_calibration_error": 0.179541449765,
+      "reasoning_chain_completeness": 1.0,
+      "evidence_utilization_rate": 1.0,
+      "confidence_distribution": {
+        "80-90%": 1,
+        "40-50%": 15,
+        "0-10%": 6,
+        "30-40%": 12,
+        "90-100%": 6,
+        "70-80%": 2,
+        "20-30%": 1,
+        "10-20%": 7
+      },
+      "hallucination_rate": 0.0,
+      "cannot_answer_misuse_rate": 0.04,
+      "method_accuracy": {
+        "Advanced-structured": 0.54
+      },
+      "cot_tot_delta": 0.0,
+      "verifier_pass_rate": 0.0
+    },
+    "classification": {
+      "per_option": {
+        "A": {
+          "precision": 0.5238095238095238,
+          "recall": 1.0,
+          "f1": 0.6875000000000001,
+          "support": 11
+        },
+        "B": {
+          "precision": 0.3333333333333333,
+          "recall": 0.23076923076923078,
+          "f1": 0.27272727272727276,
+          "support": 13
+        },
+        "C": {
+          "precision": 0.7692307692307693,
+          "recall": 0.7142857142857143,
+          "f1": 0.7407407407407408,
+          "support": 14
+        },
+        "D": {
+          "precision": 0.7142857142857143,
+          "recall": 0.4166666666666667,
+          "f1": 0.5263157894736842,
+          "support": 12
+        }
+      },
+      "macro_precision": 0.5851648351648352,
+      "macro_recall": 0.5904304029304029,
+      "macro_f1": 0.5568209507354245,
+      "weighted_f1": 0.5558822877901827,
+      "balanced_accuracy": 0.5904304029304029,
+      "confusion_matrix": {
+        "A": {
+          "A": 11,
+          "B": 0,
+          "C": 0,
+          "D": 0
+        },
+        "B": {
+          "A": 7,
+          "B": 3,
+          "C": 1,
+          "D": 2
+        },
+        "C": {
+          "A": 2,
+          "B": 2,
+          "C": 10,
+          "D": 0
+        },
+        "D": {
+          "A": 1,
+          "B": 4,
+          "C": 2,
+          "D": 5
+        }
+      },
+      "option_distribution": {
+        "B": 9,
+        "C": 13,
+        "D": 7,
+        "A": 19,
+        "Cannot answer from the provided context.": 2
+      },
+      "fp_fn_breakdown": {
+        "A": {
+          "tp": 11,
+          "fp": 10,
+          "fn": 0,
+          "tn": 29
+        },
+        "B": {
+          "tp": 3,
+          "fp": 6,
+          "fn": 10,
+          "tn": 31
+        },
+        "C": {
+          "tp": 10,
+          "fp": 3,
+          "fn": 4,
+          "tn": 33
+        },
+        "D": {
+          "tp": 5,
+          "fp": 2,
+          "fn": 7,
+          "tn": 36
+        }
+      }
+    },
+    "safety": {
+      "dangerous_error_count": 1,
+      "contraindication_check_accuracy": 0.0,
+      "urgency_recognition_accuracy": 0.0,
+      "safety_score": 0.98
+    },
+    "error_analysis": {
+      "error_categories": {
+        "reasoning": {
+          "error_type": "reasoning",
+          "description": "System retrieved relevant info but made incorrect reasoning",
+          "count": 16,
+          "examples": [
+            {
+              "question_id": "Q_036",
+              "question": "What is the best answer?",
+              "selected_answer": "B",
+              "correct_answer": "D",
+              "confidence": 0.3335270400000001,
+              "error_type": "reasoning"
+            },
+            {
+              "question_id": "Q_018",
+              "question": "What is the best answer?",
+              "selected_answer": "D",
+              "correct_answer": "B",
+              "confidence": 0.947625,
+              "error_type": "reasoning"
+            },
+            {
+              "question_id": "Q_087",
+              "question": "What is the best answer?",
+              "selected_answer": "A",
+              "correct_answer": "C",
+              "confidence": 0.4414021920000002,
+              "error_type": "reasoning"
+            },
+            {
+              "question_id": "Q_012",
+              "question": "What is the best answer?",
+              "selected_answer": "C",
+              "correct_answer": "D",
+              "confidence": 0.3422361600000001,
+              "error_type": "reasoning"
+            },
+            {
+              "question_id": "Q_005",
+              "question": "What is the best answer?",
+              "selected_answer": "Cannot answer from the provided context.",
+              "correct_answer": "A",
+              "confidence": 0.04200000000000001,
+              "error_type": "reasoning"
+            }
+          ],
+          "root_causes": [
+            "Insufficient chain-of-thought reasoning steps",
+            "Failure to properly weight evidence from multiple sources",
+            "Over-reliance on single retrieved document",
+            "Missing critical symptom analysis"
+          ],
+          "proposed_solutions": [
+            "Increase minimum reasoning steps requirement",
+            "Implement evidence aggregation with confidence weighting",
+            "Add medical logic rules for common scenarios",
+            "Improve chain-of-thought prompting with medical examples",
+            "Add validation step to check reasoning completeness"
+          ]
+        },
+        "knowledge": {
+          "error_type": "knowledge",
+          "description": "System has incorrect medical knowledge or interpretation",
+          "count": 7,
+          "examples": [
+            {
+              "question_id": "Q_032",
+              "question": "What is the best answer?",
+              "selected_answer": "B",
+              "correct_answer": "D",
+              "confidence": 0.07056000000000001,
+              "error_type": "knowledge"
+            },
+            {
+              "question_id": "Q_070",
+              "question": "What is the best answer?",
+              "selected_answer": "A",
+              "correct_answer": "B",
+              "confidence": 0.7129920000000001,
+              "error_type": "knowledge"
+            },
+            {
+              "question_id": "Q_090",
+              "question": "What is the best answer?",
+              "selected_answer": "A",
+              "correct_answer": "B",
+              "confidence": 0.17036250000000006,
+              "error_type": "knowledge"
+            },
+            {
+              "question_id": "Q_058",
+              "question": "What is the best answer?",
+              "selected_answer": "A",
+              "correct_answer": "B",
+              "confidence": 0.17036250000000006,
+              "error_type": "knowledge"
+            },
+            {
+              "question_id": "Q_020",
+              "question": "What is the best answer?",
+              "selected_answer": "B",
+              "correct_answer": "D",
+              "confidence": 0.47879999999999995,
+              "error_type": "knowledge"
+            }
+          ],
+          "root_causes": [
+            "Incorrect interpretation of medical guidelines",
+            "Missing context about patient-specific factors",
+            "Failure to consider contraindications",
+            "Incorrect application of treatment protocols"
+          ],
+          "proposed_solutions": [
+            "Expand medical knowledge base with more guidelines",
+            "Add medical expert validation of reasoning chains",
+            "Implement medical safety checks (contraindications, interactions)",
+            "Add context-aware interpretation of guidelines",
+            "Create medical concept mapping for better understanding"
+          ]
+        }
+      }
+    },
+    "performance_segmentation": {
+      "by_category": {
+        "Gastroenterology": {
+          "accuracy": 1.0,
+          "correct": 7,
+          "total": 7
+        },
+        "Endocrine": {
+          "accuracy": 0.6666666666666666,
+          "correct": 4,
+          "total": 6
+        },
+        "Cardiovascular": {
+          "accuracy": 0.45454545454545453,
+          "correct": 5,
+          "total": 11
+        },
+        "Infectious Disease": {
+          "accuracy": 0.3333333333333333,
+          "correct": 1,
+          "total": 3
+        },
+        "Respiratory": {
+          "accuracy": 0.5,
+          "correct": 4,
+          "total": 8
+        },
+        "Rheumatology": {
+          "accuracy": 0.3333333333333333,
+          "correct": 1,
+          "total": 3
+        },
+        "Hematology": {
+          "accuracy": 0.3333333333333333,
+          "correct": 1,
+          "total": 3
+        },
+        "Nephrology": {
+          "accuracy": 0.3333333333333333,
+          "correct": 1,
+          "total": 3
+        },
+        "Psychiatry": {
+          "accuracy": 0.6666666666666666,
+          "correct": 2,
+          "total": 3
+        },
+        "Critical Care": {
+          "accuracy": 1.0,
+          "correct": 1,
+          "total": 1
+        },
+        "Neurology": {
+          "accuracy": 0.0,
+          "correct": 0,
+          "total": 2
+        }
+      },
+      "by_question_type": {
+        "diagnosis": {
+          "accuracy": 0.5217391304347826,
+          "correct": 24,
+          "total": 46
+        },
+        "treatment": {
+          "accuracy": 1.0,
+          "correct": 2,
+          "total": 2
+        },
+        "other": {
+          "accuracy": 0.5,
+          "correct": 1,
+          "total": 2
+        }
+      },
+      "by_complexity": {
+        "moderate": {
+          "accuracy": 0.48,
+          "correct": 12,
+          "total": 25
+        },
+        "complex": {
+          "accuracy": 0.46153846153846156,
+          "correct": 6,
+          "total": 13
+        },
+        "simple": {
+          "accuracy": 0.75,
+          "correct": 9,
+          "total": 12
+        }
+      },
+      "by_relevance_level": {
+        "high": {
+          "accuracy": 0.4482758620689655,
+          "correct": 13,
+          "total": 29
+        },
+        "low": {
+          "accuracy": 0.5454545454545454,
+          "correct": 6,
+          "total": 11
+        },
+        "medium": {
+          "accuracy": 0.8,
+          "correct": 8,
+          "total": 10
+        }
+      },
+      "by_confidence_range": {
+        "80-90%": {
+          "accuracy": 1.0,
+          "correct": 1,
+          "total": 1
+        },
+        "40-50%": {
+          "accuracy": 0.6666666666666666,
+          "correct": 10,
+          "total": 15
+        },
+        "0-10%": {
+          "accuracy": 0.3333333333333333,
+          "correct": 2,
+          "total": 6
+        },
+        "30-40%": {
+          "accuracy": 0.3333333333333333,
+          "correct": 4,
+          "total": 12
+        },
+        "90-100%": {
+          "accuracy": 0.8333333333333334,
+          "correct": 5,
+          "total": 6
+        },
+        "70-80%": {
+          "accuracy": 0.5,
+          "correct": 1,
+          "total": 2
+        },
+        "20-30%": {
+          "accuracy": 1.0,
+          "correct": 1,
+          "total": 1
+        },
+        "10-20%": {
+          "accuracy": 0.42857142857142855,
+          "correct": 3,
+          "total": 7
+        }
+      }
+    },
+    "confusion_matrix": {
+      "Gastroenterology": {
+        "cardiology": 5,
+        "endocrinology": 1,
+        "infectious_disease": 1
+      },
+      "Endocrine": {
+        "endocrinology": 3,
+        "cardiology": 2,
+        "nephrology": 1
+      },
+      "Cardiovascular": {
+        "cardiology": 10,
+        "endocrinology": 1
+      },
+      "Infectious Disease": {
+        "infectious_disease": 1,
+        "cardiology": 2
+      },
+      "Respiratory": {
+        "cardiology": 6,
+        "endocrinology": 1,
+        "infectious_disease": 1
+      },
+      "Rheumatology": {
+        "cardiology": 2,
+        "nephrology": 1
+      },
+      "Hematology": {
+        "cardiology": 3
+      },
+      "Nephrology": {
+        "nephrology": 2,
+        "endocrinology": 1
+      },
+      "Psychiatry": {
+        "obstetrics": 1,
+        "cardiology": 2
+      },
+      "Critical Care": {
+        "cardiology": 1
+      },
+      "Neurology": {
+        "cardiology": 1,
+        "endocrinology": 1
+      }
+    },
+    "pitfalls": [
+      {
+        "pitfall": "Overconfident Wrong Answers",
+        "description": "System shows high confidence (>80%) but gives incorrect answers",
+        "count": 1,
+        "severity": "high",
+        "examples": [
+          {
+            "question_id": "Q_018",
+            "confidence": 0.947625,
+            "selected": "D",
+            "correct": "B"
+          }
+        ],
+        "solution": "Implement confidence calibration and add uncertainty estimation"
+      },
+      {
+        "pitfall": "Missing Critical Symptoms",
+        "description": "Reasoning fails to consider important symptoms from case description",
+        "count": 20,
+        "severity": "medium",
+        "examples": [
+          {
+            "question_id": "Q_004",
+            "case_symptoms": [
+              "a",
+              "38-year-old",
+              "woman",
+              "with",
+              "depression",
+              "has",
+              "been",
+              "on",
+              "fluoxetine",
+              "20"
+            ]
+          },
+          {
+            "question_id": "Q_032",
+            "case_symptoms": [
+              "a",
+              "38-year-old",
+              "woman",
+              "with",
+              "depression",
+              "has",
+              "been",
+              "on",
+              "fluoxetine",
+              "20"
+            ]
+          },
+          {
+            "question_id": "Q_087",
+            "case_symptoms": [
+              "a",
+              "38-year-old",
+              "woman",
+              "with",
+              "depression",
+              "has",
+              "been",
+              "on",
+              "fluoxetine",
+              "20"
+            ]
+          }
+        ],
+        "solution": "Enhance symptom extraction and ensure all symptoms are considered in reasoning"
+      },
+      {
+        "pitfall": "Medical Terminology Misunderstanding",
+        "description": "System fails to properly interpret medical abbreviations or terms",
+        "count": 23,
+        "severity": "medium",
+        "examples": [
+          {
+            "question_id": "Q_036",
+            "reasoning_excerpt": "Extracted 0 symptoms, demographics: {'age': 70, 'gender': 'female', 'age_group': 'geriatric'}, acuity: emergency Generated 0 differential diagnoses Scored evidence for 4 options Matched guidelines for"
+          },
+          {
+            "question_id": "Q_032",
+            "reasoning_excerpt": "Extracted 3 symptoms, demographics: {'age': 72, 'gender': 'male', 'age_group': 'geriatric'}, acuity: emergency Generated 1 differential diagnoses Scored evidence for 4 options Matched guidelines for t"
+          },
+          {
+            "question_id": "Q_018",
+            "reasoning_excerpt": "Extracted 1 symptoms, demographics: {'age': 49, 'gender': 'male', 'age_group': 'adult'}, acuity: emergency Generated 0 differential diagnoses Scored evidence for 4 options Matched guidelines for top 4"
+          }
+        ],
+        "solution": "Add medical terminology expansion and abbreviation resolution"
+      }
+    ],
+    "chart_paths": {
+      "performance_summary": "reports\\charts\\performance_summary.png",
+      "confusion_matrix": "reports\\charts\\confusion_matrix.png",
+      "error_analysis": "reports\\charts\\error_analysis.png"
+    },
+    "recommendations": [
+      "Enhance reasoning chain completeness with more structured steps",
+      "Implement evidence aggregation with confidence weighting",
+      "Expand medical knowledge base with additional guidelines",
+      "Add medical safety checks for contraindications",
+      "Implement confidence calibration to reduce overconfident wrong answers",
+      "Add query expansion with medical terminology",
+      "Improve cross-encoder reranking with medical domain fine-tuning",
+      "Implement active learning to identify difficult cases"
+    ]
+  },
+  "config": {
+    "dataset": "data\\processed\\questions\\questions_1.json",
+    "cases": 50,
+    "seed": 42
+  }
+}

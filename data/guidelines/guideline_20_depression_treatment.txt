@@ -1,0 +1,115 @@
+# Depression Treatment
+Category: Psychiatry
+Keywords: depression, major depressive, antidepressant, SSRI, SNRI
+
+---
+
+**Depression Treatment**
+**Category:** Psychiatry
+
+### 1. Definition and Epidemiology
+
+* **Definition:** Depression is a mood disorder characterized by persistent feelings of sadness, hopelessness, and loss of interest in activities.
+* **Prevalence/Incidence:** Depression is twice as common in women as in men, affecting approximately 300 million people worldwide (Source: World Health Organization).
+* **Risk Factors:**
+	+ Genetic predisposition
+	+ Familial history
+	+ Environmental factors (e.g., trauma, stress)
+	+ Psychosocial factors (e.g., social isolation, low self-esteem)
+	+ Endocrine disorders (e.g., hypothyroidism, Cushing's syndrome)
+
+### 2. Clinical Presentation
+
+* **Signs and Symptoms:**
+	+ Depressed mood
+	+ Loss of interest or pleasure in activities
+	+ Significant weight loss or gain
+	+ Insomnia or excessive sleepiness
+	+ Psychomotor agitation or retardation
+	+ Fatigue or loss of energy
+	+ Feelings of worthlessness or excessive guilt
+	+ Impaired thinking and concentration
+* **History Findings:**
+	+ Patient's medical history, including previous episodes of depression
+	+ Family history of psychiatric disorders
+	+ Social and occupational functioning
+* **Physical Examination Findings:**
+	+ Weight changes
+	+ Sleep patterns
+	+ Appetite changes
+
+### 3. Diagnostic Criteria and Workup
+
+* **Diagnostic Criteria:** Major depressive disorder is diagnosed when at least five (5) symptoms listed above are present for at least two weeks.
+* **Laboratory Tests:**
+	+ Complete Blood Count (FBC)
+	+ Basic Metabolic Panel (BUE and Creatinine)
+	+ Fasting Blood Sugar (FBS)
+	+ Thyroid function tests
+	+ Cortisol levels if indicated
+* **Imaging Studies:** None specifically mentioned in the source material.
+* **Other Investigations:**
+	+ Administer a standardized scale of depression, such as the Patient Health Questionnaire 9-item scale (PHQ-9)
+
+### 4. Treatment Algorithm
+
+* **First-Line Treatment:**
+	+ Fluoxetine (Prozac):
+		- Adults: 20 mg once daily for 2-4 weeks, then increase to a maximum of 80 mg
+		- Children and adolescents (8-18 years): 10 mg once daily for 1-2 weeks, then increase to a maximum of 20 mg once daily
+* **Second-Line Options:**
+	+ Melatonin:
+		- Adults: 3-5 mg daily, 1-2 hours before bedtime (maximum 10 mg)
+		- Children and adolescents (1 month-18 years): 2-3 mg at bedtime, increase if necessary after 1-2 weeks to 4-6 mg daily (maximum 10 mg)
+* **Treatment Modifications Based on Severity:**
+	+ Refer patients with suicidal tendencies or severe depression for immediate hospitalization
+	+ Consider electroconvulsive therapy (ECT) for treatment-resistant depression
+
+### 5. Management and Follow-up
+
+* **Monitoring Parameters:**
+	+ Symptom severity
+	+ Medication side effects
+	+ Suicidal ideation
+* **Follow-up Schedule:**
+	+ Regular follow-ups with the patient's primary care physician or mental health professional
+	+ Adjustments to treatment plan as needed
+* **Patient Education:**
+	+ Importance of adherence to medication regimen
+	+ Lifestyle modifications (e.g., regular exercise, healthy diet)
+	+ Coping mechanisms for managing symptoms
+
+### 6. Contraindications and Precautions
+
+* **Drug Contraindications:**
+	+ Fluoxetine contraindicated in patients with a history of seizures or conditions that may lower the seizure threshold
+	+ Melatonin contraindicated in patients with bleeding disorders or those taking anticoagulant medications
+* **Special Populations:**
+	+ Elderly patients: start with lower doses and monitor for side effects
+	+ Pregnant women: use fluoxetine with caution, as it may affect fetal development
+	+ Renal impairment: adjust medication dosages accordingly
+* **Drug Interactions:**
+	+ Fluoxetine interacts with many medications, including warfarin, phenytoin, and certain antidepressants
+	+ Melatonin interacts with sedatives, hypnotics, and other sleep aids
+
+### 7. Key Clinical Pearls
+
+* **Important Clinical Tips:**
+	+ Recognize depression as a treatable condition
+	+ Use standardized scales to assess symptom severity
+	+ Monitor for suicidal ideation and adjust treatment plan accordingly
+* **Common Pitfalls to Avoid:**
+	+ Underestimating the severity of symptoms or dismissing patient concerns
+	+ Failing to monitor medication side effects or adjust dosages as needed
+	+ Not providing adequate support and resources for patients with depression
+
+**Red Flags:**
+
+* Suicidal ideation or attempts
+* Severe depressive symptoms (e.g., hallucinations, delusions)
+* Failure to respond to treatment after 6 weeks of therapy
+
+This guideline is based on the provided source material and general evidence-based recommendations. Specific protocols should be verified with local guidelines.
+
+---
+Generated from source PDF. Source content available: True

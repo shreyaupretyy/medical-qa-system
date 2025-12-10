@@ -1,0 +1,15 @@
+# Infectious Disease Glossary
+
+Neutropenic fever: Fever with neutrophils <500; treat as emergency infection.
+Sepsis: Life-threatening organ dysfunction from infection.
+Septic shock: Sepsis with persistent hypotension requiring vasopressors.
+CAP: Community-acquired pneumonia.
+HAP: Hospital-acquired pneumonia.
+UTI: Urinary tract infection.
+Pyelonephritis: Kidney infection.
+Bacteremia: Bacteria in blood.
+Empiric antibiotics: Initial broad antibiotics before cultures.
+Source control: Remove/drain infection source (abscess, line).
+Hypotension: Low blood pressure; red flag in infection.
+Lactate: Marker of tissue hypoperfusion; elevated in sepsis.
+

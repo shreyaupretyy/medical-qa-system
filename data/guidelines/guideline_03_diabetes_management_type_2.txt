@@ -1,0 +1,100 @@
+# Diabetes Management (Type 2)
+Category: Endocrine
+Keywords: diabetes, type 2 diabetes, hyperglycemia, HbA1c, metformin
+
+---
+
+**Diabetes Management (Type 2)**
+
+**Category:** Endocrine
+
+### 1. Definition and Epidemiology
+
+* **Definition:** Type 2 diabetes mellitus is a chronic metabolic disorder characterized by insulin resistance and impaired insulin secretion, leading to hyperglycemia.
+* **Prevalence/Incidence:** According to the source material, there is no specific information on prevalence or incidence rates for Type 2 diabetes in pregnancy. However, it is estimated that approximately 9% of pregnancies are affected by gestational diabetes mellitus (GDM), which often develops into Type 2 diabetes postpartum.
+* **Risk Factors:** Risk factors for developing Type 2 diabetes include:
+	+ Family history
+	+ Obesity
+	+ Physical inactivity
+	+ Age > 45 years
+	+ Ethnicity (e.g., African American, Hispanic/Latino)
+	+ Previous history of GDM or delivering a macrosomic baby
+
+### 2. Clinical Presentation
+
+* **Signs and Symptoms:** Type 2 diabetes is often asymptomatic in its early stages. However, symptoms may include:
+	+ Polyuria
+	+ Polydipsia
+	+ Fatigue
+	+ Blurred vision
+	+ Slow healing of cuts and wounds
+* **History Findings:**
+	+ Previous history of GDM or delivering a macrosomic baby
+	+ Family history of diabetes
+	+ Obesity or physical inactivity
+* **Physical Examination Findings:** None specific to Type 2 diabetes
+
+### 3. Diagnostic Criteria and Workup
+
+* **Diagnostic Criteria:** Diagnosis is based on fasting plasma glucose (FPG) ≥ 126 mg/dL, 2-hour postprandial plasma glucose ≥ 200 mg/dL during an oral glucose tolerance test (OGTT), or HbA1c ≥ 6.5%.
+* **Laboratory Tests:**
+	+ Fasting plasma glucose
+	+ 2-hour postprandial plasma glucose during OGTT
+	+ Glycated hemoglobin (HbA1c)
+	+ Lipid profile
+	+ Renal function tests (e.g., serum creatinine, eGFR)
+* **Imaging Studies:** None specific to Type 2 diabetes
+
+### 4. Treatment Algorithm
+
+**First-line treatment:**
+
+* **Dietary modification:** Encourage a balanced diet with emphasis on whole grains, fruits, vegetables, lean protein sources, and healthy fats.
+* **Exercise:** Recommend regular physical activity, aiming for at least 150 minutes of moderate-intensity aerobic exercise per week.
+
+**Medications:**
+
+* **Metformin (500 mg 8-12 hourly):** First-line pharmacological treatment for Type 2 diabetes in pregnancy. Maximum dose: 2g/day.
+* **Glibenclamide (2.5-5 mg 12-24 hourly):** May be used as an alternative to metformin or in combination with insulin.
+
+**Second-line options:**
+
+* **Insulin:** Consider if blood glucose levels remain elevated despite optimal diet and exercise, or if there are signs of diabetic ketoacidosis.
+	+ Start with small doses (e.g., total daily dose of 6-10 units) of NPH insulin or premixed insulin (which has 30% regular and 70% NPH insulin), subcutaneously.
+
+### 5. Management and Follow-up
+
+* **Monitoring Parameters:**
+	+ Fasting plasma glucose
+	+ 2-hour postprandial plasma glucose during OGTT
+	+ HbA1c every 6-8 weeks
+	+ Lipid profile and renal function tests as needed
+* **Follow-up Schedule:** Regular follow-up with a healthcare provider, ideally every 4-6 weeks for the first few months after diagnosis.
+* **Patient Education:**
+	+ Emphasize the importance of lifestyle modifications (diet and exercise)
+	+ Provide education on medication management (if applicable)
+	+ Encourage regular self-monitoring of blood glucose
+* **Lifestyle Modifications:** Encourage patients to:
+	+ Maintain a healthy weight
+	+ Engage in regular physical activity
+	+ Follow a balanced diet
+
+### 6. Contraindications and Precautions
+
+* **Drug Contraindications:**
+	+ Metformin contraindicated in severe renal impairment or acute kidney injury.
+	+ Glibenclamide contraindicated in patients with a history of hypoglycemia or those taking other sulfonylureas.
+* **Special Populations:**
+	+ Pregnancy: Use metformin as first-line treatment; consider insulin if blood glucose levels remain elevated despite optimal diet and exercise.
+	+ Renal impairment: Use caution when prescribing metformin, and monitor renal function closely.
+
+### 7. Key Clinical Pearls
+
+* **Monitor blood glucose regularly:** Encourage patients to self-monitor their blood glucose levels at least twice daily.
+* **Adjust treatment as needed:** Be prepared to adjust treatment plans based on changes in blood glucose levels or presence of complications (e.g., diabetic ketoacidosis).
+* **Emphasize lifestyle modifications:** Stress the importance of diet and exercise in managing Type 2 diabetes.
+
+**Note:** This guideline is intended for general use, but specific protocols should be verified with local guidelines.
+
+---
+Generated from source PDF. Source content available: True

@@ -1,0 +1,121 @@
+# Stroke Management (Ischemic)
+Category: Neurology
+Keywords: stroke, ischemic stroke, cerebrovascular, TIA, transient ischemic
+
+---
+
+**Stroke Management (Ischemic)**
+**Category:** Neurology
+
+### 1. Definition and Epidemiology
+A stroke can be defined as a sudden global or focal neurological deficit resulting from spontaneous haemorrhage or infarction of the central nervous system, with objective evidence of an infarction or hemorrhage, irrespective of the duration of clinical symptoms (Page 148). The prevalence of ischemic stroke is not mentioned in the source material.
+
+Risk factors for strokes include:
+
+* Hypertension
+* Diabetes
+* Dyslipidaemia
+* Atrial fibrillation
+* Smoking
+* Sickle cell disease and cyanotic heart disease in children
+
+### 2. Clinical Presentation
+The clinical presentation of ischemic stroke can vary, but common signs and symptoms include:
+
+* Weakness of one side of the body including the face
+* Inability to rise up from a sitting or lying position
+* Sudden fall/collapse
+* Loss of speech
+* Loss of vision
+* Severe headache and/or neck pain (subarachnoid haemorrhage)
+* Unconsciousness in some patients
+* Seizures
+
+### 3. Diagnostic Criteria and Workup
+The diagnosis of ischemic stroke is confirmed with:
+
+* CT or MRI scan to exclude other intracranial lesions that could present similarly
+* Laboratory tests:
+	+ FBC, ESR
+	+ Blood glucose
+	+ Serum lipid profile
+	+ Blood urea, electrolytes and creatinine
+	+ Uric acid
+	+ ECG
+
+### 4. Treatment Algorithm
+The treatment objectives for ischemic stroke include:
+
+1. Limiting the area of brain damage
+2. Protecting patients from the dangers of unconsciousness and immobility
+3. Preventing aspiration
+4. Treating the underlying cause if possible
+5. Identifying and managing modifiable risk factors (hypertension, high cholesterol, diabetes mellitus etc.)
+6. Instituting measures to improve functional recovery
+
+**First-line treatment:**
+
+* Admit and monitor patient's vital signs and neurological signs frequently (4 hourly)
+* Administer anticoagulants:
+	+ Warfarin, oral, simultaneously (NOT in pregnancy):
+		- Loading dose: 10 mg on days 1 and 2
+		- Maintenance dose: 5 mg daily until a target INR of 2 to 3 is achieved
+
+**Second-line options:**
+
+* Consider the use of low molecular weight heparin if warfarin is contraindicated or not tolerated
+* Consider the use of antiplatelet agents (e.g. aspirin) in patients who are at high risk of bleeding
+
+### 5. Management and Follow-up
+**Monitoring parameters:**
+
+* Vital signs (temperature, pulse, blood pressure)
+* Neurological signs (level of consciousness, motor function, sensory function)
+
+**Follow-up schedule:**
+
+* Regular follow-up with a neurologist or primary care physician to monitor for complications and adjust treatment as needed
+
+**Patient education:**
+
+* Educate patients on the importance of lifestyle modifications (e.g. smoking cessation, diet modification)
+* Educate patients on the importance of adhering to medication regimens
+* Provide patients with information on stroke prevention and management
+
+### 6. Contraindications and Precautions
+**Drug contraindications:**
+
+* Warfarin is contraindicated in pregnancy (Page 147)
+
+**Special populations:**
+
+* Elderly patients may require dose adjustments due to decreased renal function
+* Patients with renal impairment may require dose adjustments due to decreased clearance of medications
+
+**Drug interactions:**
+
+* Monitor for interactions between warfarin and other medications (e.g. anticoagulants, antiplatelet agents)
+
+### 7. Key Clinical Pearls
+Important clinical tips:
+
+* Early recognition and treatment of ischemic stroke can significantly improve outcomes
+* Multidisciplinary care is essential for optimal management of ischemic stroke patients
+* Regular follow-up with a neurologist or primary care physician is crucial to monitor for complications and adjust treatment as needed
+
+Common pitfalls to avoid:
+
+* Delayed diagnosis and treatment
+* Inadequate monitoring and follow-up
+* Failure to address modifiable risk factors (e.g. hypertension, high cholesterol)
+
+Red flags requiring escalation:
+
+* Sudden worsening of symptoms
+* Development of new neurological deficits
+* Signs of bleeding or hemorrhage
+
+Note: Specific protocols should be verified with local guidelines.
+
+---
+Generated from source PDF. Source content available: True

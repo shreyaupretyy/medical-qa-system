@@ -1,0 +1,143 @@
+# Gastrointestinal Bleeding
+Category: Gastroenterology
+Keywords: GI bleeding, gastrointestinal bleeding, hematemesis, melena, endoscopy
+
+---
+
+**Gastrointestinal Bleeding**
+**Category:** Gastroenterology
+
+### 1. Definition and Epidemiology
+
+Gastrointestinal bleeding (GIB) refers to the loss of blood from the gastrointestinal tract, which can range from mild to life-threatening. The source material does not provide specific prevalence or incidence rates for GIB.
+
+Risk factors for GIB include:
+
+* Age > 60 years
+* History of peptic ulcer disease (PUD)
+* Use of nonsteroidal anti-inflammatory drugs (NSAIDs)
+* Helicobacter pylori infection
+* Gastroesophageal reflux disease (GERD)
+
+### 2. Clinical Presentation
+
+Clinical presentation of GIB may include:
+
+* Signs:
+	+ Tachycardia
+	+ Hypotension
+	+ Pallor
+	+ Melena (black, tarry stools)
+	+ Hematochezia (fresh blood in stool)
+* Symptoms:
+	+ Abdominal pain or discomfort
+	+ Nausea and vomiting
+	+ Bloating and gas
+	+ Weight loss
+
+History findings may include:
+
+* Recent use of NSAIDs or anticoagulants
+* History of PUD, GERD, or other gastrointestinal conditions
+* Family history of bleeding disorders
+
+Physical examination findings may include:
+
+* Abdominal tenderness or guarding
+* Signs of dehydration (dry mouth, decreased urine output)
+
+### 3. Diagnostic Criteria and Workup
+
+Diagnostic criteria for GIB include:
+
+* Presence of melena or hematochezia
+* Decreased hemoglobin or hematocrit levels
+* Endoscopy or imaging studies to identify the source of bleeding
+
+Laboratory tests may include:
+
+* Complete blood count (CBC)
+* Coagulation studies (prothrombin time, partial thromboplastin time)
+* Liver function tests (LFTs)
+
+Imaging studies may include:
+
+* Upper gastrointestinal endoscopy
+* Barium swallow or upper GI series
+* Computed tomography (CT) scan or ultrasound
+
+Other investigations may include:
+
+* Stool for occult blood
+* Endoscopic examination of the upper and lower gastrointestinal tract
+* Biopsy to rule out malignancy or other conditions
+
+### 4. Treatment Algorithm
+
+**First-line treatment:**
+
+1. **Peptic Ulcer Disease (PUD):**
+	* Magnesium trisilicate, oral, 15 ml 8 hourly (in-between meals and at bedtime)
+	* Aluminium hydroxide, oral, 500 mg 6 hourly (in-between meals and at bedtime)
+2. **NSAID-associated duodenal or gastric ulcer:**
+	* Esomeprazole, oral, 20-40 mg daily for 4-8 weeks
+3. **Gastroesophageal Reflux Disease (GERD):**
+	* Omeprazole, oral, 20 mg 12 hourly for 14 days
+
+**Second-line options:**
+
+1. **Failed medical treatment or complications:**
+	* Surgical treatment may be considered in chronic cases with severe periodic attacks, failed medical treatment, and complications such as perforation, gastric outlet obstruction, and hemorrhage.
+
+**Treatment modifications based on severity:**
+
+1. **Mild bleeding:** Medical treatment as above
+2. **Moderate bleeding:** Endoscopic examination to identify the source of bleeding, followed by medical treatment
+3. **Severe bleeding:** Emergency endoscopy or surgical intervention may be required
+
+### 5. Management and Follow-up
+
+**Monitoring parameters:**
+
+1. Hemoglobin levels
+2. Complete blood count (CBC)
+3. Coagulation studies (prothrombin time, partial thromboplastin time)
+
+**Follow-up schedule:**
+
+1. Initial follow-up: 7-10 days after treatment initiation
+2. Subsequent follow-ups: every 4-6 weeks for 3-6 months
+
+**Patient education:**
+
+1. Importance of adherence to medication regimen
+2. Lifestyle modifications (e.g., avoiding NSAIDs, smoking cessation)
+3. Recognition of warning signs requiring escalation (e.g., worsening symptoms, melena or hematochezia)
+
+### 6. Contraindications and Precautions
+
+**Drug contraindications:**
+
+1. Magnesium trisilicate: renal impairment
+2. Aluminium hydroxide: severe constipation, electrolyte imbalance
+3. Esomeprazole: pregnancy (category C), lactation
+
+**Special populations:**
+
+1. Elderly: consider age-related changes in physiology and potential interactions with medications
+2. Pregnancy: avoid NSAIDs and certain antacids; use proton pump inhibitors (PPIs) cautiously
+3. Renal impairment: adjust doses of magnesium trisilicate and aluminium hydroxide accordingly
+
+**Drug interactions:**
+
+1. Avoid taking antacids within 2 hours of PPIs (e.g., omeprazole, esomeprazole)
+
+### 7. Key Clinical Pearls
+
+* Recognize the importance of a thorough history and physical examination in diagnosing GIB
+* Use endoscopy or imaging studies to identify the source of bleeding when possible
+* Tailor treatment to the underlying cause of GIB
+* Monitor patients closely for signs of complications or worsening symptoms
+
+---
+Generated from source PDF. Source content available: True

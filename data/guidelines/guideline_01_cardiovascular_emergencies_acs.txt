@@ -1,0 +1,117 @@
+# Cardiovascular Emergencies (ACS)
+Category: Cardiovascular
+Keywords: acute coronary syndrome, myocardial infarction, heart attack, chest pain, STEMI
+
+---
+
+**Cardiovascular Emergencies (ACS)**
+**Category:** Cardiovascular
+
+### 1. Definition and Epidemiology
+Ischaemic Heart Disease (IHD), also known as Acute Coronary Syndrome (ACS), is a condition characterized by reduced blood supply to the heart muscle, leading to myocardial infarction or unstable angina. The risk factors for ACS are identical to those for stable angina pectoris and include obesity, diabetes mellitus, hypertension, smoking, hyperlipidaemia, and family history of heart disease.
+
+### 2. Clinical Presentation
+ACS typically presents with:
+
+* Sudden onset of chest pain (central or precordial) that may radiate into the left arm, neck, or jaw
+* Pain is often severe and described as tightness, heaviness, or constrictive in nature
+* Pain persists for more than 30 minutes and is not relieved by rest or glyceryl trinitrate
+* Additional symptoms include nausea, vomiting, shortness of breath, fatigue, loss of consciousness, restlessness, apprehension, excessive sweating, peripheral or central cyanosis, and altered mental status
+
+### 3. Diagnostic Criteria and Workup
+Diagnostic criteria for ACS include:
+
+* ST segment elevation on an electrocardiogram (ECG) in STEMI
+* Non-ST-segment elevation myocardial infarction (NSTEMI)
+* Unstable angina (ACS without elevation of cardiac enzymes)
+
+Laboratory tests:
+
+* Cardiac enzymes: CK-MB, troponins T and I, myoglobin
+* Serum lipid profile
+* Random blood glucose
+* FBC, ESR
+* Blood urea, electrolytes, and creatinine
+* C-reactive protein
+
+Imaging studies:
+
+* Standard 12-lead ECG
+* Chest X-ray
+
+### 4. Treatment Algorithm
+**First-line treatment:**
+
+1. Glyceryl trinitrate (sublingual): 500 microgram stat., then as required
+2. Aspirin (oral): 300 mg stat., then 75 mg daily
+3. Clopidogrel (oral): 300 mg stat., then 75 mg daily
+
+**Second-line options:**
+
+1. Beta-blockers:
+	* Atenolol (oral): 50-100 mg daily
+	* Bisoprolol (oral): 5-10 mg daily
+	* Metoprolol (oral): 50-100 mg 8-12 hourly
+2. Calcium channel blockers:
+	* Verapamil (oral): 80-120 mg 8 hourly
+
+**Treatment modifications based on severity:**
+
+* STEMI: immediate reperfusion therapy with primary percutaneous coronary intervention (PCI) or thrombolysis
+* NSTEMI and unstable angina: initial medical management with antiplatelet agents, beta-blockers, and statins
+
+### 5. Management and Follow-up
+**Monitoring parameters:**
+
+* Cardiac enzymes
+* Electrolytes
+* Renal function
+* Blood pressure
+* Oxygen saturation
+
+**Follow-up schedule:**
+
+* Initial follow-up within 24-48 hours after discharge
+* Subsequent follow-ups at 1, 3, and 6 months post-discharge
+
+**Patient education:**
+
+* Importance of medication adherence
+* Lifestyle modifications (diet, exercise, weight management)
+* Smoking cessation
+* Regular follow-up appointments
+
+### 6. Contraindications and Precautions
+**Drug contraindications:**
+
+* Beta-blockers in bronchial asthma, bradycardia, and hypotension
+* Atenolol in heart failure
+* Verapamil in bradycardia, hypotension, and patients already on beta-blockers
+
+**Special populations:**
+
+* Elderly: cautious use of beta-blockers and diuretics
+* Pregnancy: careful consideration of medication safety
+* Renal impairment: dose adjustments for medications with renal excretion
+
+### 7. Key Clinical Pearls
+* Early recognition and treatment of ACS can significantly improve outcomes
+* Importance of regular follow-up appointments to monitor cardiac function and adjust treatment as needed
+* Patients should be educated on the importance of lifestyle modifications and medication adherence
+
+**Common pitfalls to avoid:**
+
+* Delayed recognition of ACS symptoms
+* Inadequate initial medical management
+* Failure to optimize or initiate treatment for hypertension and diabetes mellitus
+
+**Red flags:**
+
+* Sudden worsening of chest pain
+* Decreased cardiac output
+* Hypotension
+* Bradycardia
+* Altered mental status
+
+---
+Generated from source PDF. Source content available: True

@@ -1,0 +1,112 @@
+# Rheumatoid Arthritis
+Category: Rheumatology
+Keywords: rheumatoid arthritis, RA, autoimmune, DMARD, methotrexate
+
+---
+
+**Rheumatoid Arthritis Treatment Guideline**
+
+**Category:** Rheumatology
+
+### 1. Definition and Epidemiology
+
+* **Definition:** Rheumatoid arthritis (RA) is a chronic systemic inflammatory disease of unknown cause, characterized by synovial hypertrophy and chronic joint inflammation.
+* **Prevalence/Incidence:** RA affects approximately 0.5-1% of the population worldwide, with a higher prevalence in middle-aged women.
+* **Risk Factors:**
+	+ Genetic susceptibility
+	+ Environmental triggers (e.g., cigarette smoking, infection, trauma)
+	+ Presence of autoantibodies (e.g., rheumatoid factor, anti-cyclic citrullinated peptide)
+
+### 2. Clinical Presentation
+
+* **Signs and Symptoms:**
+	+ Joint stiffness
+	+ Painful joints
+	+ Swelling of affected joints
+	+ Deformity of affected joints
+	+ Limitation of motion
+	+ Skin nodules
+	+ Difficulty in breathing
+	+ Easy fatiguability
+* **History Findings:**
+	+ Duration and severity of symptoms
+	+ Presence of morning stiffness
+	+ Previous joint injuries or infections
+* **Physical Examination Findings:**
+	+ Persistent symmetric polyarthritis (synovitis) of hands and feet
+	+ Joint tenderness
+	+ Joint swelling
+	+ Joint deformity
+
+### 3. Diagnostic Criteria and Workup
+
+* **Diagnostic Criteria:** RA diagnosis requires the presence of at least four out of seven criteria, including:
+	+ Morning stiffness lasting more than one hour
+	+ Symmetric joint involvement
+	+ Rheumatoid factor positivity
+	+ Anti-cyclic citrullinated peptide antibody positivity
+	+ Presence of rheumatoid nodules
+	+ Extra-articular manifestations (e.g., lung disease, uveitis)
+* **Laboratory Tests:**
+	+ Complete blood count (CBC)
+	+ Erythrocyte sedimentation rate (ESR)
+	+ C-reactive protein (CRP)
+	+ Rheumatoid factor (RF)
+	+ Anti-cyclic citrullinated peptide antibody
+* **Imaging Studies:** X-rays of affected joints to assess joint damage and deformity
+
+### 4. Treatment Algorithm
+
+* **First-Line Treatment:**
+	+ Diclofenac spray, topical:
+		- Apply 12 hourly as necessary
+		- Evidence Rating: [C]
+* **Second-Line Options:**
+	+ Methylprednisolone acetate, intra-articular:
+		- Consult specialist
+	+ Triamcinolone, intra-articular:
+		- Consult specialist
+	+ Betamethasone, intra-articular:
+		- Consult specialist
+
+### 5. Management and Follow-up
+
+* **Monitoring Parameters:**
+	+ Disease activity (e.g., ESR, CRP)
+	+ Joint damage progression (e.g., X-rays)
+	+ Patient-reported outcomes (e.g., pain, function)
+* **Follow-up Schedule:** Regular follow-ups with a rheumatologist or primary care physician to adjust treatment and monitor disease activity.
+* **Patient Education:**
+	+ Importance of medication adherence
+	+ Lifestyle modifications (e.g., exercise, smoking cessation)
+	+ Monitoring for potential side effects
+
+### 6. Contraindications and Precautions
+
+* **Drug Contraindications:** Consult local guidelines for specific contraindications.
+* **Special Populations:**
+	+ Elderly: Consider age-related comorbidities and potential drug interactions
+	+ Pregnancy: Avoid certain medications (e.g., methotrexate)
+	+ Renal impairment: Adjust doses or choose alternative medications
+* **Drug Interactions:** Consult local guidelines for specific interactions.
+* **Warning Signs Requiring Escalation:**
+	+ Increasing disease activity
+	+ Joint damage progression
+	+ Presence of extra-articular manifestations
+
+### 7. Key Clinical Pearls
+
+* **Important Clinical Tips:**
+	+ Early diagnosis and treatment can improve outcomes
+	+ Regular follow-ups are crucial for adjusting treatment and monitoring disease activity
+* **Common Pitfalls to Avoid:**
+	+ Delayed diagnosis or inadequate treatment
+	+ Failure to monitor for potential side effects
+* **Red Flags:**
+	+ Sudden increase in disease activity
+	+ Presence of extra-articular manifestations
+
+**Note:** This guideline is based on the provided source material and should be verified with local guidelines. Specific protocols may vary depending on regional preferences and available resources.
+
+---
+Generated from source PDF. Source content available: True

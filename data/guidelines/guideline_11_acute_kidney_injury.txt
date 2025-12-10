@@ -1,0 +1,95 @@
+# Acute Kidney Injury
+Category: Nephrology
+Keywords: acute kidney injury, AKI, renal failure, creatinine, oliguria
+
+---
+
+**Acute Kidney Injury**
+
+**Category:** Nephrology
+
+### 1. Definition and Epidemiology
+
+* **Definition:** Acute Kidney Injury (AKI) is a sudden decrease in renal function occurring over hours to days, resulting in the accumulation of nitrogenous waste products and disruption of blood volume, electrolyte, and acid-base balance.
+* **Prevalence/Incidence:** AKI affects approximately 5-10% of hospitalized patients, with a higher incidence in critically ill patients (1).
+* **Risk Factors:**
+	+ Pre-existing chronic kidney disease
+	+ Volume contraction
+	+ Hypotension
+	+ Nephrotoxic agents
+
+### 2. Clinical Presentation
+
+* **Signs and Symptoms:** Oliguria (decreased urine output), anuria, nausea, vomiting, fatigue, flank pain, metallic taste in mouth, hiccups, change in mood.
+* **History Findings:**
+	+ Recent surgery or trauma
+	+ Medications known to cause AKI (e.g., NSAIDs)
+	+ Underlying medical conditions (e.g., diabetes mellitus, hypertension)
+* **Physical Examination Findings:** Oliguria, edema, decreased blood pressure
+
+### 3. Diagnostic Criteria and Workup
+
+* **Diagnostic Criteria:**
+	+ KDIGO criteria:
+		- Stage 1: 1.5-1.9 times baseline serum creatinine or increase of >26.4 micromol/L
+		- Stage 2: 2.0-2.9 times baseline serum creatinine or increase of >353.6 micromol/L
+		- Stage 3: 3.0 times baseline serum creatinine or anuria for >12 hours
+* **Laboratory Tests:** Serum creatinine, urine output, electrolyte panel, blood urea nitrogen (BUN)
+* **Imaging Studies:** Not typically required for diagnosis, but may be used to evaluate underlying causes of AKI
+* **Other Investigations:**
+	+ Urinalysis to evaluate for proteinuria or hematuria
+	+ Imaging studies to evaluate for obstructive uropathy
+
+### 4. Treatment Algorithm
+
+* **First-Line Treatment:**
+	+ Fluid management:
+		- Maintain strict fluid input and output chart
+		- Avoid volume contraction
+	+ Medications:
+		- Lisinopril (5-20 mg daily) for control of proteinuria
+		- Prednisolone (1 mg/kg daily or 60 mg/m2 in children) for minimal change nephrotic syndrome
+* **Second-Line Options:**
+	+ Hemodialysis or peritoneal dialysis for severe AKI or refractory to medical management
+	+ Consultation with a nephrologist for further management
+
+### 5. Management and Follow-up
+
+* **Monitoring Parameters:** Serum creatinine, urine output, electrolyte panel, BUN
+* **Follow-up Schedule:**
+	+ Daily monitoring of serum creatinine and urine output
+	+ Weekly follow-up with a nephrologist or primary care physician
+* **Patient Education:**
+	+ Importance of fluid management and medication adherence
+	+ Lifestyle modifications (e.g., smoking cessation, weight reduction)
+* **Lifestyle Modifications:**
+	+ Smoking cessation
+	+ Weight reduction if obese
+	+ Avoidance of NSAIDs and other nephrotoxic agents
+
+### 6. Contraindications and Precautions
+
+* **Drug Contraindications:** Lisinopril in patients with bilateral renal artery stenosis or angiotensin-converting enzyme (ACE) inhibitor-induced angioedema
+* **Special Populations:**
+	+ Elderly: cautious use of medications, close monitoring of serum creatinine and urine output
+	+ Pregnancy: careful consideration of medication use, consultation with a maternal-fetal medicine specialist
+	+ Renal impairment: cautious use of medications, close monitoring of serum creatinine and urine output
+* **Drug Interactions:** ACE inhibitors and angiotensin receptor blockers (ARBs) should not be used together
+
+### 7. Key Clinical Pearls
+
+* **Important Clinical Tips:** Close monitoring of serum creatinine and urine output, careful fluid management, and consideration of medication use in special populations.
+* **Common Pitfalls to Avoid:**
+	+ Failure to recognize AKI early
+	+ Inadequate fluid management
+	+ Inappropriate use of medications
+* **Red Flags:** Sudden decrease in renal function, anuria, or severe electrolyte imbalances requiring immediate escalation of care.
+
+References:
+
+1. KDIGO Clinical Practice Guideline for Acute Kidney Injury (2012)
+
+Note: This guideline is based on the provided source material and may not be comprehensive or up-to-date. Specific protocols should be verified with local guidelines.
+
+---
+Generated from source PDF. Source content available: True

@@ -1,0 +1,26 @@
+# General Medical Glossary (cross-specialty)
+
+Neutropenic fever: Fever in a patient with low neutrophils; treat as emergency infection.
+AKI: Acute kidney injury; sudden loss of kidney function.
+CKD: Chronic kidney disease.
+Hematuria: Blood in urine.
+Thrombocytopenia: Low platelets.
+Leukocytosis: High white blood cell count.
+Leukopenia: Low white blood cell count.
+Hyponatremia: Low sodium.
+Hyperkalemia: High potassium.
+Hypokalemia: Low potassium.
+Pneumonia: Lung infection.
+CAP: Community-acquired pneumonia.
+UTI: Urinary tract infection.
+Sepsis: Life-threatening organ dysfunction from infection.
+Neutrophils: Type of white blood cell; critical for fighting infection.
+INR: Clotting measure; high INR = bleeding risk.
+Anticoagulant: Blood thinner (e.g., heparin, warfarin).
+Antiplatelet: Drug that stops platelets (e.g., aspirin, clopidogrel).
+Hypotension: Low blood pressure.
+Tachycardia: High heart rate.
+Bradycardia: Low heart rate.
+Dyspnea: Shortness of breath.
+Hypoxia: Low oxygen saturation.
+

@@ -1,0 +1,582 @@
+{
+  "answer_confusion_matrix": {
+    "A": {
+      "A": 9,
+      "B": 0,
+      "C": 0,
+      "Cannot answer from the provided context.": 2,
+      "D": 0
+    },
+    "B": {
+      "A": 7,
+      "B": 3,
+      "C": 1,
+      "Cannot answer from the provided context.": 0,
+      "D": 2
+    },
+    "C": {
+      "A": 2,
+      "B": 2,
+      "C": 10,
+      "Cannot answer from the provided context.": 0,
+      "D": 0
+    },
+    "Cannot answer from the provided context.": {
+      "A": 0,
+      "B": 0,
+      "C": 0,
+      "Cannot answer from the provided context.": 0,
+      "D": 0
+    },
+    "D": {
+      "A": 1,
+      "B": 4,
+      "C": 2,
+      "Cannot answer from the provided context.": 0,
+      "D": 5
+    }
+  },
+  "condition_confusion_matrix": {
+    "Tenofovir disoproxil fumarate": {
+      "Tenofovir disoproxil fumarate": 1
+    },
+    "Recommend dietary modification and exercise program": {
+      "Recommend dietary modification and exercise program": 1
+    },
+    "Activate the cardiac cath lab for primary": {
+      "Activate the cardiac cath lab for primary": 1
+    },
+    "Oral bisphosphonate (alendronate)": {
+      "Oral bisphosphonate (alendronate)": 1
+    },
+    "Insert indwelling catheter": {
+      "Obtain urine culture": 1
+    },
+    "Endotracheal intubation": {
+      "Oxygen therapy via non-rebreather mask": 1
+    },
+    "COPD Exacerbation": {
+      "COPD Exacerbation": 1
+    },
+    "Lisinopril": {
+      "Metoprolol": 1,
+      "IV furosemide": 1
+    },
+    "Metformin": {
+      "Metformin": 1
+    },
+    "Order a complete blood count": {
+      "Initiate methotrexate": 1
+    },
+    "Enoxaparin": {
+      "Warfarin": 1
+    },
+    "Glucagon injection": {
+      "Subcutaneous insulin": 1
+    },
+    "Initiate aggressive fluid resuscitation with lactated Ringer's": {
+      "Initiate aggressive fluid resuscitation with lactated Ringer's": 1
+    },
+    "Fluid challenge with 1 liter of normal": {
+      "Fluid challenge with 1 liter of normal": 1
+    },
+    "Acute Coronary Syndrome": {
+      "Unknown": 1
+    },
+    "Thyroid function tests": {
+      "Liver function tests": 1
+    },
+    "Rheumatoid Arthritis": {
+      "Rheumatoid Arthritis": 1
+    },
+    "Initiate oxygen therapy via nasal prongs": {
+      "Initiate oxygen therapy via nasal prongs": 1
+    },
+    "Salbutamol via pressurized metered dose inhaler": {
+      "IV furosemide": 1
+    },
+    "Atrial Fibrillation": {
+      "Atrial Fibrillation": 1
+    },
+    "Lactated Ringer's solution": {
+      "Lactated Ringer's solution": 1
+    },
+    "Hepatic Encephalopathy": {
+      "Hepatic Encephalopathy": 1
+    },
+    "Initiate IV fluids and oxygen therapy": {
+      "Administer IV furosemide": 1
+    },
+    "Azithromycin": {
+      "IV furosemide": 1
+    },
+    "Methotrexate oral tablets": {
+      "Diclofenac spray": 1
+    },
+    "Nephrology consult": {
+      "IV furosemide": 1
+    },
+    "Every 2-3 years": {
+      "Every 6 months": 1
+    },
+    "5 symptoms": {
+      "5 symptoms": 1
+    },
+    "STEMI": {
+      "Unknown": 1
+    },
+    "Acute Asthma Exacerbation": {
+      "Acute Asthma Exacerbation": 1
+    },
+    "Schedule a DEXA scan to assess bone": {
+      "Schedule a DEXA scan to assess bone": 1
+    },
+    "Initiate aggressive fluid resuscitation with Ringers lactate": {
+      "Initiate aggressive fluid resuscitation with Ringers lactate": 1
+    },
+    "Fluid resuscitation with IV lactated Ringer's solution": {
+      "Fluid resuscitation with IV lactated Ringer's solution": 1
+    },
+    "Administer sublingual nifedipine": {
+      "Oral Lisinopril": 1
+    },
+    "Refer to liver transplant evaluation due to": {
+      "Refer to liver transplant evaluation due to": 1
+    },
+    "Perform an immediate Doppler ultrasound": {
+      "Initiate anticoagulation with warfarin": 1
+    },
+    "Obtain non-contrast CT head": {
+      "Initiate anticoagulation with warfarin": 1
+    },
+    "Non-contrast CT head scan": {
+      "Blood pressure management with labetalol": 1
+    },
+    "Asthma Exacerbation": {
+      "Asthma Exacerbation": 1
+    },
+    "Start warfarin therapy immediately": {
+      "Order a chest X-ray to evaluate cardiac": 1
+    },
+    "Initiate nebulized albuterol therapy with ipratropium bromide": {
+      "Order a chest X-ray to rule out": 1
+    },
+    "Deep Vein Thrombosis": {
+      "Deep Vein Thrombosis": 1
+    },
+    "Order an echocardiogram to assess cardiac function": {
+      "Order an echocardiogram to assess cardiac function": 1
+    },
+    "Administer IV fluids and monitor for signs": {
+      "Administer IV fluids and monitor for signs": 1
+    },
+    "Hypertensive Encephalopathy": {
+      "Hypertensive Encephalopathy": 1
+    },
+    "Initiate dialysis": {
+      "Measure serum creatinine and electrolyte panel": 1
+    },
+    "Order cardiac enzymes and ECG": {
+      "Order cardiac enzymes and ECG": 1
+    },
+    "Perform an urgent endoscopy to identify and": {
+      "Perform an urgent endoscopy to identify and": 1
+    },
+    "Arrange immediate psychiatric evaluation": {
+      "Arrange immediate psychiatric evaluation": 1
+    }
+  },
+  "similarity_analysis": {
+    "similar_condition_errors": [],
+    "unrelated_condition_errors": [
+      {
+        "question_id": "Q_036",
+        "true_condition": "Insert indwelling catheter",
+        "predicted_condition": "Obtain urine culture",
+        "true_answer": "D",
+        "predicted_answer": "B",
+        "condition_group_true": "other",
+        "condition_group_pred": "other"
+      },
+      {
+        "question_id": "Q_032",
+        "true_condition": "Endotracheal intubation",
+        "predicted_condition": "Oxygen therapy via non-rebreather mask",
+        "true_answer": "D",
+        "predicted_answer": "B",
+        "condition_group_true": "other",
+        "condition_group_pred": "other"
+      },
+      {
+        "question_id": "Q_018",
+        "true_condition": "Lisinopril",
+        "predicted_condition": "Metoprolol",
+        "true_answer": "B",
+        "predicted_answer": "D",
+        "condition_group_true": "other",
+        "condition_group_pred": "other"
+      },
+      {
+        "question_id": "Q_087",
+        "true_condition": "Order a complete blood count",
+        "predicted_condition": "Initiate methotrexate",
+        "true_answer": "C",
+        "predicted_answer": "A",
+        "condition_group_true": "other",
+        "condition_group_pred": "other"
+      },
+      {
+        "question_id": "Q_070",
+        "true_condition": "Enoxaparin",
+        "predicted_condition": "Warfarin",
+        "true_answer": "B",
+        "predicted_answer": "A",
+        "condition_group_true": "other",
+        "condition_group_pred": "other"
+      },
+      {
+        "question_id": "Q_012",
+        "true_condition": "Glucagon injection",
+        "predicted_condition": "Subcutaneous insulin",
+        "true_answer": "D",
+        "predicted_answer": "C",
+        "condition_group_true": "other",
+        "condition_group_pred": "other"
+      },
+      {
+        "question_id": "Q_005",
+        "true_condition": "Acute Coronary Syndrome",
+        "predicted_condition": "Unknown",
+        "true_answer": "A",
+        "predicted_answer": "Cannot answer from the provided context.",
+        "condition_group_true": "cardiac_ischemic",
+        "condition_group_pred": "other"
+      },
+      {
+        "question_id": "Q_098",
+        "true_condition": "Thyroid function tests",
+        "predicted_condition": "Liver function tests",
+        "true_answer": "B",
+        "predicted_answer": "A",
+        "condition_group_true": "other",
+        "condition_group_pred": "other"
+      },
+      {
+        "question_id": "Q_030",
+        "true_condition": "Salbutamol via pressurized metered dose inhaler",
+        "predicted_condition": "IV furosemide",
+        "true_answer": "B",
+        "predicted_answer": "A",
+        "condition_group_true": "other",
+        "condition_group_pred": "other"
+      },
+      {
+        "question_id": "Q_072",
+        "true_condition": "Initiate IV fluids and oxygen therapy",
+        "predicted_condition": "Administer IV furosemide",
+        "true_answer": "D",
+        "predicted_answer": "A",
+        "condition_group_true": "other",
+        "condition_group_pred": "other"
+      },
+      {
+        "question_id": "Q_026",
+        "true_condition": "Azithromycin",
+        "predicted_condition": "IV furosemide",
+        "true_answer": "B",
+        "predicted_answer": "A",
+        "condition_group_true": "other",
+        "condition_group_pred": "other"
+      },
+      {
+        "question_id": "Q_090",
+        "true_condition": "Methotrexate oral tablets",
+        "predicted_condition": "Diclofenac spray",
+        "true_answer": "B",
+        "predicted_answer": "A",
+        "condition_group_true": "other",
+        "condition_group_pred": "other"
+      },
+      {
+        "question_id": "Q_054",
+        "true_condition": "Nephrology consult",
+        "predicted_condition": "IV furosemide",
+        "true_answer": "B",
+        "predicted_answer": "A",
+        "condition_group_true": "other",
+        "condition_group_pred": "other"
+      },
+      {
+        "question_id": "Q_094",
+        "true_condition": "Every 2-3 years",
+        "predicted_condition": "Every 6 months",
+        "true_answer": "C",
+        "predicted_answer": "A",
+        "condition_group_true": "other",
+        "condition_group_pred": "other"
+      },
+      {
+        "question_id": "Q_058",
+        "true_condition": "Lisinopril",
+        "predicted_condition": "IV furosemide",
+        "true_answer": "B",
+        "predicted_answer": "A",
+        "condition_group_true": "other",
+        "condition_group_pred": "other"
+      },
+      {
+        "question_id": "Q_001",
+        "true_condition": "STEMI",
+        "predicted_condition": "Unknown",
+        "true_answer": "A",
+        "predicted_answer": "Cannot answer from the provided context.",
+        "condition_group_true": "cardiac_ischemic",
+        "condition_group_pred": "other"
+      },
+      {
+        "question_id": "Q_020",
+        "true_condition": "Administer sublingual nifedipine",
+        "predicted_condition": "Oral Lisinopril",
+        "true_answer": "D",
+        "predicted_answer": "B",
+        "condition_group_true": "other",
+        "condition_group_pred": "other"
+      },
+      {
+        "question_id": "Q_068",
+        "true_condition": "Perform an immediate Doppler ultrasound",
+        "predicted_condition": "Initiate anticoagulation with warfarin",
+        "true_answer": "D",
+        "predicted_answer": "C",
+        "condition_group_true": "other",
+        "condition_group_pred": "other"
+      },
+      {
+        "question_id": "Q_007",
+        "true_condition": "Obtain non-contrast CT head",
+        "predicted_condition": "Initiate anticoagulation with warfarin",
+        "true_answer": "B",
+        "predicted_answer": "C",
+        "condition_group_true": "other",
+        "condition_group_pred": "other"
+      },
+      {
+        "question_id": "Q_006",
+        "true_condition": "Non-contrast CT head scan",
+        "predicted_condition": "Blood pressure management with labetalol",
+        "true_answer": "B",
+        "predicted_answer": "D",
+        "condition_group_true": "other",
+        "condition_group_pred": "other"
+      },
+      {
+        "question_id": "Q_063",
+        "true_condition": "Start warfarin therapy immediately",
+        "predicted_condition": "Order a chest X-ray to evaluate cardiac",
+        "true_answer": "C",
+        "predicted_answer": "B",
+        "condition_group_true": "other",
+        "condition_group_pred": "other"
+      },
+      {
+        "question_id": "Q_023",
+        "true_condition": "Initiate nebulized albuterol therapy with ipratropium bromide",
+        "predicted_condition": "Order a chest X-ray to rule out",
+        "true_answer": "C",
+        "predicted_answer": "B",
+        "condition_group_true": "other",
+        "condition_group_pred": "other"
+      },
+      {
+        "question_id": "Q_052",
+        "true_condition": "Initiate dialysis",
+        "predicted_condition": "Measure serum creatinine and electrolyte panel",
+        "true_answer": "D",
+        "predicted_answer": "B",
+        "condition_group_true": "other",
+        "condition_group_pred": "other"
+      }
+    ],
+    "correct_predictions": [
+      {
+        "question_id": "Q_082",
+        "condition": "Tenofovir disoproxil fumarate",
+        "answer": "B"
+      },
+      {
+        "question_id": "Q_015",
+        "condition": "Recommend dietary modification and exercise program",
+        "answer": "C"
+      },
+      {
+        "question_id": "Q_004",
+        "condition": "Activate the cardiac cath lab for primary",
+        "answer": "D"
+      },
+      {
+        "question_id": "Q_095",
+        "condition": "Oral bisphosphonate (alendronate)",
+        "answer": "A"
+      },
+      {
+        "question_id": "Q_029",
+        "condition": "COPD Exacerbation",
+        "answer": "A"
+      },
+      {
+        "question_id": "Q_014",
+        "condition": "Metformin",
+        "answer": "B"
+      },
+      {
+        "question_id": "Q_076",
+        "condition": "Initiate aggressive fluid resuscitation with lactated Ringer's",
+        "answer": "D"
+      },
+      {
+        "question_id": "Q_055",
+        "condition": "Fluid challenge with 1 liter of normal",
+        "answer": "C"
+      },
+      {
+        "question_id": "Q_089",
+        "condition": "Rheumatoid Arthritis",
+        "answer": "A"
+      },
+      {
+        "question_id": "Q_028",
+        "condition": "Initiate oxygen therapy via nasal prongs",
+        "answer": "D"
+      },
+      {
+        "question_id": "Q_065",
+        "condition": "Atrial Fibrillation",
+        "answer": "A"
+      },
+      {
+        "question_id": "Q_078",
+        "condition": "Lactated Ringer's solution",
+        "answer": "B"
+      },
+      {
+        "question_id": "Q_085",
+        "condition": "Hepatic Encephalopathy",
+        "answer": "A"
+      },
+      {
+        "question_id": "Q_096",
+        "condition": "5 symptoms",
+        "answer": "C"
+      },
+      {
+        "question_id": "Q_021",
+        "condition": "Acute Asthma Exacerbation",
+        "answer": "A"
+      },
+      {
+        "question_id": "Q_091",
+        "condition": "Schedule a DEXA scan to assess bone",
+        "answer": "C"
+      },
+      {
+        "question_id": "Q_044",
+        "condition": "Initiate aggressive fluid resuscitation with Ringers lactate",
+        "answer": "D"
+      },
+      {
+        "question_id": "Q_080",
+        "condition": "Fluid resuscitation with IV lactated Ringer's solution",
+        "answer": "D"
+      },
+      {
+        "question_id": "Q_083",
+        "condition": "Refer to liver transplant evaluation due to",
+        "answer": "C"
+      },
+      {
+        "question_id": "Q_025",
+        "condition": "Asthma Exacerbation",
+        "answer": "A"
+      },
+      {
+        "question_id": "Q_069",
+        "condition": "Deep Vein Thrombosis",
+        "answer": "A"
+      },
+      {
+        "question_id": "Q_059",
+        "condition": "Order an echocardiogram to assess cardiac function",
+        "answer": "C"
+      },
+      {
+        "question_id": "Q_039",
+        "condition": "Administer IV fluids and monitor for signs",
+        "answer": "C"
+      },
+      {
+        "question_id": "Q_017",
+        "condition": "Hypertensive Encephalopathy",
+        "answer": "A"
+      },
+      {
+        "question_id": "Q_003",
+        "condition": "Order cardiac enzymes and ECG",
+        "answer": "C"
+      },
+      {
+        "question_id": "Q_047",
+        "condition": "Perform an urgent endoscopy to identify and",
+        "answer": "C"
+      },
+      {
+        "question_id": "Q_100",
+        "condition": "Arrange immediate psychiatric evaluation",
+        "answer": "C"
+      }
+    ],
+    "similar_error_count": 0,
+    "unrelated_error_count": 23,
+    "total_errors": 23,
+    "similar_error_rate": 0.0,
+    "unrelated_error_rate": 1.0
+  },
+  "top_confusion_pairs": [
+    [
+      "Insert indwelling catheter",
+      "Obtain urine culture",
+      1
+    ],
+    [
+      "Endotracheal intubation",
+      "Oxygen therapy via non-rebreather mask",
+      1
+    ],
+    [
+      "Lisinopril",
+      "Metoprolol",
+      1
+    ],
+    [
+      "Lisinopril",
+      "IV furosemide",
+      1
+    ],
+    [
+      "Order a complete blood count",
+      "Initiate methotrexate",
+      1
+    ]
+  ],
+  "summary_statistics": {
+    "total_questions": 50,
+    "correct_predictions": 27,
+    "incorrect_predictions": 23,
+    "accuracy": 0.54,
+    "error_rate": 0.46,
+    "similar_condition_confusion_rate": 0.0,
+    "unrelated_condition_confusion_rate": 1.0,
+    "similar_condition_errors": 0,
+    "unrelated_condition_errors": 23
+  },
+  "total_questions": 50
+}

@@ -1,0 +1,126 @@
+# Pulmonary Embolism
+Category: Respiratory
+Keywords: pulmonary embolism, PE, VTE, D-dimer, CTPA
+
+---
+
+**Pulmonary Embolism**
+
+**Category:** Respiratory
+
+### 1. Definition and Epidemiology
+
+Pulmonary embolism (PE) is a condition where one or more arteries in the lungs become blocked by a blood clot, leading to reduced blood flow to the lung tissue.
+
+* Prevalence: Estimated to affect approximately 1-2 per 1000 adults per year.
+* Risk factors:
+	+ Age > 40 years
+	+ Family history of PE or deep vein thrombosis (DVT)
+	+ Recent surgery or trauma
+	+ Immobility or prolonged bed rest
+	+ Cancer or chemotherapy
+	+ Obesity
+	+ Smoking
+
+### 2. Clinical Presentation
+
+Clinical presentation may vary depending on the size and location of the embolism.
+
+* Signs and symptoms:
+	+ Sudden onset of chest pain (pleuritic)
+	+ Shortness of breath (dyspnea)
+	+ Coughing up blood (hemoptysis)
+	+ Syncope or near-syncope
+	+ Tachycardia or bradycardia
+* History findings:
+	+ Recent surgery, trauma, or immobilization
+	+ Family history of PE or DVT
+	+ Cancer or chemotherapy treatment
+* Physical examination findings:
+	+ Tachypnea (rapid breathing rate)
+	+ Tachycardia (rapid heart rate)
+	+ Hypotension (low blood pressure)
+
+### 3. Diagnostic Criteria and Workup
+
+Diagnostic criteria for PE include:
+
+* Clinical presentation consistent with PE
+* Imaging studies showing a filling defect in the pulmonary arteries
+
+Laboratory tests:
+
+* Complete Blood Count (CBC) to rule out infection or anemia
+* D-dimer test to assess for clotting disorders
+* Electrocardiogram (ECG) to evaluate cardiac rhythm and function
+
+Imaging studies:
+
+* Computed Tomography Pulmonary Angiography (CTPA) is the preferred imaging modality for diagnosing PE.
+* Ventilation-Perfusion Scan (VPS) may be used in patients with contraindications to CTPA.
+
+### 4. Treatment Algorithm
+
+First-line treatment for PE includes:
+
+* **Warfarin**: Loading dose of 10 mg orally, followed by a daily dose of 5 mg until an INR of 2-3 is achieved.
+	+ Continue warfarin at a maintenance dose of 2.5-5 mg daily (or 7.5 mg in some patients) for 3-6 months if the risk factor is temporary or unknown.
+* **Low Molecular Weight Heparin (LMWH)**: May be used as an alternative to warfarin, especially in patients with contraindications to oral anticoagulants.
+
+Second-line options:
+
+* Thrombolytic therapy may be considered for patients with severe PE and hemodynamic instability.
+
+### 5. Management and Follow-up
+
+Monitoring parameters:
+
+* INR levels
+* CBC and D-dimer tests as needed
+* ECG monitoring for cardiac rhythm and function
+
+Follow-up schedule:
+
+* Regular follow-up appointments to monitor INR levels and adjust warfarin dose as needed.
+* Patients should be educated on the importance of adhering to their medication regimen and attending follow-up appointments.
+
+Lifestyle modifications:
+
+* Encourage patients to engage in regular physical activity, maintain a healthy weight, and avoid smoking.
+
+### 6. Contraindications and Precautions
+
+Contraindications to warfarin include:
+
+* Pregnancy or breastfeeding
+* Renal impairment (creatinine clearance < 30 mL/min)
+* Severe liver disease
+* Active bleeding or high risk of bleeding
+
+Special populations:
+
+* Elderly patients may require dose adjustments due to decreased renal function.
+* Pregnant women should not receive warfarin; LMWH is recommended instead.
+
+### 7. Key Clinical Pearls
+
+Important clinical tips:
+
+* Patients with suspected PE should be referred to a cardiologist or physician specialist for expert management after stabilization.
+* Regular follow-up appointments are crucial to monitor INR levels and adjust warfarin dose as needed.
+
+Common pitfalls to avoid:
+
+* Failing to recognize the importance of adhering to medication regimen and attending follow-up appointments.
+* Not monitoring INR levels regularly, leading to inadequate anticoagulation or excessive bleeding risk.
+
+Red flags:
+
+* Sudden onset of chest pain or shortness of breath
+* Hemodynamic instability (hypotension, tachycardia)
+* High-risk patients (e.g., those with cancer or recent surgery)
+
+Please note that specific protocols should be verified with local guidelines.
+
+---
+Generated from source PDF. Source content available: True

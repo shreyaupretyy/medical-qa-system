@@ -1,0 +1,142 @@
+# Multi-Stage RAG Pipeline Configuration
+# This file contains all configurable parameters for the Day 3 multi-stage RAG system
+
+# Multi-Stage Retrieval Configuration
+# Optimized for PubMedBERT (768-dim embeddings)
+retrieval:
+  # Stage 1: Broad Semantic Search (FAISS)
+  # OPTIMIZED: Increased k for maximum evidence retrieval
+  stage1:
+    k: 150  # Increased from 100 to 150 for broader evidence coverage
+    weight: 0.70  # Higher weight for semantic search (0.70 dense + 0.30 keyword = optimal)
+  
+  # Stage 2: Medical Keyword Filtering (BM25)
+  # OPTIMIZED: Increased k for better keyword-based evidence retrieval
+  stage2:
+    k: 100  # Increased from 80 to 100 for more keyword matches
+    weight: 0.30  # Keyword weight for hybrid (0.70 + 0.30 = 1.0)
+    k1: 1.8  # Higher BM25 term frequency saturation for medical terms
+    b: 0.70  # Balanced length normalization
+  
+  # Stage 3: Medical Relevance Reranking (Cross-Encoder)
+  # OPTIMIZED: Increased k and weight for superior reranking
+  stage3:
+    k: 30  # Increased from 20 to 30 for more evidence context
+    weight: 0.40  # Higher cross-encoder weight for better clinical relevance
+    model: "cross-encoder/ms-marco-MiniLM-L-6-v2"
+    max_length: 512  # Maximum sequence length for cross-encoder
+  
+  # General retrieval settings
+  # PubMedBERT: Very lenient threshold for maximum recall
+  min_score_threshold: -1.0  # Very lenient - accept all results for maximum recall
+  use_cross_encoder: true  # Whether to use cross-encoder (fallback if false)
+  concept_first: false  # If true, use BM25 → concept expansion (incl. UMLS) → embedding search → rerank
+
+# Medical Reasoning Configuration
+reasoning:
+  # Evidence matching thresholds
+  evidence:
+    keyword_overlap_threshold: 0.25  # Lower threshold for better evidence matching
+    strong_support_threshold: 0.5  # Lower threshold for capturing more strong evidence
+    weak_support_threshold: 0.08  # Lower threshold for capturing weak supporting evidence
+  
+  # Answer selection
+  selection:
+    direct_match_boost: 1.5  # Higher boost for direct evidence matches
+    contradiction_penalty: 0.6  # Stronger penalty for contradictions
+    use_multi_hop_reasoning: true  # Enable multi-hop reasoning for complex cases
+  
+  # Medical logic rules
+  medical_rules:
+    rule_out_worst_case: true  # Always consider worst-case scenarios first
+    consider_demographics: true  # Age/gender affect treatment
+    check_contraindications: true  # Rule out contraindicated treatments
+    prefer_guideline_based: true  # Favor guideline-recommended treatments
+    consider_urgency: true  # Urgency affects treatment choice
+
+# Query Understanding Configuration
+query_understanding:
+  # Medical terminology
+  expand_abbreviations: true  # Expand medical abbreviations
+  use_synonyms: true  # Use medical synonym groups
+  
+  # Clinical feature extraction
+  extract_symptoms: true
+  extract_demographics: true
+  extract_medications: true
+  extract_tests: true
+  extract_conditions: true
+  
+  # Specialty identification
+  identify_specialty: true
+  specialty_confidence_threshold: 0.5
+
+# Pipeline Performance Settings
+performance:
+  # Caching
+  cache_embeddings: true  # Cache query embeddings
+  cache_retrieval_results: false  # Cache retrieval results (use with caution)
+  
+  # Batch processing
+  batch_size: 10  # Batch size for processing multiple questions
+  max_workers: 1  # Number of parallel workers (1 = sequential)
+  
+  # Timeouts
+  retrieval_timeout_ms: 5000  # Maximum time for retrieval
+  reasoning_timeout_ms: 10000  # Maximum time for reasoning
+
+# Evaluation Configuration
+evaluation:
+  # Dataset splits
+  dev_split_size: 80  # Number of questions for development
+  test_split_size: 20  # Number of questions for testing
+  
+  # Metrics to calculate
+  calculate_accuracy: true
+  calculate_confidence_calibration: true
+  calculate_retrieval_metrics: true
+  calculate_reasoning_metrics: true
+  calculate_category_accuracy: true
+  
+  # Output settings
+  save_detailed_results: true
+  output_format: "json"  # json or csv
+
+# Logging Configuration
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  log_retrieval_stages: true  # Log each retrieval stage
+  log_reasoning_steps: true  # Log reasoning steps
+  log_timing: true  # Log timing information
+
+# Model Configuration
+models:
+  # Embedding model (MiniLM-L6-v2 for faster inference)
+  embedding:
+    model_name: "sentence-transformers/all-MiniLM-L6-v2"  # Fast, general-purpose model
+    device: "auto"  # auto, cpu, or cuda (auto-detects GPU)
+    use_medical_model: false  # Use general model instead of PubMedBERT
+    precision: "auto"  # auto, fp32, or fp16 (fp16 on GPU for 2x speedup)
+    batch_size: 64  # Larger batches on GPU (32 for CPU)
+  
+  # Cross-encoder model
+  cross_encoder:
+    model_name: "cross-encoder/ms-marco-MiniLM-L-6-v2"
+    device: "auto"  # auto, cpu, or cuda (auto-detects GPU)
+    max_length: 512
+  
+  # LLM model (Ollama for medical reasoning)
+  llm:
+    use_llm: true
+    model_name: "llama3.1:8b"  # Ollama model name
+    ollama_url: "http://localhost:11434/api/generate"  # Ollama API endpoint
+    temperature: 0.1  # Slightly higher for better calibration
+    max_tokens: 512  # Sufficient for medical reasoning
+
+# Data Paths
+paths:
+  index_dir: "data/indexes"
+  guidelines_path: "data/guidelines"  # Text guideline files
+  clinical_cases_path: "data/processed/questions/questions_1.json"  # Generated clinical cases
+  output_dir: "data/results"
+
