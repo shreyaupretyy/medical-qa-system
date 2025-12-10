@@ -1,23 +1,23 @@
 {
   "answer_confusion_matrix": {
     "A": {
-      "A": 9,
+      "A": 8,
       "B": 0,
       "C": 0,
       "Cannot answer from the provided context.": 2,
-      "D": 0
+      "D": 1
     },
     "B": {
       "A": 7,
-      "B": 3,
+      "B": 4,
       "C": 1,
       "Cannot answer from the provided context.": 0,
-      "D": 2
+      "D": 1
     },
     "C": {
-      "A": 2,
+      "A": 3,
       "B": 2,
-      "C": 10,
+      "C": 9,
       "Cannot answer from the provided context.": 0,
       "D": 0
     },
@@ -38,7 +38,7 @@
   },
   "condition_confusion_matrix": {
     "Tenofovir disoproxil fumarate": {
-      "Tenofovir disoproxil fumarate": 1
+      "Entecavir": 1
     },
     "Recommend dietary modification and exercise program": {
       "Recommend dietary modification and exercise program": 1
@@ -59,7 +59,7 @@
       "COPD Exacerbation": 1
     },
     "Lisinopril": {
-      "Metoprolol": 1,
+      "Lisinopril": 1,
       "IV furosemide": 1
     },
     "Metformin": {
@@ -102,7 +102,7 @@
       "Lactated Ringer's solution": 1
     },
     "Hepatic Encephalopathy": {
-      "Hepatic Encephalopathy": 1
+      "Acute Pancreatitis": 1
     },
     "Initiate IV fluids and oxygen therapy": {
       "Administer IV furosemide": 1
@@ -114,13 +114,13 @@
       "Diclofenac spray": 1
     },
     "Nephrology consult": {
-      "IV furosemide": 1
+      "Nephrology consult": 1
     },
     "Every 2-3 years": {
       "Every 6 months": 1
     },
     "5 symptoms": {
-      "5 symptoms": 1
+      "4 symptoms": 1
     },
     "STEMI": {
       "Unknown": 1
@@ -159,7 +159,7 @@
       "Order a chest X-ray to evaluate cardiac": 1
     },
     "Initiate nebulized albuterol therapy with ipratropium bromide": {
-      "Order a chest X-ray to rule out": 1
+      "Initiate nebulized albuterol therapy with ipratropium bromide": 1
     },
     "Deep Vein Thrombosis": {
       "Deep Vein Thrombosis": 1
@@ -168,7 +168,7 @@
       "Order an echocardiogram to assess cardiac function": 1
     },
     "Administer IV fluids and monitor for signs": {
-      "Administer IV fluids and monitor for signs": 1
+      "Prescribe trimethoprim-sulfamethoxazole": 1
     },
     "Hypertensive Encephalopathy": {
       "Hypertensive Encephalopathy": 1
@@ -190,6 +190,15 @@
     "similar_condition_errors": [],
     "unrelated_condition_errors": [
       {
+        "question_id": "Q_082",
+        "true_condition": "Tenofovir disoproxil fumarate",
+        "predicted_condition": "Entecavir",
+        "true_answer": "B",
+        "predicted_answer": "A",
+        "condition_group_true": "other",
+        "condition_group_pred": "other"
+      },
+      {
         "question_id": "Q_036",
         "true_condition": "Insert indwelling catheter",
         "predicted_condition": "Obtain urine culture",
@@ -204,15 +213,6 @@
         "predicted_condition": "Oxygen therapy via non-rebreather mask",
         "true_answer": "D",
         "predicted_answer": "B",
-        "condition_group_true": "other",
-        "condition_group_pred": "other"
-      },
-      {
-        "question_id": "Q_018",
-        "true_condition": "Lisinopril",
-        "predicted_condition": "Metoprolol",
-        "true_answer": "B",
-        "predicted_answer": "D",
         "condition_group_true": "other",
         "condition_group_pred": "other"
       },
@@ -271,6 +271,15 @@
         "condition_group_pred": "other"
       },
       {
+        "question_id": "Q_085",
+        "true_condition": "Hepatic Encephalopathy",
+        "predicted_condition": "Acute Pancreatitis",
+        "true_answer": "A",
+        "predicted_answer": "D",
+        "condition_group_true": "hepatic",
+        "condition_group_pred": "gastrointestinal_inflammatory"
+      },
+      {
         "question_id": "Q_072",
         "true_condition": "Initiate IV fluids and oxygen therapy",
         "predicted_condition": "Administer IV furosemide",
@@ -298,15 +307,6 @@
         "condition_group_pred": "other"
       },
       {
-        "question_id": "Q_054",
-        "true_condition": "Nephrology consult",
-        "predicted_condition": "IV furosemide",
-        "true_answer": "B",
-        "predicted_answer": "A",
-        "condition_group_true": "other",
-        "condition_group_pred": "other"
-      },
-      {
         "question_id": "Q_094",
         "true_condition": "Every 2-3 years",
         "predicted_condition": "Every 6 months",
@@ -321,6 +321,15 @@
         "predicted_condition": "IV furosemide",
         "true_answer": "B",
         "predicted_answer": "A",
+        "condition_group_true": "other",
+        "condition_group_pred": "other"
+      },
+      {
+        "question_id": "Q_096",
+        "true_condition": "5 symptoms",
+        "predicted_condition": "4 symptoms",
+        "true_answer": "C",
+        "predicted_answer": "B",
         "condition_group_true": "other",
         "condition_group_pred": "other"
       },
@@ -379,11 +388,11 @@
         "condition_group_pred": "other"
       },
       {
-        "question_id": "Q_023",
-        "true_condition": "Initiate nebulized albuterol therapy with ipratropium bromide",
-        "predicted_condition": "Order a chest X-ray to rule out",
+        "question_id": "Q_039",
+        "true_condition": "Administer IV fluids and monitor for signs",
+        "predicted_condition": "Prescribe trimethoprim-sulfamethoxazole",
         "true_answer": "C",
-        "predicted_answer": "B",
+        "predicted_answer": "A",
         "condition_group_true": "other",
         "condition_group_pred": "other"
       },
@@ -398,11 +407,6 @@
       }
     ],
     "correct_predictions": [
-      {
-        "question_id": "Q_082",
-        "condition": "Tenofovir disoproxil fumarate",
-        "answer": "B"
-      },
       {
         "question_id": "Q_015",
         "condition": "Recommend dietary modification and exercise program",
@@ -422,6 +426,11 @@
         "question_id": "Q_029",
         "condition": "COPD Exacerbation",
         "answer": "A"
+      },
+      {
+        "question_id": "Q_018",
+        "condition": "Lisinopril",
+        "answer": "B"
       },
       {
         "question_id": "Q_014",
@@ -459,14 +468,9 @@
         "answer": "B"
       },
       {
-        "question_id": "Q_085",
-        "condition": "Hepatic Encephalopathy",
-        "answer": "A"
-      },
-      {
-        "question_id": "Q_096",
-        "condition": "5 symptoms",
-        "answer": "C"
+        "question_id": "Q_054",
+        "condition": "Nephrology consult",
+        "answer": "B"
       },
       {
         "question_id": "Q_021",
@@ -499,6 +503,11 @@
         "answer": "A"
       },
       {
+        "question_id": "Q_023",
+        "condition": "Initiate nebulized albuterol therapy with ipratropium bromide",
+        "answer": "C"
+      },
+      {
         "question_id": "Q_069",
         "condition": "Deep Vein Thrombosis",
         "answer": "A"
@@ -506,11 +515,6 @@
       {
         "question_id": "Q_059",
         "condition": "Order an echocardiogram to assess cardiac function",
-        "answer": "C"
-      },
-      {
-        "question_id": "Q_039",
-        "condition": "Administer IV fluids and monitor for signs",
         "answer": "C"
       },
       {
@@ -535,12 +539,17 @@
       }
     ],
     "similar_error_count": 0,
-    "unrelated_error_count": 23,
-    "total_errors": 23,
+    "unrelated_error_count": 24,
+    "total_errors": 24,
     "similar_error_rate": 0.0,
     "unrelated_error_rate": 1.0
   },
   "top_confusion_pairs": [
+    [
+      "Tenofovir disoproxil fumarate",
+      "Entecavir",
+      1
+    ],
     [
       "Insert indwelling catheter",
       "Obtain urine culture",
@@ -549,11 +558,6 @@
     [
       "Endotracheal intubation",
       "Oxygen therapy via non-rebreather mask",
-      1
-    ],
-    [
-      "Lisinopril",
-      "Metoprolol",
       1
     ],
     [
@@ -569,14 +573,14 @@
   ],
   "summary_statistics": {
     "total_questions": 50,
-    "correct_predictions": 27,
-    "incorrect_predictions": 23,
-    "accuracy": 0.54,
-    "error_rate": 0.46,
+    "correct_predictions": 26,
+    "incorrect_predictions": 24,
+    "accuracy": 0.52,
+    "error_rate": 0.48,
     "similar_condition_confusion_rate": 0.0,
     "unrelated_condition_confusion_rate": 1.0,
     "similar_condition_errors": 0,
-    "unrelated_condition_errors": 23
+    "unrelated_condition_errors": 24
   },
   "total_questions": 50
 }

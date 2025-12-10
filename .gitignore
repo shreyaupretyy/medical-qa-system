@@ -51,8 +51,6 @@ htmlcov/
 *.index
 
 # Data (large files)
-data/raw/*.pdf
-data/processed/*.pkl
 
 # Logs
 *.log
