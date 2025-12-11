@@ -1,7 +1,6 @@
 # Part 2: RAG Implementation
 
 **Author:** Shreya Uprety  
-**Last Updated:** December 11, 2025
 
 ---
 

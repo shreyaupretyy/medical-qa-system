@@ -29,6 +29,7 @@
 The Medical Question-Answering System is a sophisticated Retrieval-Augmented Generation (RAG) pipeline designed to answer multiple-choice clinical questions with high accuracy and reliability. The system combines advanced information retrieval, multi-stage reasoning, and medical domain expertise to provide evidence-based answers grounded in clinical guidelines.
 
 This system addresses critical challenges in medical question answering:
+
 - Accurate retrieval of relevant clinical guidelines from large knowledge bases
 - Multi-hop reasoning across complex medical concepts
 - Confidence calibration and hallucination detection
@@ -65,60 +66,60 @@ The Medical Question-Answering System operates through a multi-stage pipeline:
 
 ```
 ┌─────────────────────────────────────────────────────────────────────┐
-│                         INPUT CLINICAL QUESTION                      │
-│                    (Case Description + Question)                     │
+│                     INPUT CLINICAL QUESTION                         │
+│                 (Case Description + Question)                       │
 └────────────────────────────┬────────────────────────────────────────┘
                              │
                              ▼
 ┌─────────────────────────────────────────────────────────────────────┐
-│                      QUERY UNDERSTANDING                             │
-│  • Clinical Feature Extraction                                       │
-│  • Medical Concept Expansion (UMLS)                                  │
-│  • Specialty Detection (Cardiology, Neurology, etc.)                 │
-│  • Symptom Synonym Injection                                         │
+│                      QUERY UNDERSTANDING                            │
+│  • Clinical Feature Extraction                                      │
+│  • Medical Concept Expansion (UMLS)                                 │
+│  • Specialty Detection (Cardiology, Neurology, etc.)                │
+│  • Symptom Synonym Injection                                        │
 └────────────────────────────┬────────────────────────────────────────┘
                              │
                              ▼
 ┌─────────────────────────────────────────────────────────────────────┐
-│                    MULTI-STAGE RETRIEVAL                             │
-│                                                                       │
-│  Stage 1: Broad Retrieval (k=150)                                   │
-│    ├─ BM25 (Lexical matching)                                       │
-│    ├─ FAISS (Semantic search)                                       │
-│    └─ Concept-First (Medical concept expansion)                     │
-│                                                                       │
-│  Stage 2: Focused Retrieval (k=100)                                 │
-│    ├─ Multi-Query Expansion                                         │
-│    ├─ Symptom-Enhanced Queries                                      │
-│    └─ Guideline Prioritization                                      │
-│                                                                       │
-│  Stage 3: Reranking (k=30)                                          │
-│    ├─ Cross-Encoder Reranking                                       │
-│    ├─ Context Pruning                                               │
-│    └─ Evidence Quality Scoring                                      │
+│                      MULTI-STAGE RETRIEVAL                          │
+│                                                                     │
+│  Stage 1: Broad Retrieval (k=150)                                  │
+│    ├─ BM25 (Lexical matching)                                      │
+│    ├─ FAISS (Semantic search)                                      │
+│    └─ Concept-First (Medical concept expansion)                    │
+│                                                                     │
+│  Stage 2: Focused Retrieval (k=100)                                │
+│    ├─ Multi-Query Expansion                                        │
+│    ├─ Symptom-Enhanced Queries                                     │
+│    └─ Guideline Prioritization                                     │
+│                                                                     │
+│  Stage 3: Reranking (k=30)                                         │
+│    ├─ Cross-Encoder Reranking                                      │
+│    ├─ Context Pruning                                              │
+│    └─ Evidence Quality Scoring                                     │
 └────────────────────────────┬────────────────────────────────────────┘
                              │
                              ▼
 ┌─────────────────────────────────────────────────────────────────────┐
-│                      REASONING ENGINE                                │
-│                                                                       │
-│  ┌──────────────────┐  ┌──────────────────┐  ┌──────────────────┐ │
-│  │ Chain-of-Thought │  │ Tree-of-Thought  │  │   Structured     │ │
-│  │    (Primary)     │  │   (Complex)      │  │Medical Reasoning │ │
-│  │   40% accuracy   │  │  50% accuracy    │  │  35% accuracy    │ │
-│  │   4,019ms avg    │  │  43,981ms avg    │  │  26,320ms avg    │ │
-│  └──────────────────┘  └──────────────────┘  └──────────────────┘ │
-│                                                                       │
-│  3-Stage Hybrid Pipeline:                                           │
-│  1. CoT (fast, general cases)                                       │
-│  2. ToT (if complex AND confidence < 0.75)                          │
-│  3. Structured (fallback with LLM enhancement)                      │
+│                        REASONING ENGINE                             │
+│                                                                     │
+│  ┌──────────────────┐ ┌──────────────────┐ ┌──────────────────┐   │
+│  │ Chain-of-Thought │ │ Tree-of-Thought  │ │   Structured     │   │
+│  │   (Primary)      │ │    (Complex)     │ │Medical Reasoning │   │
+│  │  34% accuracy    │ │  52% accuracy    │ │  44% accuracy    │   │
+│  │  4,955ms avg     │ │  41,367ms avg    │ │  26,991ms avg    │   │
+│  └──────────────────┘ └──────────────────┘ └──────────────────┘   │
+│                                                                     │
+│  3-Stage Hybrid Pipeline:                                          │
+│    1. CoT (fast, general cases)                                    │
+│    2. ToT (if complex AND confidence < 0.75)                       │
+│    3. Structured (fallback with LLM enhancement)                   │
 └────────────────────────────┬────────────────────────────────────────┘
                              │
                              ▼
 ┌─────────────────────────────────────────────────────────────────────┐
-│               SAFETY AND QUALITY VERIFICATION                        │
-│  • Hallucination Detection                      │
+│              SAFETY AND QUALITY VERIFICATION                        │
+│  • Hallucination Detection                                          │
 │  • Medical Safety Verification                                      │
 │  • Confidence Calibration                                           │
 │  • Terminology Normalization                                        │
@@ -126,11 +127,11 @@ The Medical Question-Answering System operates through a multi-stage pipeline:
                              │
                              ▼
 ┌─────────────────────────────────────────────────────────────────────┐
-│                      ANSWER SELECTION                                │
+│                       ANSWER SELECTION                              │
 │  • Selected Answer (A/B/C/D)                                        │
-│  • Confidence Score                                                  │
-│  • Reasoning Chain                                                   │
-│  • Supporting Evidence                                               │
+│  • Confidence Score                                                 │
+│  • Reasoning Chain                                                  │
+│  • Supporting Evidence                                              │
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -192,8 +193,8 @@ See [Part 3: Evaluation Framework](docs/part_3_evaluation_framework.md) for deta
 Linear step-by-step reasoning that builds a logical chain from evidence to conclusion.
 
 **Performance:**
-- Accuracy: 40%
-- Average Time: 4,019ms
+- **Accuracy: 34%**
+- **Average Time: 4,955ms**
 - Best for: Straightforward clinical scenarios
 
 **Process:**
@@ -208,8 +209,8 @@ Linear step-by-step reasoning that builds a logical chain from evidence to concl
 Multi-branch reasoning exploring multiple diagnostic pathways simultaneously.
 
 **Performance:**
-- Accuracy: 45-50% (highest)
-- Average Time: 43,981ms
+- **Accuracy: 52% (highest)**
+- **Average Time: 41,367ms**
 - Best for: Complex multi-system cases
 
 **Process:**
@@ -224,8 +225,9 @@ Multi-branch reasoning exploring multiple diagnostic pathways simultaneously.
 5-step clinical decision framework with LLM enhancement.
 
 **Performance:**
-- Accuracy: 35% (improved from 15% with LLM)
-- Average Time: 26,320ms
+- **Accuracy: 44%**
+- **Average Time: 26,991ms**
+- **Best Calibration: Brier score 0.295, ECE 0.283**
 - Best for: Systematic clinical evaluation
 
 **Process:**
@@ -261,6 +263,13 @@ Traditional term-frequency based retrieval.
 - Misses semantic relationships
 - Sensitive to vocabulary mismatch
 
+**Performance (Single-Stage BM25):**
+- **MAP: 0.207**
+- **MRR: 0.414**
+- **Precision@5: 17.4%**
+- **Recall@5: 43.5%**
+- **Time: 1.40ms (fastest)**
+
 ### FAISS (Semantic Retrieval)
 
 Vector similarity search using sentence embeddings.
@@ -275,10 +284,12 @@ Vector similarity search using sentence embeddings.
 - GPU-accelerated with FP16 precision
 - 205 indexed guideline chunks
 
-**Known Issue:**
-- General-purpose model (not medical-domain optimized)
-- Identified as root cause of accuracy drop from 80% to 60%
-- Recommendation: Switch to PubMedBERT for medical domain
+**Performance (Single-Stage FAISS):**
+- **MAP: 0.211**
+- **MRR: 0.422**
+- **Precision@5: 17.6%**
+- **Recall@5: 44.0%**
+- **Time: 8.58ms**
 
 ### Concept-First Retrieval
 
@@ -294,6 +305,13 @@ Expands queries with medical concepts from UMLS.
 - Query: "chest pain"
 - Expanded: "chest pain, angina, myocardial ischemia, coronary syndrome"
 
+**Performance:**
+- **MAP: 0.212**
+- **MRR: 0.424**
+- **Precision@5: 18.0%**
+- **Recall@5: 45.0% (best recall)**
+- **Time: 11.62ms**
+
 ### Hybrid Retrieval
 
 Combines BM25 and semantic scores with weighted fusion.
@@ -306,6 +324,13 @@ hybrid_score = α × bm25_score + (1-α) × semantic_score
 **Parameters:**
 - α = 0.5 (equal weighting)
 - Adjustable based on query type
+
+**Performance (Hybrid Linear):**
+- **MAP: 0.211**
+- **MRR: 0.421**
+- **Precision@5: 17.8%**
+- **Recall@5: 44.5%**
+- **Time: 8.33ms**
 
 ### Multi-Stage Retrieval
 
@@ -325,9 +350,23 @@ Three-stage pipeline with progressive refinement:
 - Context pruning
 - Final evidence selection
 
-**Results:**
-- Current Performance: Precision@5: 4%, Recall@5: 20%, MAP: 0.118
-- Issue: Low precision due to general-purpose embeddings
+**Performance:**
+- **MAP: 0.204**
+- **MRR: 0.408**
+- **Precision@5: 17.0%**
+- **Recall@5: 42.5%**
+- **Time: 2,878ms**
+
+### Semantic-First Retrieval
+
+FAISS retrieval with BM25 reranking.
+
+**Performance:**
+- **MAP: 0.213 (best MAP)**
+- **MRR: 0.425 (best MRR)**
+- **Precision@5: 17.8%**
+- **Recall@5: 44.5%**
+- **Time: 9.65ms**
 
 ---
 
@@ -337,46 +376,73 @@ Three-stage pipeline with progressive refinement:
 
 **Exact Match Accuracy**
 - Binary correct/incorrect evaluation
-- Current: 60% (target: 80% with medical embeddings)
+- **Current: 52%**
 
 **Semantic Accuracy**
 - Measures answer similarity even if not exact match
+- **Current: 52%** (same as exact match)
 - Allows partial credit for close answers
 
 ### Retrieval Metrics
 
 **Precision@k**
 - Percentage of retrieved documents that are relevant
-- Current: Precision@5 = 0.108000
+- **Current:**
+  - Precision@1: 0.0%
+  - Precision@3: 10.7%
+  - Precision@5: 11.2%
+  - Precision@10: 7.98%
 
 **Recall@k**
 - Percentage of relevant documents retrieved
-- Current: Recall@5 = 0..54
+- **Current:**
+  - Recall@1: 0.0%
+  - Recall@3: 32.0%
+  - Recall@5: 56.0%
+  - Recall@10: 78.0%
 
 **Mean Average Precision (MAP)**
 - Average precision across all queries
-- Current: 0.2523
+- **Current: 0.268**
 
 **Mean Reciprocal Rank (MRR)**
 - Average of reciprocal ranks of first relevant document
-- Current: 0.2523
+- **Current: 0.268**
 
 **Context Relevance Score**
 - Measures how relevant retrieved context is to the question
 - Scale: 0 (irrelevant) to 2 (highly relevant)
+- **Distribution:** 0.0 (40%), 1.0 (15%), 2.0 (45%)
+
+**Medical Concept Coverage**
+- Percentage of medical concepts covered by retrieved documents
+- **Current: 75.1%**
+
+**Guideline Coverage**
+- Percentage of guidelines referenced in retrieved documents
+- **Current: 100%**
 
 ### Reasoning Metrics
 
 **Chain Completeness**
 - Measures if all reasoning steps are present
-- Current: 100% (all methods produce complete chains)
+- **Current: 100%** (all methods produce complete chains)
 
 **Evidence Utilization Rate**
 - Percentage of retrieved evidence used in reasoning
-- Current: 100%
+- **Current: 100%**
 
 **Confidence Distribution**
 - Tracks prediction confidence ranges
+- **Current Distribution:**
+  - 90-100%: 7 cases
+  - 40-50%: 11 cases
+  - 0-10%: 5 cases
+  - 30-40%: 13 cases
+  - 70-80%: 2 cases
+  - 20-30%: 4 cases
+  - 10-20%: 7 cases
+  - 80-90%: 1 case
 
 ### Calibration Metrics
 
@@ -384,24 +450,33 @@ Three-stage pipeline with progressive refinement:
 - Measures accuracy of probabilistic predictions
 - Lower is better (0 = perfect calibration)
 - Formula: `BS = (1/N) Σ(p - y)²`
+- **Current: 0.254**
 
 **Expected Calibration Error (ECE)**
 - Measures difference between confidence and accuracy
-- Current: 0.179 
+- **Current: 0.179**
 
 ### Safety Metrics
 
 **Hallucination Rate**
 - Percentage of answers not grounded in context
-- Current: 0.0% (strict prompting successful)
+- **Current: 0.0%** (strict prompting successful)
 
 **Dangerous Error Count**
 - Answers that could lead to patient harm
-- Current: 0
+- **Current: 2**
 
 **Safety Score**
 - Composite safety metric
-- Current: 0.98
+- **Current: 0.96**
+
+**Contraindication Check Accuracy**
+- Accuracy of checking for contraindications
+- **Current: 0.0%**
+
+**Urgency Recognition Accuracy**
+- Accuracy of recognizing urgent/emergent conditions
+- **Current: 0.0%**
 
 ### Confusion Matrix
 
@@ -409,14 +484,24 @@ Three-stage pipeline with progressive refinement:
 - Tracks predicted vs true answers (A/B/C/D)
 - Visualized with green-bordered diagonal for correct predictions
 
-![Confusion Matrix](reports/charts/confusion_matrix.png)
+**Confusion Matrix Results:**
+- **Option A:** Precision: 47.6%, Recall: 90.9%, F1: 62.5%
+- **Option B:** Precision: 40.0%, Recall: 30.8%, F1: 34.8%
+- **Option C:** Precision: 75.0%, Recall: 64.3%, F1: 69.2%
+- **Option D:** Precision: 71.4%, Recall: 41.7%, F1: 52.6%
+
+**Macro Averages:**
+- **Macro Precision: 58.5%**
+- **Macro Recall: 56.9%**
+- **Macro F1: 54.8%**
+- **Balanced Accuracy: 56.9%**
 
 **Condition-Level Confusion Analysis**
 - Identifies confusion between similar medical conditions
 - Tracks:
   - Similar-condition errors (same medical group)
   - Unrelated-condition errors (different groups)
-  - Top confusion pairs (e.g., "Pneumonia → Bronchitis")
+  - Top confusion pairs
 
 **Medical Similarity Groups:**
 - Respiratory infections, Cardiac ischemic, Thrombotic, Infections, etc.
@@ -425,19 +510,22 @@ Three-stage pipeline with progressive refinement:
 ### Error Analysis
 
 **Error Categories:**
-- Retrieval failures (0% current)
-- Reasoning failures (100% of errors)
-- High-confidence errors
-- Safety-critical errors
+- **Reasoning Errors (16 cases, 32%):** System retrieved relevant info but made incorrect reasoning
+- **Knowledge Errors (8 cases, 16%):** System has incorrect medical knowledge or interpretation
+- **Retrieval failures: 0%** (all relevant documents successfully retrieved)
 
-**Error Breakdown by Concept:**
-- Tracks errors by medical domain (cardiovascular, endocrine, etc.)
-- Identifies systematic weaknesses
+**Error Breakdown by Medical Domain:**
+- **Cardiovascular:** 54.5% accuracy (6/11 correct)
+- **Gastroenterology:** 71.4% accuracy (5/7 correct)
+- **Respiratory:** 62.5% accuracy (5/8 correct)
+- **Endocrine:** 66.7% accuracy (4/6 correct)
+- **Infectious Disease:** 0% accuracy (0/3 correct)
+- **Neurology:** 0% accuracy (0/2 correct)
 
 **Common Pitfalls:**
-- Missing critical symptoms
-- Medical terminology misunderstanding
-- Incomplete differential diagnosis
+- **Overconfident Wrong Answers (2 cases):** High confidence (>80%) but incorrect answers
+- **Missing Critical Symptoms (20 cases):** Reasoning fails to consider important symptoms from case description
+- **Medical Terminology Misunderstanding (24 cases):** System fails to properly interpret medical abbreviations or terms
 
 ---
 
@@ -472,12 +560,12 @@ MANAGEMENT:
 
 ### Clinical Case Generation
 
-**Generator v5.0 Features:**
+**Generator Features:**
 - Realistic vital sign constraints
-- Balanced answer distribution (25% A/B/C/D)
+- Balanced answer distribution
 - Varied clinical presentations
-- Controlled difficulty levels (easy/medium/hard)
-- Multiple question types (diagnosis/treatment/management/immediate)
+- Controlled difficulty levels (simple/moderate/complex)
+- Multiple question types (diagnosis/treatment/other)
 
 **Generation Process:**
 1. Select clinical guideline
@@ -487,33 +575,30 @@ MANAGEMENT:
 5. Apply cryptographic shuffling for answer balance
 6. Validate clinical consistency
 
-**Quality Checks:**
-- Fever > 101°F → Must consider infectious differentials
-- Stroke → CT/MRI before anticoagulation
-- Wide pulse pressure → Explained or normalized
-- Clean option formatting (no embedded explanations)
 
-**Dataset Statistics:**
-- Total Questions: 100
-- Distribution:
-  - Answers: A (25%), B (25%), C (22%), D (21%)
-  - Difficulty: Easy (23%), Medium (46%), Hard (22%)
-  - Types: Diagnosis (23%), Treatment (23%), Management (23%), Immediate (22%)
-  - Relevance: High (55%), Medium (18%), Low (18%)
-
----
 
 ## Experimental Results
 
 ### Retrieval Strategy Comparison
 
-**Experiment:** Compared BM25, Concept-First, Hybrid, and Multi-Stage retrieval
+**Experiment:** Compared 6 retrieval strategies on 100 clinical cases
 
 **Results:**
-- Multi-Stage: Best overall performance (highest MAP and recall)
-- Concept-First: Best for medical concept matching
-- BM25: Fast but lower accuracy
-- Hybrid: Balanced performance
+
+| Strategy | MAP | MRR | P@5 | R@5 | Time (ms) |
+|----------|-----|-----|-----|-----|-----------|
+| Single BM25 | 0.207 | 0.414 | 17.4% | 43.5% | **1.40** |
+| Single FAISS | 0.211 | 0.422 | 17.6% | 44.0% | 8.58 |
+| Hybrid Linear | 0.211 | 0.421 | 17.8% | 44.5% | 8.33 |
+| Concept-First | 0.212 | 0.424 | 18.0% | **45.0%** | 11.62 |
+| **Semantic-First** | **0.213** | **0.425** | 17.8% | 44.5% | 9.65 |
+| Multi-Stage | 0.204 | 0.408 | 17.0% | 42.5% | 2,878 |
+
+**Key Findings:**
+- **Semantic-First** achieves best MAP (0.213) and MRR (0.425)
+- **Concept-First** achieves best recall (45.0%)
+- **Single BM25** is fastest (1.40ms)
+- All strategies benefit from medical concept expansion
 
 ### Reasoning Method Comparison
 
@@ -521,16 +606,40 @@ MANAGEMENT:
 
 **Results:**
 
-| Method | Accuracy | Avg Time (ms) | Best For |
-|--------|----------|---------------|----------|
-| Chain-of-Thought | 40% | 4,019 | General cases |
-| Tree-of-Thought | 50% | 43,981 | Complex scenarios |
-| Structured Medical | 35% | 26,320 | Systematic evaluation |
+| Method | Accuracy | Avg Time (ms) | Brier Score | ECE | Best For |
+|--------|----------|---------------|-------------|-----|----------|
+| Chain-of-Thought | 34% | **4,955** | 0.424 | 0.266 | General cases |
+| **Tree-of-Thought** | **52%** | 41,367 | 0.344 | 0.310 | Complex scenarios |
+| Structured Medical | 44% | 26,991 | **0.295** | **0.283** | Systematic evaluation |
 
 **Key Findings:**
-- ToT achieves highest accuracy but 10x slower than CoT
-- Structured Medical improved from 15% to 35% with LLM enhancement
+- **Tree-of-Thought** achieves highest accuracy (52%) but is 8x slower than CoT
+- **Structured Medical** provides best calibration (Brier: 0.295, ECE: 0.283)
+- **Chain-of-Thought** is fastest (4,955ms) but lowest accuracy (34%)
 - Hybrid pipeline balances speed and accuracy
+
+### Performance by Specialty
+
+**Results (50 cases across 11 specialties):**
+
+| Specialty | Accuracy | Cases | Correct/Total |
+|-----------|----------|-------|---------------|
+| Critical Care | 100% | 1 | 1/1 |
+| Gastroenterology | 71.4% | 7 | 5/7 |
+| Endocrine | 66.7% | 6 | 4/6 |
+| Nephrology | 66.7% | 3 | 2/3 |
+| Respiratory | 62.5% | 8 | 5/8 |
+| Cardiovascular | 54.5% | 11 | 6/11 |
+| Rheumatology | 33.3% | 3 | 1/3 |
+| Hematology | 33.3% | 3 | 1/3 |
+| Psychiatry | 33.3% | 3 | 1/3 |
+| Infectious Disease | 0% | 3 | 0/3 |
+| Neurology | 0% | 2 | 0/2 |
+
+**Key Insights:**
+- System excels in Critical Care, Gastroenterology, and Endocrine
+- Struggles with Infectious Disease and Neurology
+- Performance varies significantly by medical domain
 
 ### Error Analysis
 
@@ -540,29 +649,30 @@ MANAGEMENT:
 3. Gastritis → GI Bleed
 
 **Error Distribution:**
-- Similar condition errors: 33.3%
-- Unrelated condition errors: 66.7%
+- **Reasoning errors:** 16 cases (32%)
+- **Knowledge errors:** 8 cases (16%)
+- **Retrieval errors:** 0 cases (0%)
 
 **Root Causes:**
-1. Embedding model mismatch (general vs medical domain)
-2. Insufficient retrieval precision (4% at k=5)
-3. Missing critical symptoms in reasoning
-4. Medical terminology misunderstanding
+1. Incomplete differential diagnosis
+2. Missing critical symptoms in reasoning
+3. Medical terminology misunderstanding
+4. Overconfident predictions
 
 ### Hallucination Prevention
 
 **Experiment:** Tested strict prompting to prevent LLM memory usage
 
 **Results:**
-- Hallucination Rate: 0.0%
+- **Hallucination Rate: 0.0%**
 - Method: Explicit instructions to use only provided context
-- Verification: Tested on 10 cases with hallucination detection
+- Verification: Tested on all 50 cases with hallucination detection
 
 ### Calibration Analysis
 
 **Findings:**
-- Brier Score: 0.385 (moderate calibration)
-- ECE: 0.46 (high calibration error)
+- **Brier Score: 0.254** (moderate calibration)
+- **ECE: 0.179** (reduced by 42% with calibration)
 - Issue: Model overconfident on incorrect predictions
 - Solution: Implemented confidence calibration module
 
@@ -628,11 +738,11 @@ evaluation:
 ### Evaluate the System
 
 ```bash
-# Evaluate on 10 cases
-python scripts/evaluate_new_dataset.py --num-cases 10 --seed 42
+# Evaluate on 50 cases (full dataset)
+python scripts/evaluate_new_dataset.py --num-cases 50
 
-# Evaluate on full dataset
-python scripts/evaluate_new_dataset.py --num-cases 100
+# Evaluate on subset of cases
+python scripts/evaluate_new_dataset.py --num-cases 10 --seed 42
 
 # Custom dataset
 python scripts/evaluate_new_dataset.py --dataset path/to/questions.json
@@ -642,12 +752,13 @@ python scripts/evaluate_new_dataset.py --dataset path/to/questions.json
 - Detailed metrics in `reports/new_dataset_eval_N_cases.json`
 - Confusion matrix in `reports/charts/confusion_matrix.png`
 - Performance summary in `reports/charts/performance_summary.png`
+- Error analysis in `reports/charts/error_analysis.png`
 
 ### Compare Reasoning Methods
 
 ```bash
-# Compare CoT, ToT, and Structured on 20 cases
-python scripts/compare_reasoning_methods.py --num-cases 20
+# Compare CoT, ToT, and Structured on 50 cases
+python scripts/compare_reasoning_methods.py --num-cases 50
 ```
 
 **Output:** `reports/reasoning_method_comparison.json`
@@ -655,7 +766,7 @@ python scripts/compare_reasoning_methods.py --num-cases 20
 ### Compare Retrieval Strategies
 
 ```bash
-# Compare BM25, Concept-First, Hybrid, Multi-Stage
+# Compare all 6 retrieval strategies
 python scripts/compare_retrieval_strategies.py
 ```
 
@@ -664,8 +775,8 @@ python scripts/compare_retrieval_strategies.py
 ### Generate New Clinical Cases
 
 ```bash
-# Generate 100 cases
-python scripts/generate_clinical_cases_v5.py 100
+# Generate 50 cases
+python scripts/generate_clinical_cases_v5.py 50
 
 # Output: data/processed/questions/questions_1.json
 ```
@@ -707,6 +818,8 @@ print(f"Reasoning: {result['reasoning']}")
 ```
 
 ---
+
+
 
 ## Project Structure
 
@@ -898,48 +1011,7 @@ See [LangChain Integration Documentation](docs/langchain_integration_documentati
 
 ---
 
-## Performance Summary
 
-### Current System Performance
-
-**Overall Accuracy:** 60%  
-**Target Accuracy:** 80% (achievable with medical embeddings)
-
-**Retrieval Performance:**
-- Precision@5: 4%
-- Recall@5: 20%
-- MAP: 0.118
-- MRR: 0.215
-
-**Reasoning Performance:**
-- Chain Completeness: 100%
-- Evidence Utilization: 100%
-- Hallucination Rate: 0%
-
-**Safety Performance:**
-- Dangerous Errors: 0
-- Safety Score: 1.0
-
-**Calibration:**
-- Brier Score: 0.385
-- ECE: 0.46
-
-### Known Issues and Solutions
-
-**Issue 1: Low Accuracy (60% vs 80% target)**
-- Root Cause: General-purpose embeddings (MiniLM-L6-v2)
-- Solution: Switch to medical-domain model (PubMedBERT)
-- Location: src/models/embeddings.py lines 116-119
-
-**Issue 2: Low Retrieval Precision (4%)**
-- Root Cause: General-purpose embeddings
-- Solution: Medical embeddings + better reranking
-
-**Issue 3: High Calibration Error (ECE: 0.46)**
-- Root Cause: Overconfident predictions
-- Solution: Enhanced confidence calibration (already implemented)
-
----
 
 ## Contributing
 
@@ -985,4 +1057,3 @@ For questions, issues, or collaboration opportunities, please open an issue on G
 ---
 
 **Documentation Author:** Shreya Uprety  
-**Last Updated:** December 11, 2025

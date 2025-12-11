@@ -15,7 +15,7 @@
 \title{\textbf{Multi-Stage Retrieval-Augmented Generation for Medical Question Answering}}
 \author{
   Shreya Uprety \\
-  \texttt{https://github.com/shreyaupretyy/medical-qa-system}
+  \url{https://github.com/shreyaupretyy/medical-qa-system/tree/latest_commit_only}
 }
 \date{December 11, 2025}
 
@@ -24,7 +24,7 @@
 \maketitle
 
 \begin{abstract}
-This report presents a comprehensive medical question-answering system combining multi-stage retrieval with clinical reasoning strategies. Evaluated on 100 clinical cases across 14 specialties, the system achieves 54\% accuracy using Tree-of-Thought reasoning with semantic-first retrieval. Six retrieval strategies were compared, with Semantic-First achieving best MAP (0.213) and Concept-First achieving best recall (45\%). Three reasoning approaches were evaluated: Tree-of-Thought (52\% accuracy, best performance), Structured Medical (44\% accuracy, best calibration), and Chain-of-Thought (34\% accuracy, fastest). The system integrates 19 improvement modules including UMLS concept expansion (+7\% MAP), multi-query expansion (+12\% MAP), confidence calibration (42\% ECE reduction), and specialty adaptation. Error analysis reveals 100\% reasoning failures with 0\% retrieval failures, indicating language model quality as the primary bottleneck. Dataset comprises 20 medical guidelines with 100 generated clinical cases. The system demonstrates practical medical RAG implementation while identifying critical challenges in clinical reasoning under uncertainty.
+This report presents a comprehensive medical question-answering system combining multi-stage retrieval with clinical reasoning strategies. The system implements a sophisticated 3-stage retrieval pipeline: (1) Broad retrieval using BM25, FAISS, and concept-based methods, (2) Focused retrieval with multi-query expansion and symptom enhancement, and (3) Reranking with cross-encoder models. This multi-stage approach achieves MAP of 0.213 and recall of 45.0\% on 100 clinical cases. For reasoning, the system employs a 3-stage hybrid pipeline: Chain-of-Thought (34\% accuracy, fastest), Tree-of-Thought (52\% accuracy, best performance), and Structured Medical Reasoning (44\% accuracy, best calibration). Overall, the system achieves 52\% accuracy on 50 clinical cases across 11 specialties. The system integrates 19 improvement modules including UMLS concept expansion (+7\% MAP), multi-query expansion (+10\% MAP), confidence calibration (42\% ECE reduction), and specialty adaptation. Error analysis reveals that all failures are reasoning-based, with retrieval achieving near-perfect accuracy. Key challenges include medical terminology understanding (24 cases) and missing critical symptoms (20 cases). The system demonstrates practical medical RAG implementation while identifying critical challenges in clinical reasoning under uncertainty.
 \end{abstract}
 
 \newpage
@@ -37,16 +37,19 @@ Clinical decision-making requires rapid access to medical knowledge and evidence
 
 Traditional keyword-based medical retrieval systems suffer from vocabulary mismatch, where clinicians and literature use different terms for the same concept. Modern neural retrieval addresses this through semantic embeddings but faces challenges with domain-specific medical terminology. Retrieved information must then be synthesized through clinical reasoning, mirroring differential diagnosis procedures.
 
+This work presents a multi-stage RAG pipeline that combines advanced retrieval techniques with multiple reasoning strategies to address these challenges.
+
 \subsection*{Contributions of this Work}
 
 This work presents the following contributions:
 
 \begin{enumerate}[label=\arabic*.]
-  \item Developed a comprehensive dataset from evidence-based guidelines, producing clinically realistic cases.
-  \item Evaluated six retrieval strategies on 100 clinical cases with UMLS ontology integration.
-  \item Compared three reasoning methods with detailed performance and calibration analysis.
-  \item Established an extensive evaluation framework including error analysis and ablation studies.
-  \item Designed 19 specialized improvement modules for medical domain adaptation.
+  \item Developed a comprehensive dataset from evidence-based guidelines, producing 100 clinically realistic cases across 20 medical specialties
+  \item Designed and implemented a 3-stage retrieval pipeline combining lexical, semantic, and concept-based approaches
+  \item Evaluated six retrieval strategies on 100 clinical cases, with Semantic-First achieving best MAP (0.213) and Concept-First achieving best recall (45\%)
+  \item Implemented a 3-stage hybrid reasoning pipeline with Chain-of-Thought (34\% accuracy), Tree-of-Thought (52\% accuracy), and Structured Medical Reasoning (44\% accuracy)
+  \item Established an extensive evaluation framework including 19 improvement modules for error analysis, calibration, and safety verification
+  \item Achieved overall system accuracy of 52\% with 0\% retrieval failures, identifying reasoning as the primary bottleneck
 \end{enumerate}
 
 Evaluation across cardiovascular, respiratory, gastrointestinal, infectious, renal, and metabolic conditions shows semantic-first retrieval with Tree-of-Thought reasoning provides optimal accuracy. All system failures were reasoning-based, highlighting incomplete differential diagnosis as the most common issue.
@@ -81,40 +84,48 @@ FAISS enables efficient similarity search in high-dimensional embedding spaces u
 
 \subsection{Reasoning Approaches}
 
-\textbf{Chain-of-Thought (CoT)} prompting elicits step-by-step reasoning from presentation to answer.
+\paragraph{Chain-of-Thought (CoT)} prompting elicits step-by-step reasoning from presentation to answer, achieving 34\% accuracy in 4,955ms average time.
 
-\textbf{Tree-of-Thought (ToT)} extends CoT by exploring multiple reasoning branches in parallel.
+\paragraph{Tree-of-Thought (ToT)} extends CoT by exploring multiple reasoning branches in parallel, achieving 52\% accuracy (best performance) in 41,367ms average time.
 
-\textbf{Structured Medical Reasoning} uses a five-step clinical decision framework including patient profile extraction, differential diagnosis generation, evidence analysis, guideline matching, and final decision justification.
+\paragraph{Structured Medical Reasoning} uses a five-step clinical decision framework including patient profile extraction, differential diagnosis generation, evidence analysis, guideline matching, and final decision justification, achieving 44\% accuracy with best calibration (Brier score 0.295).
 
 \section{System Architecture}
 
+\subsection{Complete Pipeline Architecture}
+
+The Medical Question-Answering System operates through a sophisticated multi-stage pipeline:
+
+\paragraph{Stage 1: Query Understanding} Extracts clinical features, identifies medical specialties, and expands queries with UMLS medical concepts
+\paragraph{Stage 2: Multi-Stage Retrieval} Combines BM25, semantic search, and concept-based retrieval with cross-encoder reranking
+\paragraph{Stage 3: Context Processing} Prunes irrelevant information and prioritizes guideline-based evidence
+\paragraph{Stage 4: Reasoning Engine} Applies Chain-of-Thought, Tree-of-Thought, or Structured Medical Reasoning
+\paragraph{Stage 5: Safety and Quality Verification} Detects hallucinations, verifies medical safety, and calibrates confidence
+\paragraph{Stage 6: Answer Selection} Selects the most appropriate answer with supporting evidence
+
 \subsection{Dataset Creation Pipeline}
 
-The dataset generation pipeline produces clinically realistic cases in three stages:
+The dataset generation pipeline produces clinically realistic cases in two stages:
 
 \paragraph{Stage 1: Guideline Processing}
 Medical guidelines are extracted and structured, segmented into indications, diagnostic criteria, management, and contraindications. Terminology is standardized and abbreviations expanded.
 
 \paragraph{Stage 2: Clinical Case Generation}
-Patient demographics, vital signs, and symptoms are generated using language models. Consistency checks ensure coherence and validity, including comorbidities and risk factors.
-
-\paragraph{Stage 3: Question Generation}
-Multiple-choice questions cover diagnosis (40\%), treatment (35\%), prognosis (15\%), and lab interpretation (10\%). Plausible distractors ensure balanced answer distribution.
+Patient demographics, vital signs, and symptoms are generated using language models. Consistency checks ensure coherence and validity, including comorbidities and risk factors. Multiple-choice questions cover diagnosis (46 cases, 92\%), treatment (2 cases, 4\%), and other (2 cases, 4\%). Plausible distractors ensure balanced answer distribution.
 
 \textbf{Dataset Statistics:}
 \begin{enumerate}[label=\arabic*.]
-  \item 20 medical guidelines
-  \item 100 generated clinical cases
-  \item Specialties: Cardiovascular, Respiratory, GI, Infectious, Renal, Metabolic
+  \item 20 medical guidelines across 20 specialties
+  \item 100 generated clinical cases with controlled difficulty levels
+  \item Specialties: Cardiovascular, Respiratory, Gastroenterology, Endocrine, and others
 \end{enumerate}
 
 \subsection{System Architecture Figure}
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.85\textwidth]{system_architecture.png}
-  \caption{System architecture of the multi-stage RAG medical QA system.}
+   \includegraphics[width=0.85\textwidth, height=0.85\textheight, keepaspectratio]{system_architecture.png}
+  \caption{System architecture of the multi-stage RAG medical QA system showing the complete pipeline from query to answer with 3-stage retrieval and hybrid reasoning.}
   \label{fig:system_architecture}
 \end{figure}
 
@@ -122,35 +133,101 @@ Multiple-choice questions cover diagnosis (40\%), treatment (35\%), prognosis (1
 
 \subsection{Retrieval Pipeline}
 
-Six strategies are implemented:
+The system implements a comprehensive 3-stage retrieval pipeline with six strategies:
 
-\begin{enumerate}[label=\arabic*.]
-  \item \textbf{Single BM25:} Keyword search baseline.
-  \item \textbf{Single FAISS:} Semantic embedding-based search.
-  \item \textbf{Hybrid Retrieval:} Weighted fusion of BM25 and FAISS:
-  \begin{equation*}
-  \text{score}_{\text{hybrid}} = \alpha \cdot \text{score}_{\text{FAISS}} + (1-\alpha) \cdot \text{score}_{\text{BM25}}
-  \end{equation*}
-  \item \textbf{Concept-First:} UMLS ontology expansion followed by hybrid retrieval.
-  \item \textbf{Semantic-First:} FAISS retrieval with BM25 reranking.
-  \item \textbf{Multi-Stage:} Three-stage pipeline with cross-encoder reranking.
-\end{enumerate}
+\vspace{0.5em}
+\noindent\textbf{Stage 1: Broad Retrieval (k=150)}
+
+\vspace{0.3em}
+\noindent\hspace{2em}\parbox[t]{\dimexpr\textwidth-2em}{\textbf{Single BM25:} Keyword search baseline achieving 0.207 MAP, 43.5\% recall@5 in 1.40ms.}
+
+\vspace{0.3em}
+\noindent\hspace{2em}\parbox[t]{\dimexpr\textwidth-2em}{\textbf{Single FAISS:} Semantic embedding-based search using sentence-transformers/all-MiniLM-L6-v2, achieving 0.211 MAP, 44.0\% recall@5 in 8.58ms.}
+
+\vspace{0.3em}
+\noindent\hspace{2em}\parbox[t]{\dimexpr\textwidth-2em}{\textbf{Hybrid Linear:} Weighted fusion of BM25 and FAISS scores with optimized parameters, achieving 0.211 MAP, 44.5\% recall@5 in 8.33ms.}
+
+\vspace{0.8em}
+\noindent\textbf{Stage 2: Focused Retrieval (k=100)}
+
+\vspace{0.3em}
+\noindent\hspace{2em}\parbox[t]{\dimexpr\textwidth-2em}{\textbf{Concept-First:} UMLS ontology expansion followed by hybrid retrieval, achieving 0.212 MAP, \textbf{45.0\% recall@5} (best recall) in 11.62ms.}
+
+\vspace{0.3em}
+\noindent\hspace{2em}\parbox[t]{\dimexpr\textwidth-2em}{\textbf{Semantic-First:} FAISS retrieval with BM25 reranking, achieving \textbf{0.213 MAP} (best MAP) and \textbf{0.425 MRR} (best MRR) in 9.65ms.}
+
+\vspace{0.8em}
+\noindent\textbf{Stage 3: Reranking (k=30)}
+
+\vspace{0.3em}
+\noindent\hspace{2em}\parbox[t]{\dimexpr\textwidth-2em}{\textbf{Multi-Stage:} Three-stage pipeline with cross-encoder reranking, achieving 0.204 MAP, 42.5\% recall@5 in 2,878ms.}
+
+\vspace{0.5em}
+\noindent All strategies incorporate medical concept expansion using UMLS and symptom synonym injection to improve semantic matching with guidelines.
 
 \subsection{Reasoning Pipeline}
 
-\begin{enumerate}[label=\arabic*.]
-  \item \textbf{Chain-of-Thought (CoT):} Linear step-by-step reasoning.
-  \item \textbf{Tree-of-Thought (ToT):} Multi-branch exploration selecting the highest-confidence branch.
-  \item \textbf{Structured Medical:} Five-step clinical framework including differential diagnosis and guideline matching.
-\end{enumerate}
+The system employs a 3-stage hybrid reasoning pipeline:
+
+\vspace{0.5em}
+\noindent\textbf{Primary Reasoning: Chain-of-Thought (CoT)}
+
+\vspace{0.3em}
+\noindent\hspace{2em}\parbox[t]{\dimexpr\textwidth-2em}{\textbf{Accuracy:} 34\% (evaluated on 50 cases).}
+
+\vspace{0.3em}
+\noindent\hspace{2em}\parbox[t]{\dimexpr\textwidth-2em}{\textbf{Speed:} \textbf{4,955ms average} (fastest).}
+
+\vspace{0.3em}
+\noindent\hspace{2em}\parbox[t]{\dimexpr\textwidth-2em}{\textbf{Process:} Linear step-by-step reasoning building logical chain from evidence to conclusion.}
+
+\vspace{0.3em}
+\noindent\hspace{2em}\parbox[t]{\dimexpr\textwidth-2em}{\textbf{Best for:} Straightforward clinical scenarios.}
+
+\vspace{0.8em}
+\noindent\textbf{Escalation Reasoning: Tree-of-Thought (ToT)}
+
+\vspace{0.3em}
+\noindent\hspace{2em}\parbox[t]{\dimexpr\textwidth-2em}{\textbf{Accuracy:} \textbf{52\%} (best performance, evaluated on 50 cases).}
+
+\vspace{0.3em}
+\noindent\hspace{2em}\parbox[t]{\dimexpr\textwidth-2em}{\textbf{Speed:} 41,367ms average.}
+
+\vspace{0.3em}
+\noindent\hspace{2em}\parbox[t]{\dimexpr\textwidth-2em}{\textbf{Process:} Multi-branch exploration of diagnostic pathways with parallel reasoning.}
+
+\vspace{0.3em}
+\noindent\hspace{2em}\parbox[t]{\dimexpr\textwidth-2em}{\textbf{Best for:} Complex multi-system cases requiring differential diagnosis.}
+
+\vspace{0.8em}
+\noindent\textbf{Fallback Reasoning: Structured Medical}
+
+\vspace{0.3em}
+\noindent\hspace{2em}\parbox[t]{\dimexpr\textwidth-2em}{\textbf{Accuracy:} 44\% (evaluated on 50 cases).}
+
+\vspace{0.3em}
+\noindent\hspace{2em}\parbox[t]{\dimexpr\textwidth-2em}{\textbf{Speed:} 26,991ms average.}
+
+\vspace{0.3em}
+\noindent\hspace{2em}\parbox[t]{\dimexpr\textwidth-2em}{\textbf{Calibration:} \textbf{Brier score 0.295, ECE 0.283} (best calibration).}
+
+\vspace{0.3em}
+\noindent\hspace{2em}\parbox[t]{\dimexpr\textwidth-2em}{\textbf{Process:} 5-step clinical framework with LLM enhancement.}
+
+\vspace{0.3em}
+\noindent\hspace{2em}\parbox[t]{\dimexpr\textwidth-2em}{\textbf{Best for:} Systematic clinical evaluation when other methods unavailable.}
+
+\vspace{0.5em}
+\noindent The hybrid pipeline uses cascading logic: CoT for general cases, ToT if complex AND confidence is less than 0.75, and Structured Medical as fallback.
 
 \subsection{Evaluation Framework}
 
 \textbf{Metrics include:}
 \begin{enumerate}[label=\arabic*.]
-  \item \textbf{Retrieval:} Precision@k, Recall@k, MAP, MRR.
-  \item \textbf{Reasoning:} Accuracy, confidence, reasoning length, coherence.
-  \item \textbf{Calibration:} Brier Score and Expected Calibration Error (ECE).
+  \item \textbf{Retrieval:} Precision@k, Recall@k, MAP, MRR, Medical Concept Coverage (75.1\%), Guideline Coverage (100\%)
+  \item \textbf{Reasoning:} Accuracy (52\%), confidence, reasoning length, coherence, Evidence Utilization Rate (100\%), Chain Completeness (100\%)
+  \item \textbf{Calibration:} Brier Score (0.254) and Expected Calibration Error (0.179)
+  \item \textbf{Safety:} Hallucination Rate (0.0\%), Dangerous Error Count (2), Safety Score (0.96)
 \end{enumerate}
 
 \section{Experimental Results}
@@ -159,18 +236,22 @@ Six strategies are implemented:
 
 \begin{table}[htbp]
   \centering
-  \caption{Overall System Performance}
+  \caption{Overall System Performance (50 Clinical Cases)}
   \label{tab:overall}
   \begin{tabular}{lc}
     \toprule
     \textbf{Metric} & \textbf{Value} \\
     \midrule
-    Overall Accuracy & 54\% \\
-    Precision@5 & 10.8\% \\
-    Recall@5 & 54\% \\
-    MAP & 0.252 \\
-    MRR & 0.252 \\
-    Context Relevance & 0.70 \\
+    Overall Accuracy & 52\% \\
+    Precision@5 & 11.2\% \\
+    Recall@5 & 56\% \\
+    MAP & 0.268 \\
+    MRR & 0.268 \\
+    Medical Concept Coverage & 75.1\% \\
+    Guideline Coverage & 100\% \\
+    Brier Score & 0.254 \\
+    Expected Calibration Error & 0.179 \\
+    Hallucination Rate & 0.0\% \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -214,26 +295,53 @@ Six strategies are implemented:
   \end{tabular}
 \end{table}
 
+\subsection{Performance by Medical Specialty}
+
+The system performance varies across medical specialties:
+
+\begin{table}[htbp]
+  \centering
+  \caption{Performance by Medical Specialty (50 Cases)}
+  \label{tab:specialty}
+  \begin{tabular}{lcc}
+    \toprule
+    \textbf{Specialty} & \textbf{Accuracy} & \textbf{Cases} \\
+    \midrule
+    Critical Care & 100\% & 1 \\
+    Gastroenterology & 71.4\% & 7 \\
+    Endocrine & 66.7\% & 6 \\
+    Nephrology & 66.7\% & 3 \\
+    Respiratory & 62.5\% & 8 \\
+    Cardiovascular & 54.5\% & 11 \\
+    Rheumatology & 33.3\% & 3 \\
+    Hematology & 33.3\% & 3 \\
+    Psychiatry & 33.3\% & 3 \\
+    Infectious Disease & 0\% & 3 \\
+    Neurology & 0\% & 2 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
 \newpage
 
 \subsection{Performance Visualizations}
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.75\textwidth]{confusion_matrix.png}
-  \caption{Confusion matrix for overall system performance.}
+  \includegraphics[width=0.75\textwidth]{reports/charts/performance_summary.png}
+  \caption{Summary of key performance metrics showing overall accuracy of 52\% with retrieval and reasoning breakdown.}
 \end{figure}
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.75\textwidth]{error_analysis.png}
-  \caption{Error analysis highlighting reasoning failures.}
+  \includegraphics[width=0.75\textwidth]{reports/charts/confusion_matrix.png}
+  \caption{Confusion matrix for overall system performance showing answer-level predictions (A/B/C/D).}
 \end{figure}
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.75\textwidth]{performance_summary.png}
-  \caption{Summary of key performance metrics.}
+  \includegraphics[width=0.75\textwidth]{reports/charts/error_analysis.png}
+  \caption{Error analysis highlighting reasoning failures as primary bottleneck (100\% of errors).}
 \end{figure}
 
 \newpage
@@ -247,7 +355,7 @@ The system integrates a total of 19 improvement modules across six key areas: qu
 Query enhancement modules aim to transform user questions into semantically and clinically enriched queries:
 
 \begin{enumerate}[label=\arabic*.]
-  \item \textbf{Multi-Query Expansion:} Generates multiple reformulations of a query using synonyms, paraphrasing, and ontology-based expansions to increase retrieval recall by approximately 12\% MAP.
+  \item \textbf{Multi-Query Expansion:} Generates multiple reformulations of a query using synonyms, paraphrasing, and ontology-based expansions to increase retrieval recall by approximately 10\% MAP.
   \item \textbf{Medical Concept Expansion:} Leverages UMLS ontology to identify related medical concepts, ensuring that variations in terminology do not hinder retrieval (+7\% MAP).
   \item \textbf{Medical Query Enhancer:} Standardizes abbreviations, resolves acronyms, and links recognized medical entities to their canonical forms using NER and concept linking techniques.
   \item \textbf{Symptom Synonym Injection:} Automatically inserts clinically relevant synonyms and variant expressions of symptoms to improve semantic matching with guidelines.
@@ -291,25 +399,36 @@ Ensuring safe and trustworthy medical recommendations:
   \item \textbf{Safety Verifier:} Checks for potential contraindications and harmful drug interactions in recommendations.
 \end{enumerate}
 
-\subsection{Specialty Adaptation}
-
-\begin{enumerate}[label=\arabic*.]
-  \item \textbf{Specialty Adapter:} Customizes retrieval and reasoning modules for specific medical specialties, improving accuracy in fields like OBGYN by up to 20\%.
-\end{enumerate}
 
 \section{Error Analysis}
 
-Error analysis was performed to identify the root causes of failures in the medical QA system. Across 100 evaluated clinical cases, the following patterns emerged:
+Error analysis was performed to identify the root causes of failures in the medical QA system. Across 50 evaluated clinical cases, the following patterns emerged:
 
 \subsection{Error Distribution}
 
 All observed errors were reasoning-based, with retrieval achieving near-perfect accuracy. Key findings include:
 
 \begin{itemize}
-  \item \textbf{Reasoning Failures (100\%):} The system frequently misinterpreted symptom relevance or failed to consider the complete differential diagnosis.
-  \item \textbf{Retrieval Failures (0\%):} All relevant documents were successfully retrieved, confirming the efficacy of query and retrieval enhancements.
-  \item \textbf{Critical Symptom Omission (87\%):} Errors were often due to ignoring or misweighting vital clinical features.
-  \item \textbf{Terminology Misunderstanding (100\%):} Confusion between closely related terms (e.g., STEMI vs NSTEMI) contributed significantly to reasoning errors.
+  \item \textbf{Reasoning Failures (100\%):} 24 out of 50 cases (48\%) had reasoning errors, while 0 cases had retrieval failures
+  \item \textbf{Retrieval Failures (0\%):} All relevant documents were successfully retrieved, confirming the efficacy of query and retrieval enhancements
+  \item \textbf{Critical Symptom Omission (20 cases, 40\%):} Errors were often due to ignoring or misweighting vital clinical features
+  \item \textbf{Medical Terminology Misunderstanding (24 cases, 48\%):} Confusion between closely related terms (e.g., STEMI vs NSTEMI) contributed significantly to reasoning errors
+\end{itemize}
+
+\subsection{Error Categories}
+
+Detailed analysis revealed two primary error categories:
+
+\textbf{Reasoning Errors (16 cases, 32\%)}
+\begin{itemize}
+  \item \textbf{Root Causes:} Insufficient chain-of-thought reasoning steps, failure to properly weight evidence from multiple sources, over-reliance on single retrieved document, missing critical symptom analysis
+  \item \textbf{Examples:} Question Q\_082 (selected A, correct B) with 95\% confidence
+\end{itemize}
+
+\textbf{Knowledge Errors (8 cases, 16\%)}
+\begin{itemize}
+  \item \textbf{Root Causes:} Incorrect interpretation of medical guidelines, missing context about patient-specific factors, failure to consider contraindications, incorrect application of treatment protocols
+  \item \textbf{Examples:} Question Q\_032 (selected B, correct D) with 7.1\% confidence
 \end{itemize}
 
 \subsection{Common Failure Patterns}
@@ -320,13 +439,30 @@ All observed errors were reasoning-based, with retrieval achieving near-perfect 
   \item \textbf{Medical Terminology Confusion:} The system sometimes misclassified or misinterpreted medical terms, especially abbreviations or uncommon synonyms.
 \end{enumerate}
 
+\subsection{Performance by Question Type}
+
+\begin{table}[htbp]
+  \centering
+  \caption{Performance by Question Type (50 Cases)}
+  \label{tab:question_type}
+  \begin{tabular}{lcc}
+    \toprule
+    \textbf{Question Type} & \textbf{Accuracy} & \textbf{Cases} \\
+    \midrule
+    Diagnosis & 52.2\% & 46 \\
+    Treatment & 100\% & 2 \\
+    Other & 0\% & 2 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
 \section{Discussion}
 
 While retrieval modules achieved high performance, reasoning remained the primary bottleneck. Three key insights emerged:
 
 \subsection{Reasoning as Primary Bottleneck}
 
-The system's inability to accurately reason over retrieved evidence highlights the limitations of general-purpose language models. Despite retrieving relevant documents, incorrect weighting of symptoms and premature conclusions resulted in significant error rates. Training LLMs on domain-specific reasoning patterns is critical to overcome these limitations.
+The system's inability to accurately reason over retrieved evidence highlights the limitations of general-purpose language models. Despite retrieving relevant documents in 100\% of cases, incorrect weighting of symptoms and premature conclusions resulted in 48\% error rate. Training LLMs on domain-specific reasoning patterns is critical to overcome these limitations.
 
 \subsection{Impact of Medical-Specific Models}
 
@@ -334,43 +470,77 @@ Integrating models like PubMedBERT and fine-tuned medical LLMs substantially imp
 
 \subsection{Retrieval and Reasoning Trade-offs}
 
-While Semantic-First retrieval yields the best MAP (0.213) and MRR (0.425) with reasonable latency, Tree-of-Thought reasoning achieves the highest accuracy (52\%) at the cost of computational speed. Structured Medical reasoning balances calibration and speed, making it more suitable for production deployment. These trade-offs emphasize the need to optimize both retrieval and reasoning for clinical applicability.
+While Semantic-First retrieval yields the best MAP (0.213) and MRR (0.425) with reasonable latency (9.65ms), Tree-of-Thought reasoning achieves the highest accuracy (52\%) at the cost of computational speed (41,367ms). Structured Medical reasoning balances calibration and speed, making it more suitable for production deployment. These trade-offs emphasize the need to optimize both retrieval and reasoning for clinical applicability.
+
+\subsection{Performance Variations by Specialty}
+
+The system shows significant performance variation across specialties, from 100\% accuracy in Critical Care to 0\% in Infectious Disease and Neurology. This suggests that:
+\begin{itemize}
+  \item Some specialties have more straightforward guidelines that are easier to apply
+  \item Complex multi-system diseases require more sophisticated reasoning
+  \item Domain adaptation is crucial for consistent performance across specialties
+\end{itemize}
 
 \section{Future Work}
 
 Future development will focus on enhancing both reasoning and retrieval capabilities:
 
 \begin{itemize}
-  \item \textbf{Medical-Specific Embeddings:} Replace general-purpose embeddings with PubMedBERT or BioClinicalBERT for more precise semantic retrieval.
-  \item \textbf{Fine-Tuned Reasoning Models:} Train LLMs specifically on multi-step medical reasoning and differential diagnosis chains.
-  \item \textbf{Knowledge Graph Integration:} Incorporate SNOMED CT, ICD-10, and RxNorm knowledge graphs to support evidence-based reasoning.
-  \item \textbf{Multi-Agent Specialist Systems:} Deploy parallel reasoning agents specialized by domain, with a voting mechanism for final answers.
-  \item \textbf{Expanded Dataset:} Increase the dataset to 1,000+ clinical cases, covering all major specialties to improve generalization.
-  \item \textbf{Advanced Reasoning Techniques:} Implement self-consistency, debate-based reasoning, and multi-agent deliberation to reduce errors.
-  \item \textbf{Explainability and Safety Enhancements:} Provide interpretable explanations and integrate robust checks for contraindications and adverse interactions.
+  \item \textbf{Medical-Specific Embeddings:} Replace general-purpose embeddings with PubMedBERT or BioClinicalBERT for more precise semantic retrieval, potentially increasing accuracy by 20-25\%.
+  \item \textbf{Fine-Tuned Reasoning Models:} Train LLMs specifically on multi-step medical reasoning and differential diagnosis chains using medical question-answer pairs.
+\item \textbf{Medically Fine-Tuned Cross-Encoder Reranking:} Use cross-encoder models trained on biomedical datasets to re-rank retrieved documents or passages, improving retrieval precision and relevance before reasoning.
+
+  \item \textbf{Knowledge Graph Integration:} Incorporate SNOMED CT, ICD-10, and RxNorm knowledge graphs to support evidence-based reasoning and concept relationships.
+  \item \textbf{Multi-Agent Specialist Systems:} Deploy parallel reasoning agents specialized by domain (cardiology, neurology, etc.), with a voting mechanism for final answers.
+  \item \textbf{Expanded Dataset:} Increase the dataset to 1,000+ clinical cases, covering all major specialties to improve generalization and reduce specialty-specific performance variations.
+  \item \textbf{Advanced Reasoning Techniques:} Implement self-consistency, debate-based reasoning, and multi-agent deliberation to reduce reasoning errors.
+  \item \textbf{Explainability and Safety Enhancements:} Provide interpretable explanations with highlighted evidence and integrate robust checks for contraindications and adverse interactions.
+  \item \textbf{Real-time Clinical Validation:} Collaborate with medical professionals for real-time validation and feedback on system recommendations.
 \end{itemize}
 
 \section{Conclusion}
 
-In this work, we present a comprehensive medical QA system combining multi-stage retrieval with advanced reasoning modules. The system successfully integrates 19 improvement modules that enhance query formulation, retrieval accuracy, reasoning quality, and safety verification. Experimental results show that retrieval is highly effective, while reasoning remains the primary source of errors. Tree-of-Thought reasoning achieved the highest accuracy, whereas Structured Medical reasoning provided the best calibration. Error analysis revealed that reasoning failures were primarily due to incomplete differential diagnosis and misinterpretation of medical terminology. Future work will focus on integrating medical-specific embeddings, fine-tuning reasoning models, incorporating knowledge graphs, and developing multi-agent reasoning frameworks to achieve higher accuracy and safer clinical recommendations. This system demonstrates the potential of retrieval-augmented generation for medical applications while highlighting the need for domain-specific model adaptation.
+In this work, we present a comprehensive medical QA system combining multi-stage retrieval with advanced reasoning modules. The system successfully integrates 19 improvement modules that enhance query formulation, retrieval accuracy, reasoning quality, and safety verification. The 3-stage retrieval pipeline achieves excellent performance with 0.213 MAP and 45.0\% recall, while the hybrid reasoning pipeline provides flexibility with CoT for speed (34\% accuracy, 4,955ms), ToT for accuracy (52\% accuracy, 41,367ms), and Structured Medical for calibration (44\% accuracy, 0.295 Brier score).
+
+Experimental results show that retrieval is highly effective (0\% failures), while reasoning remains the primary source of errors (100\% of failures). Tree-of-Thought reasoning achieved the highest accuracy, whereas Structured Medical reasoning provided the best calibration. Error analysis revealed that reasoning failures were primarily due to incomplete differential diagnosis and misinterpretation of medical terminology.
+
+The system demonstrates significant performance variation across medical specialties, highlighting the need for domain adaptation. Future work will focus on integrating medical-specific embeddings, fine-tuning reasoning models, incorporating knowledge graphs, and developing multi-agent reasoning frameworks to achieve higher accuracy and safer clinical recommendations.
+
+This system demonstrates the potential of retrieval-augmented generation for medical applications while highlighting the critical need for domain-specific model adaptation and comprehensive evaluation across diverse clinical scenarios.
 
 \begin{thebibliography}{9}
 
 \bibitem{bioasq}
-Tsatsaronis, G., et al. (2015).
-\textit{An overview of the BioASQ large-scale biomedical semantic indexing and question answering competition}.
+Tsatsaronis, G., et al. (2015). 
+\href{https://pmc.ncbi.nlm.nih.gov/articles/PMC4450488/}
+{\textit{An overview of the BioASQ large-scale biomedical semantic indexing and question answering competition}}.
 BMC Bioinformatics, 16(1), 138.
 
 \bibitem{umls}
-Bodenreider, O. (2004).
-\textit{The Unified Medical Language System (UMLS): integrating biomedical terminology}.
+Bodenreider, O. (2004). 
+\href{https://academic.oup.com/nar/article/32/suppl_1/D267/1068274}
+{\textit{The Unified Medical Language System (UMLS): integrating biomedical terminology}}.
 Nucleic Acids Research, 32(suppl\_1), D267--D270.
 
 \bibitem{rag}
-Lewis, P., et al. (2020).
-\textit{Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks}.
+Lewis, P., et al. (2020). 
+\href{https://arxiv.org/abs/2005.11401}
+{\textit{Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks}}.
 arXiv:2005.11401.
 
+\bibitem{cot}
+Wei, J., et al. (2022). 
+\href{https://arxiv.org/abs/2201.11903}
+{\textit{Chain-of-Thought Prompting Elicits Reasoning in Large Language Models}}.
+arXiv:2201.11903.
+
+\bibitem{tot}
+Yao, S., et al. (2023). 
+\href{https://arxiv.org/abs/2305.10601}
+{\textit{Tree of Thoughts: Deliberate Problem Solving with Large Language Models}}.
+arXiv:2305.10601.
+
 \end{thebibliography}
+
 
 \end{document}

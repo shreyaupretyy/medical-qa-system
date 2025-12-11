@@ -1,9 +1,7 @@
 # Part 4: Experiments and Analysis
 
 **Author:** Shreya Uprety  
-**Last Updated:** December 11, 2025
-
----
+**Updated:** 2025-12-11 (Corrected based on actual evaluation results)
 
 ## Table of Contents
 
@@ -11,22 +9,18 @@
 2. [Retrieval Strategy Comparison](#retrieval-strategy-comparison)
 3. [Reasoning Method Comparison](#reasoning-method-comparison)
 4. [Error Analysis](#error-analysis)
-5. [Ablation Studies](#ablation-studies)
-6. [Performance Insights](#performance-insights)
-7. [Recommendations](#recommendations)
-
----
+5. [Performance Insights](#performance-insights)
+6. [Recommendations](#recommendations)
 
 ## Overview
 
-This document presents comprehensive experimental results from evaluating the Medical Question-Answering System across different retrieval strategies, reasoning methods, and configurations. All experiments were conducted on the generated clinical case dataset (100 questions).
+This document presents comprehensive experimental results from evaluating the Medical Question-Answering System across different retrieval strategies and reasoning methods. All experiments were conducted on the clinical case dataset.
 
 **Evaluation Date:** December 9-11, 2025  
-**Dataset:** `data/processed/questions/questions_1.json` (100 clinical MCQs)  
+**Dataset:** Clinical MCQs (50 cases for full evaluation, 100 cases for retrieval-only)  
 **Hardware:** GPU-accelerated (NVIDIA CUDA)  
-**LLM:** Ollama Llama 3.1 8B
-
----
+**LLM:** Ollama Llama 3.1 8B  
+**Reasoning Method:** Advanced-structured (Tree-of-Thought variant)
 
 ## Retrieval Strategy Comparison
 
@@ -43,8 +37,8 @@ This document presents comprehensive experimental results from evaluating the Me
 **Description:** Pure semantic search using dense embeddings (MiniLM-L6-v2)
 
 **Results:**
-- MAP: 0.211
-- MRR: 0.422
+- MAP: 0.2110
+- MRR: 0.42199
 - Precision@1: 0%
 - Precision@3: 25.3%
 - Precision@5: 17.6%
@@ -57,15 +51,13 @@ This document presents comprehensive experimental results from evaluating the Me
 - **Weaknesses:** General-purpose embeddings miss medical terminology
 - **Best For:** Paraphrased queries, conceptual questions
 
----
-
 #### 2. Single-Stage BM25
 
 **Description:** Pure keyword-based search using BM25 algorithm
 
 **Results:**
-- MAP: 0.207
-- MRR: 0.414
+- MAP: 0.2072
+- MRR: 0.4145
 - Precision@1: 0%
 - Precision@3: 24.0%
 - Precision@5: 17.4%
@@ -78,15 +70,13 @@ This document presents comprehensive experimental results from evaluating the Me
 - **Weaknesses:** Misses semantic relationships, vocabulary-dependent
 - **Best For:** Questions with specific medical terminology
 
----
-
 #### 3. Hybrid Linear
 
 **Description:** Linear combination of FAISS (65%) and BM25 (35%)
 
 **Results:**
-- MAP: 0.211
-- MRR: 0.421
+- MAP: 0.2106
+- MRR: 0.4213
 - Precision@1: 0%
 - Precision@3: 24.7%
 - Precision@5: 17.8%
@@ -107,18 +97,16 @@ weights = [
     (0.65, 0.35),  # FAISS-heavy (used)
     (0.35, 0.65),  # BM25-heavy
 ]
-# Best: 0.65 FAISS, 0.35 BM25 (slight edge in recall)
+# Best: 0.65 FAISS, 0.35 BM25
 ```
-
----
 
 #### 4. Multi-Stage (3-stage)
 
 **Description:** Stage 1: FAISS (k=150) → Stage 2: BM25 filter (k=100) → Stage 3: Cross-encoder rerank (k=25)
 
 **Results:**
-- MAP: 0.204
-- MRR: 0.408
+- MAP: 0.2042
+- MRR: 0.4083
 - Precision@1: 0%
 - Precision@3: 24.3%
 - Precision@5: 17.0%
@@ -138,19 +126,16 @@ Stage 1 (FAISS): ~8ms, k=150
 Stage 2 (BM25 filter): ~2ms, k=100
 Stage 3 (Cross-encoder): ~2,868ms, k=25
 Total: ~2,878ms
+Bottleneck: Cross-encoder processes 100 documents × query
 ```
-
-**Bottleneck:** Cross-encoder processes 100 documents × query (10,000 operations)
-
----
 
 #### 5. Concept-First
 
 **Description:** BM25 keyword filter followed by FAISS semantic refinement
 
 **Results:**
-- MAP: 0.212 (highest)
-- MRR: 0.424 (highest)
+- MAP: 0.2121 (highest)
+- MRR: 0.4243 (highest)
 - Precision@1: 0%
 - Precision@3: 25.0%
 - Precision@5: 18.0% (highest)
@@ -159,24 +144,17 @@ Total: ~2,878ms
 - Avg Query Time: 11.62ms
 
 **Analysis:**
-- **Strengths:** Best overall performance, good balance of precision and recall
+- **Strengths:** Best recall performance, good balance
 - **Mechanism:** BM25 filters for medical terms, FAISS refines with semantics
-- **Best For:** Medical QA (current best choice)
-
-**Why It Works:**
-1. BM25 ensures medical terminology is matched
-2. FAISS adds semantic understanding
-3. Sequential pipeline avoids cross-encoder overhead
-
----
+- **Best For:** Maximizing recall
 
 #### 6. Semantic-First
 
 **Description:** FAISS semantic search followed by BM25 keyword refinement
 
 **Results:**
-- MAP: 0.213 (tied highest)
-- MRR: 0.425 (tied highest)
+- MAP: 0.2126 (highest)
+- MRR: 0.4252 (highest)
 - Precision@1: 0%
 - Precision@3: 25.3%
 - Precision@5: 17.8%
@@ -185,35 +163,28 @@ Total: ~2,878ms
 - Avg Query Time: 9.65ms
 
 **Analysis:**
-- **Strengths:** Nearly identical to Concept-First, slightly better semantic matching
+- **Strengths:** Best MAP score, slightly better semantic matching
 - **Mechanism:** FAISS casts wide net, BM25 refines with keywords
-- **Best For:** Paraphrased or non-standard medical terminology
-
----
+- **Best For:** Overall performance balance
 
 ### Retrieval Strategy Comparison Summary
 
 | Strategy | MAP | MRR | P@5 | R@5 | Time (ms) | Rank |
 |----------|-----|-----|-----|-----|-----------|------|
-| Concept-First | **0.212** | **0.424** | **18.0%** | **45.0%** | 11.62 | 1 |
-| Semantic-First | **0.213** | **0.425** | 17.8% | 44.5% | 9.65 | 2 |
-| Hybrid Linear | 0.211 | 0.421 | 17.8% | 44.5% | 8.33 | 3 |
-| Single FAISS | 0.211 | 0.422 | 17.6% | 44.0% | **8.58** | 4 |
-| Single BM25 | 0.207 | 0.414 | 17.4% | 43.5% | **1.40** | 5 |
-| Multi-Stage | 0.204 | 0.408 | 17.0% | 42.5% | 2,878 | 6 |
+| Semantic-First | 0.2126 | 0.4252 | 17.8% | 44.5% | 9.65 | 1 |
+| Concept-First | 0.2121 | 0.4243 | 18.0% | 45.0% | 11.62 | 2 |
+| Single FAISS | 0.2110 | 0.4220 | 17.6% | 44.0% | 8.58 | 3 |
+| Hybrid Linear | 0.2106 | 0.4213 | 17.8% | 44.5% | 8.33 | 4 |
+| Single BM25 | 0.2072 | 0.4145 | 17.4% | 43.5% | 1.40 | 5 |
+| Multi-Stage | 0.2042 | 0.4083 | 17.0% | 42.5% | 2,878 | 6 |
 
-**Winner:** Concept-First and Semantic-First (tied performance, choose based on use case)
+**Key Findings:**
+- **Semantic-First** has best MAP (0.2126) and fastest among top performers (9.65ms)
+- **Concept-First** has best recall (45.0% @5) and precision (18.0% @5)
+- **Multi-Stage** significantly underperforms due to cross-encoder bottleneck
+- **BM25** is fastest (1.40ms) but has lower accuracy
 
----
-
-### Key Findings
-
-1. **Concept-First/Semantic-First outperform** all other strategies on MAP, MRR, and recall
-2. **Multi-Stage underperforms** due to general-purpose cross-encoder (needs medical fine-tuning)
-3. **BM25 is fastest** but lower accuracy
-4. **Speed-Accuracy Tradeoff:** Concept-First achieves best accuracy with only 11.62ms latency
-
----
+**Recommendation:** Use **Semantic-First** for best overall performance (MAP 0.213, 9.65ms)
 
 ## Reasoning Method Comparison
 
@@ -238,41 +209,16 @@ Total: ~2,878ms
 - **Reasoning Coherence:** 32.7%
 
 **Answer Distribution:**
-- A: 17 (34%)
 - B: 23 (46%)
+- A: 17 (34%)
 - C: 7 (14%)
 - D: 2 (4%)
 - Cannot answer: 1 (2%)
 
 **Analysis:**
 - **Strengths:** Fast, straightforward, best calibrated
-- **Weaknesses:** Lowest accuracy, tends to over-select option B
-- **Best For:** Time-sensitive applications, general medical questions
-
-**Sample Reasoning:**
-```
-Step 1: Analyze the clinical presentation
-- 58-year-old male with chest pain
-- Pain radiates to left arm
-- Diaphoretic and anxious
-
-Step 2: Consider differential diagnoses
-- Acute coronary syndrome (most likely)
-- Musculoskeletal pain (less likely given radiation)
-- GERD (less likely given severity)
-
-Step 3: Review guideline recommendations
-- MONA protocol: Morphine, Oxygen, Nitroglycerin, Aspirin
-- Immediate ECG required
-- Aspirin should be given immediately
-
-Step 4: Evaluate options
-Option B (Aspirin + ECG) aligns with guidelines
-
-Answer: B
-```
-
----
+- **Weaknesses:** Lowest accuracy, significant bias toward option B (46%)
+- **Best For:** Time-sensitive applications
 
 ### Method 2: Tree-of-Thought (ToT)
 
@@ -290,67 +236,17 @@ Answer: B
 
 **Answer Distribution:**
 - A: 18 (36%)
-- B: 14 (28%)
 - C: 14 (28%)
+- B: 14 (28%)
 - D: 2 (4%)
 - Cannot answer: 2 (4%)
 
 **Analysis:**
-- **Strengths:** Highest accuracy, balanced answer distribution, best reasoning coherence
+- **Strengths:** Highest accuracy, best reasoning coherence, most balanced distribution
 - **Weaknesses:** 8.4x slower than CoT, verbose output
-- **Best For:** Complex multi-system cases, differential diagnosis questions
+- **Best For:** Complex cases requiring differential diagnosis
 
-**Performance Breakdown:**
-```
-Time Distribution:
-- Branch generation: ~5,000ms (5 branches avg)
-- Branch evaluation: ~30,000ms
-- Branch pruning: ~4,000ms
-- Final selection: ~2,367ms
-Total: ~41,367ms
-```
-
-**Sample Reasoning:**
-```
-Branch 1: Acute Coronary Syndrome
-Evidence:
-- Chest pain radiating to arm (classic ACS symptom)
-- Diaphoresis (autonomic response)
-- Risk factors: age 58, male
-Guideline match: High
-Confidence: 0.85
-
-Branch 2: Musculoskeletal Pain
-Evidence:
-- Pain started with activity (climbing stairs)
-Guideline match: Low
-Confidence: 0.15
-
-Branch 3: Pulmonary Embolism
-Evidence:
-- Dyspnea not mentioned
-- No recent immobilization
-Guideline match: Low
-Confidence: 0.10
-
-Branch Evaluation:
-Branch 1 (ACS) scores highest based on:
-- Symptom match: 9/10
-- Risk factor alignment: 8/10
-- Guideline support: 10/10
-
-Pruned Branches: 2, 3, 4, 5
-
-Selected Branch: 1 (ACS)
-Recommended Action: Aspirin + ECG (Option B)
-
-Answer: B
-Confidence: 0.85
-```
-
----
-
-### Method 3: Structured Medical Reasoning
+### Method 3: Structured Medical
 
 **Description:** 5-step clinical reasoning: feature extraction → differential → evidence → treatment → selection
 
@@ -365,362 +261,299 @@ Confidence: 0.85
 - **Reasoning Coherence:** 32.0%
 
 **Answer Distribution:**
-- A: 13 (26%)
 - B: 21 (42%)
+- A: 13 (26%)
 - C: 9 (18%)
 - D: 5 (10%)
 - Cannot answer: 2 (4%)
 
 **Analysis:**
-- **Strengths:** Best calibration (lowest Brier score), concise reasoning, systematic approach
-- **Weaknesses:** Middle accuracy, tends to over-select B
-- **Best For:** Systematic clinical evaluation, confidence-critical applications
-
-**5-Step Process:**
-```
-Step 1: Patient Profile Extraction
-Extracted 3 symptoms, demographics: {'age': 58, 'gender': 'male', 'age_group': 'middle-aged'}, acuity: emergency
-
-Step 2: Differential Diagnosis Generation (LLM-Enhanced)
-Generated 2 differential diagnoses:
-  1. Acute coronary syndrome (confidence: 0.85)
-  2. Musculoskeletal pain (confidence: 0.15)
-
-Step 3: Evidence Analysis
-Scored evidence for 4 options:
-  Option A: 0.30
-  Option B: 0.85
-  Option C: 0.20
-  Option D: 0.10
-
-Step 4: Guideline Application
-Matched guidelines for top 4 options:
-  Option B: ACS management (MONA protocol)
-
-Step 5: Final Decision with LLM Verification
-Selected: Option B
-Confidence: 0.85
-LLM Verification: PASS (reasoning coherent)
-
-Answer: B
-```
-
----
+- **Strengths:** Best calibration, concise reasoning, systematic approach
+- **Weaknesses:** Middle accuracy, bias toward option B (42%)
+- **Best For:** Confidence-critical applications
 
 ### Reasoning Method Comparison Summary
 
 | Method | Accuracy | Avg Time (ms) | Brier Score | ECE | Coherence |
 |--------|----------|---------------|-------------|-----|-----------|
-| Tree-of-Thought | **52%** | 41,367 | 0.344 | 0.310 | **43.3%** |
-| Structured Medical | 44% | 26,991 | **0.295** | 0.283 | 32.0% |
-| Chain-of-Thought | 34% | **4,955** | 0.424 | **0.266** | 32.7% |
+| Tree-of-Thought | 52% | 41,367 | 0.344 | 0.310 | 43.3% |
+| Structured Medical | 44% | 26,991 | 0.295 | 0.283 | 32.0% |
+| Chain-of-Thought | 34% | 4,955 | 0.424 | 0.266 | 32.7% |
+
+**Performance Insights:**
+- ToT is most accurate (52%) but slowest (41.4s)
+- Structured Medical has best calibration (Brier: 0.295)
+- CoT is fastest (5.0s) but least accurate (34%)
+- Accuracy-Calibration Tradeoff: More accurate methods have worse calibration
 
 **Recommendations:**
 - **For Accuracy:** Use Tree-of-Thought (52%)
-- **For Speed:** Use Chain-of-Thought (4.96s avg)
+- **For Speed:** Use Chain-of-Thought (5.0s avg)
 - **For Calibration:** Use Structured Medical (Brier: 0.295)
-- **For Production:** Use Hybrid (CoT → ToT escalation on complexity/confidence thresholds)
-
----
+- **For Production:** Hybrid approach with complexity-based escalation
 
 ## Error Analysis
 
-**Source:** `reports/evaluation_results.json` (50 cases)  
-**Total Errors:** 23 (46% error rate)
+**Source:** `reports/evaluation_results.json` (50 cases with Advanced-structured/Tree-of-Thought)  
+**Total Errors:** 24 (48% error rate)
 
-### Error Distribution by Type
+### Error Categorization
 
-**Error Categories:**
-- High Confidence Wrong: 1 (4.3%)
-- Medium Confidence Wrong: 14 (60.9%)
-- Low Confidence Wrong: 8 (34.8%)
+**Primary Error Types (Based on Full Evaluation):**
+
+#### 1. Reasoning Errors (16 cases - 64% of errors)
+
+**Description:** System retrieved relevant info but made incorrect reasoning
 
 **Root Causes:**
-- Retrieval Failures: 0 (0%)
-- Reasoning Failures: 23 (100%)
+- Insufficient chain-of-thought reasoning steps
+- Failure to properly weight evidence from multiple sources
+- Over-reliance on single retrieved document
+- Missing critical symptom analysis
 
-**Analysis:** All errors are reasoning failures, not retrieval failures. This indicates:
-1. Retrieval is adequate (relevant guidelines are retrieved)
-2. Reasoning needs improvement (LLM struggles to apply guidelines correctly)
+**Examples:**
+- Q_082: 95% confidence but incorrect (A instead of B)
+- Q_036: 34.7% confidence, wrong treatment selection
 
----
+#### 2. Knowledge Errors (8 cases - 32% of errors)
 
-### Error Distribution by Medical Domain
+**Description:** System has incorrect medical knowledge or interpretation
 
-**Errors by Concept:**
-- Cardiovascular: 8 errors (34.8%)
-- Respiratory: 5 errors (21.7%)
-- Gastrointestinal: 3 errors (13.0%)
-- Infectious: 2 errors (8.7%)
-- Renal: 1 error (4.3%)
-- Metabolic: 1 error (4.3%)
-- Other: 3 errors (13.0%)
+**Root Causes:**
+- Incorrect interpretation of medical guidelines
+- Missing context about patient-specific factors
+- Failure to consider contraindications
+- Incorrect application of treatment protocols
 
-**Analysis:** Cardiovascular questions have highest error rate, possibly due to:
-- Complex decision trees (ACS vs angina vs heart failure)
-- Multiple competing treatment options
-- Time-sensitive interventions
+**Examples:**
+- Q_032: 7.1% confidence, wrong treatment (B instead of D)
+- Q_070: 71.3% confidence, incorrect diagnosis
 
----
+### Performance Segmentation
 
-### Common Pitfalls
+#### By Medical Category:
 
-#### Pitfall 1: Incomplete Differential Diagnosis
-
-**Description:** Reasoning fails to generate comprehensive differential diagnoses
-
-**Frequency:** 23 cases (100% of errors)
-
-**Example:**
 ```
-Question: Q_036 (Cardiovascular + Renal)
-Extracted: 0 symptoms, demographics: {'age': 70, 'gender': 'female', 'age_group': 'geriatric'}, acuity: emergency
-Generated: 0 differential diagnoses
-Issue: Failed to extract symptoms → No differential → Random guessing
+Gastroenterology:    71.4% accuracy (5/7)
+Endocrine:           66.7% accuracy (4/6)
+Cardiovascular:      54.5% accuracy (6/11)
+Respiratory:         62.5% accuracy (5/8)
+Nephrology:          66.7% accuracy (2/3)
+Critical Care:      100.0% accuracy (1/1)
+Hematology:          33.3% accuracy (1/3)
+Rheumatology:        33.3% accuracy (1/3)
+Psychiatry:          33.3% accuracy (1/3)
+Infectious Disease:   0.0% accuracy (0/3) - Critical gap
+Neurology:            0.0% accuracy (0/2) - Critical gap
 ```
 
-**Solution:** Enhance symptom extraction with NER and medical concept recognition
+#### By Question Type:
 
----
+- **Diagnosis:** 52.2% accuracy (24/46)
+- **Treatment:** 100.0% accuracy (2/2) - but only 2 cases
+- **Other:** 0.0% accuracy (0/2)
+
+#### By Complexity:
+
+- **Simple:** 58.3% accuracy (7/12)
+- **Moderate:** 52.0% accuracy (13/25)
+- **Complex:** 46.2% accuracy (6/13)
+
+#### By Relevance Level:
+
+- **High relevance:** 44.8% accuracy (13/29)
+- **Medium relevance:** 80.0% accuracy (8/10) - Best performance
+- **Low relevance:** 45.5% accuracy (5/11)
+
+### Major Pitfalls Identified
+
+#### Pitfall 1: Overconfident Wrong Answers
+
+- **Count:** 2 cases (>80% confidence but incorrect)
+- **Severity:** High
+- **Examples:** Q_082 (95% confidence wrong), Q_085 (87.8% confidence wrong)
+- **Solution:** Implement confidence calibration and uncertainty estimation
 
 #### Pitfall 2: Missing Critical Symptoms
 
-**Description:** Reasoning fails to consider important symptoms from case description
-
-**Frequency:** 20 cases (87% of errors)
-
-**Example:**
-```
-Case: "A 38-year-old woman with depression has been on fluoxetine 20mg for 6 weeks..."
-Extracted Symptoms: ["38-year-old", "woman", "with", "depression", "has", "been", "on", "fluoxetine", "20"]
-Issue: Tokenization splits "fluoxetine 20mg" incorrectly
-```
-
-**Solution:** Improve symptom extraction with medical-specific tokenization
-
----
+- **Count:** 20 cases (40% of total)
+- **Severity:** Medium
+- **Description:** Reasoning fails to consider important symptoms
+- **Examples:** Q_004, Q_032, Q_087 - all missing symptom extraction
+- **Solution:** Enhance symptom extraction and ensure all symptoms are considered
 
 #### Pitfall 3: Medical Terminology Misunderstanding
 
-**Description:** System fails to properly interpret medical abbreviations or terms
-
-**Frequency:** 23 cases (100% of errors)
-
-**Example:**
-```
-Question: Q_018 (Medication + Cardiovascular)
-Reasoning: "Extracted 1 symptoms, demographics: {'age': 49, 'gender': 'male', 'age_group': 'adult'}, acuity: emergency Generated 0 differential diagnoses"
-Issue: Didn't recognize medical terms as symptoms
-```
-
-**Solution:** Add medical terminology expansion and abbreviation resolution
-
----
-
-### High-Confidence Errors
-
-**Count:** 1 error with confidence > 0.8
-
-**Case Details:**
-- Question ID: Q_018
-- Predicted: (unknown)
-- Correct: (unknown)
-- Confidence: 0.948 (94.8%)
-- Concepts: medication, sign, cardiovascular, disease, symptom, treatment, neurological, gastrointestinal
-- Retrieval Quality: 0.5
-
-**Analysis:** This is a dangerous error (high confidence but wrong). Indicates:
-- Overconfidence in incorrect reasoning
-- Need for confidence calibration
-- Potential safety risk in deployment
-
----
-
-## Ablation Studies
-
-### Study 1: Impact of Multi-Query Expansion
-
-**Hypothesis:** Multi-query expansion improves recall by covering diverse phrasings
-
-**Setup:**
-- Baseline: Single query retrieval
-- Treatment: Multi-query expansion (3 alternative queries)
-
-**Results:**
-- Baseline Recall@5: 42%
-- With Multi-Query: 54%
-- Improvement: +12 percentage points
-
-**Conclusion:** Multi-query expansion significantly improves recall
-
----
-
-### Study 2: Impact of Cross-Encoder Reranking
-
-**Hypothesis:** Cross-encoder improves precision by better ranking
-
-**Setup:**
-- Baseline: FAISS retrieval only
-- Treatment: FAISS + Cross-encoder reranking
-
-**Results:**
-- Baseline Precision@5: 17.6%
-- With Cross-Encoder: 17.0%
-- Change: -0.6 percentage points
-
-**Conclusion:** General-purpose cross-encoder HURTS performance (not medical-domain)
-
-**Recommendation:** Switch to medical cross-encoder or remove this stage
-
----
-
-### Study 3: Impact of Concept Expansion
-
-**Hypothesis:** UMLS concept expansion improves medical term coverage
-
-**Setup:**
-- Baseline: No concept expansion
-- Treatment: UMLS concept expansion
-
-**Results:**
-- Baseline Recall@5: 38%
-- With Concept Expansion: 45%
-- Improvement: +7 percentage points
-
-**Conclusion:** Concept expansion helps, especially for medical terminology
-
----
+- **Count:** 24 cases (48% of total)
+- **Severity:** Medium
+- **Description:** Fails to properly interpret medical abbreviations/terms
+- **Examples:** Reasoning excerpts show poor symptom extraction (e.g., "Extracted 0 symptoms")
+- **Solution:** Add medical terminology expansion and abbreviation resolution
 
 ## Performance Insights
 
-### Insight 1: General-Purpose Embeddings are the Bottleneck
+### Insight 1: Retrieval Precision is Critical Bottleneck
 
-**Evidence:**
-- Low precision (10.8% @ k=5)
-- Retrieval works (54% recall) but ranks poorly
-- Similar issues in both FAISS and cross-encoder
+**Current State:**
+- Precision@5: 11.2% (too low)
+- Recall@5: 56.0% (reasonable)
+- MAP: 0.268 (moderate)
 
-**Root Cause:** sentence-transformers/all-MiniLM-L6-v2 is not medical-domain
+**Impact on Accuracy:**
+- 52% accuracy ceiling suggests retrieval issues limit reasoning
+- Even with perfect reasoning, poor retrieval would limit performance
 
-**Projected Impact of Medical Embeddings:**
+**Root Cause:** General-purpose embeddings (MiniLM) not medical-domain
+
+**Projected Improvement with Medical Embeddings:**
 ```
-Current (MiniLM):        Medical (PubMedBERT):
-  Accuracy: 54%            Accuracy: 75-80%
-  Precision@5: 10.8%       Precision@5: 30-40%
-  Recall@5: 54%            Recall@5: 75-85%
-```
-
-**Evidence from Literature:**
-- PubMedBERT achieves 15-20% improvement on medical QA tasks
-- Medical cross-encoders improve reranking by 25-30%
-
----
-
-### Insight 2: Reasoning Method Matters More Than Retrieval
-
-**Evidence:**
-- Retrieval failures: 0%
-- Reasoning failures: 100%
-- Accuracy varies 34% (CoT) to 52% (ToT)
-
-**Implication:** Even with perfect retrieval, reasoning is the limiting factor
-
-**Solution:** Hybrid reasoning with complexity-based escalation
-
----
-
-### Insight 3: Answer Distribution Bias
-
-**Observed:**
-- Chain-of-Thought: B=46%, A=34%, C=14%, D=4%
-- Structured Medical: B=42%, A=26%, C=18%, D=10%
-
-**Expected:** A=25%, B=25%, C=25%, D=25%
-
-**Issue:** Models exhibit positional bias toward option B
-
-**Solution:** Shuffle options during inference, then map back
-
----
-
-### Insight 4: Confidence Calibration is Critical
-
-**ECE Analysis:**
-```
-Confidence Bin    Accuracy    Expected    Calibration Error
-0-10%             0%          5%          -5%
-10-20%            10%         15%         -5%
-20-30%            15%         25%         -10%
-30-40%            25%         35%         -10%
-40-50%            35%         45%         -10%
-50-60%            45%         55%         -10%
-60-70%            50%         65%         -15%
-70-80%            55%         75%         -20%
-80-90%            60%         85%         -25%
-90-100%           70%         95%         -25%
+Current:                With PubMedBERT:
+  Precision@5: 11.2%      Precision@5: 25-30%
+  Recall@5: 56.0%         Recall@5: 70-75%
+  Accuracy: 52%           Accuracy: 65-70%
 ```
 
-**Pattern:** Model is consistently overconfident (predicts higher confidence than actual accuracy)
+### Insight 2: Reasoning Method Selection Depends on Use Case
 
-**Solution:** Temperature scaling, Platt scaling, or isotonic regression
+**Tradeoffs Identified:**
+```
+Method          Accuracy  Speed     Calibration  Use Case
+Tree-of-Thought   52%     41.4s     Moderate     Complex cases, high stakes
+Structured Med    44%     27.0s     Best         Confidence-critical apps
+Chain-of-Thought  34%      5.0s     Good         Time-sensitive, simple cases
+```
 
----
+**Hybrid Strategy Recommended:**
+```python
+def hybrid_reasoning_strategy(question_complexity, time_constraint):
+    if time_constraint < 10:  # seconds
+        return "chain_of_thought"
+    elif question_complexity > 0.7:  # complex case
+        return "tree_of_thought"
+    else:
+        return "structured_medical"
+```
+
+### Insight 3: Confidence Calibration Needs Improvement
+
+**Current Calibration Metrics:**
+- Brier Score: 0.254 (target: <0.20)
+- ECE: 0.179 (target: <0.15)
+- Overconfident Errors: 2 cases with >80% confidence but wrong
+
+**Calibration Analysis by Confidence Range:**
+```
+Confidence    Cases  Accuracy  Calibration Error
+90-100%         7     85.7%     -9.3% (slightly underconfident)
+80-90%          1      0.0%    -80.0% (severely overconfident)
+70-80%          2     50.0%    -25.0% (overconfident)
+40-50%         11     63.6%    -21.4% (overconfident)
+30-40%         13     46.2%    -18.8% (overconfident)
+0-10%           5     20.0%    +10.0% (underconfident)
+```
+
+**Pattern:** System is overconfident in mid-range (30-80%) and has one severely overconfident case
+
+### Insight 4: Dataset Imbalances Affect Performance
+
+**Dataset Issues Identified:**
+- **Specialty Imbalance:** Cardiology dominates (70% confusion), Infectious Disease/Neurology at 0%
+- **Question Type Bias:** 92% diagnosis (46/50), only 4% treatment (2/50)
+- **Safety Coverage Gap:** 0% accuracy in contraindication and urgency recognition
+- **Complexity Distribution:** Complex cases perform worst (46% vs 58% simple)
+
+**Impact:** Current 52% accuracy ceiling partly due to dataset limitations
 
 ## Recommendations
 
 ### Immediate Priority (High Impact)
 
-1. **Switch to Medical Embeddings**
-   - Model: microsoft/BiomedNLP-PubMedBERT-base-uncased-abstract
-   - Location: `src/models/embeddings.py` lines 116-119
-   - Expected Impact: +20-25% accuracy
+#### 1. Address Retrieval Precision (Target: 16% @5)
 
-2. **Implement Hybrid Reasoning**
-   - Use CoT as default (fast)
-   - Escalate to ToT when complexity > 0.7 AND confidence < 0.75
-   - Expected Impact: 48-50% accuracy with 10s avg time
+- **Action:** Switch to medical embeddings (PubMedBERT/BioBERT)
+- **Location:** Replace MiniLM-L6-v2 in embedding model
+- **Expected Impact:** +15-20% precision, +5-10% accuracy
+- **Timeline:** 1 week
 
-3. **Fix Symptom Extraction**
-   - Use medical NER (scispacy or BioBERT)
-   - Expected Impact: +5-10% accuracy
+#### 2. Implement Confidence Calibration
 
----
+- **Action:** Add temperature scaling or Platt scaling
+- **Target:** Reduce ECE from 0.179 to <0.15, eliminate >80% wrong answers
+- **Expected Impact:** Better uncertainty estimation, safer deployment
+- **Timeline:** 2 weeks
+
+#### 3. Fix Critical Safety Gaps
+
+- **Action:** Add contraindication and urgency recognition
+- **Target:** >50% accuracy on safety metrics (currently 0%)
+- **Expected Impact:** Reduce dangerous error count from 2 to 0
+- **Timeline:** 2 weeks
 
 ### Medium Priority (Moderate Impact)
 
-4. **Add Confidence Calibration**
-   - Implement temperature scaling
-   - Expected Impact: Reduce ECE from 0.28 to 0.15
+#### 4. Improve Symptom Extraction
 
-5. **Remove General-Purpose Cross-Encoder**
-   - Current cross-encoder hurts performance
-   - Replace with medical cross-encoder or remove
-   - Expected Impact: +2-3% precision
+- **Action:** Implement medical NER (scispacy or BioBERT)
+- **Target:** Reduce "missing critical symptoms" from 20 to <10 cases
+- **Expected Impact:** +5% accuracy
+- **Timeline:** 3 weeks
 
-6. **Implement Option Shuffling**
-   - Shuffle options during inference
-   - Mitigate positional bias
-   - Expected Impact: +2-3% accuracy
+#### 5. Rebalance Dataset
 
----
+- **Action:** Generate more treatment questions, reduce cardiology dominance
+- **Target:** Treatment questions: 4% → 30%, Cardiology: 70% → 30%
+- **Expected Impact:** More representative performance measurement
+- **Timeline:** 4 weeks
 
-### Long-Term Priority (Infrastructure)
+#### 6. Optimize Hybrid Retrieval
 
-7. **Build Medical Embedding Fine-Tuning Pipeline**
-   - Fine-tune PubMedBERT on clinical guidelines
-   - Expected Impact: +5% beyond base PubMedBERT
+- **Action:** Fine-tune weights for Semantic-First/Concept-First
+- **Target:** Precision@5: 11.2% → 14%
+- **Expected Impact:** Better retrieval for reasoning
+- **Timeline:** 2 weeks
 
-8. **Implement Active Learning**
-   - Identify difficult cases
-   - Generate targeted training data
-   - Expected Impact: Continuous improvement
+### Long-Term Priority (Foundation)
 
-9. **Add Medical Knowledge Graph**
-   - Integrate UMLS, SNOMED, ICD-10
-   - Enhance concept expansion
-   - Expected Impact: +5-10% recall
+#### 7. Fine-tune Medical Cross-Encoder
 
----
+- **Action:** Fine-tune on medical QA pairs
+- **Target:** Replace general-purpose cross-encoder hurting performance
+- **Expected Impact:** +5-10% precision
+- **Timeline:** 6 weeks
+
+#### 8. Implement Active Learning
+
+- **Action:** Identify difficult cases for targeted improvement
+- **Target:** Continuous accuracy improvement
+- **Expected Impact:** +1-2% accuracy per iteration
+- **Timeline:** 8 weeks
+
+#### 9. Build Medical Knowledge Integration
+
+- **Action:** Integrate UMLS/SNOMED for concept expansion
+- **Target:** Improve medical terminology understanding
+- **Expected Impact:** Reduce terminology misunderstandings (24→12 cases)
+- **Timeline:** 10 weeks
+
+### Expected Performance Improvements
+
+**With Immediate+Medium Priorities (8 weeks):**
+```
+Metric           Current  Target    Improvement
+Accuracy          52%      58-60%    +6-8%
+Precision@5       11.2%    14-16%   +2.8-4.8%
+Brier Score       0.254    0.23     -0.024
+ECE               0.179    0.15     -0.029
+Safety Accuracy   0%       >50%     +50%
+```
+
+**With All Priorities (16 weeks):**
+```
+Metric           Current  Target    Improvement
+Accuracy          52%      65%       +13%
+Precision@5       11.2%    20%      +8.8%
+Dangerous Errors  2        0        -2
+```
 
 ## Experiment Reproduction
 
@@ -740,24 +573,27 @@ python scripts/compare_reasoning_methods.py \
     --output reports/reasoning_method_comparison.json
 ```
 
-### Full Evaluation
+### Full Evaluation with Current Best Configuration
 
 ```bash
-python scripts/evaluate_new_dataset.py \
+python src/evaluation/evaluate_pipeline.py \
+    --dataset data/processed/questions/questions_1.json \
     --num-cases 50 \
-    --seed 42 \
+    --retrieval-strategy semantic_first \
+    --reasoning-method tree_of_thought \
+    --top-k 25 \
     --output reports/evaluation_results.json
 ```
 
----
-
 ## Related Documentation
 
-- [Part 2: RAG Implementation](part_2_rag_implementation.md)
-- [Part 3: Evaluation Framework](part_3_evaluation_framework.md)
-- [Retrieval Documentation](retrieval_documentation.md)
-- [Reasoning Documentation](reasoning_documentation.md)
+- **Part 2:** RAG Implementation
+- **Part 3:** Evaluation Framework - Updated with actual results
+- **Retrieval Documentation**
+- **Reasoning Documentation**
 
 ---
 
-**Documentation Author:** Shreya Uprety
+**Documentation Author:** Shreya Uprety  
+**Evaluation Reference:** 2025-12-11 Comprehensive Medical QA Evaluation Results  
+**Key Finding:** System achieves 52% accuracy with Tree-of-Thought reasoning, limited by retrieval precision (11.2% @5) and dataset imbalances

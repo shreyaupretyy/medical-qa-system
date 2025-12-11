@@ -1,15 +1,11 @@
 # Part 3: Evaluation Framework
 
 **Author:** Shreya Uprety  
-**Last Updated:** December 11, 2025
-
----
+**Updated:** 2025-12-11 (Based on comprehensive evaluation results)
 
 ## Overview
 
-This document details the comprehensive evaluation framework for the Medical Question-Answering System, including all metrics, error analysis, and visualization tools.
-
----
+This document details the comprehensive evaluation framework for the Medical Question-Answering System, including all metrics, error analysis, and visualization tools. Based on 50-case evaluation revealing 52% accuracy with critical insights.
 
 ## Evaluation Pipeline
 
@@ -21,35 +17,37 @@ RAG Pipeline (Retrieval + Reasoning)
 Predicted Answer + Reasoning Chain + Confidence
         ↓
 ┌─────────────────────────────────────────────┐
-│         Metrics Calculation                  │
-│  ├─ Accuracy Metrics                        │
-│  ├─ Retrieval Metrics                       │
-│  ├─ Reasoning Metrics                       │
-│  ├─ Calibration Metrics                     │
-│  └─ Safety Metrics                          │
+│         Comprehensive Metrics Suite          │
+│  ├─ Accuracy Metrics (Baseline: 52%)        │
+│  ├─ Retrieval Metrics (Precision@5: 11.2%)  │
+│  ├─ Reasoning Metrics (Tree-of-Thought best)│
+│  ├─ Calibration Metrics (Brier: 0.254)      │
+│  ├─ Safety Metrics (0% contraindication)    │
+│  └─ Classification Metrics (F1: 0.548)      │
 └─────────────────┬───────────────────────────┘
                   ↓
 ┌─────────────────────────────────────────────┐
-│         Error Analysis                       │
-│  ├─ Condition Confusion Matrix              │
-│  ├─ Error Categorization                    │
-│  ├─ Concept-Level Analysis                  │
-│  └─ High-Confidence Errors                  │
+│         Deep Error Analysis                  │
+│  ├─ Error Categorization (Reasoning: 16,    │
+│  │                       Knowledge: 8)      │
+│  ├─ Performance Segmentation                │
+│  ├─ Pitfalls Analysis (3 major issues)      │
+│  └─ Root Cause Analysis                     │
 └─────────────────┬───────────────────────────┘
                   ↓
 ┌─────────────────────────────────────────────┐
-│         Visualization                        │
-│  ├─ Confusion Matrix (PNG)                  │
+│         Multi-Dimensional Visualization      │
 │  ├─ Performance Summary (PNG)               │
-│  └─ Error Analysis Charts (PNG)             │
+│  ├─ Confusion Matrix (PNG)                  │
+│  ├─ Error Analysis Charts (PNG)             │
+│  ├─ Category Performance                    │
+│  └─ Confidence Distribution                 │
 └─────────────────┬───────────────────────────┘
                   ↓
-       Evaluation Report (JSON)
+       Comprehensive Evaluation Report (JSON)
 ```
 
----
-
-## Accuracy Metrics
+## Core Performance Metrics
 
 ### Exact Match Accuracy
 
@@ -60,32 +58,21 @@ Predicted Answer + Reasoning Chain + Confidence
 Accuracy = (Correct Predictions / Total Questions) × 100
 ```
 
-**Implementation:**
-```python
-def calculate_accuracy(predictions, gold_answers):
-    correct = sum(1 for pred, gold in zip(predictions, gold_answers) if pred == gold)
-    return correct / len(predictions)
-```
+**Current Performance:** 52.0% (26/50 correct)
 
-**Current Performance:** 54% (hybrid reasoning on 50 cases)  
-**Target:** 80% (achievable with medical embeddings + PubMedBERT)
-
----
+**Method Performance Comparison:**
+- Chain-of-Thought: 34.0% (17/50)
+- **Tree-of-Thought: 52.0% (26/50) - Best**
+- Structured Medical: 44.0% (22/50)
+- **Target:** 65% (achievable with optimization)
 
 ### Semantic Accuracy
 
 **Definition:** Measures answer similarity even if not exact match
 
-**Use Case:** Allows partial credit for close answers
+**Current Performance:** 52.0% (identical to exact match)
 
-**Formula:**
-```
-Semantic_Accuracy = avg(cosine_similarity(pred_embedding, gold_embedding))
-```
-
-**Not currently used** (multiple-choice format requires exact match)
-
----
+**Note:** Multiple-choice format requires exact match, semantic similarity not applicable
 
 ## Retrieval Metrics
 
@@ -98,21 +85,13 @@ Semantic_Accuracy = avg(cosine_similarity(pred_embedding, gold_embedding))
 Precision@k = (Relevant Documents in Top k / k) × 100
 ```
 
-**Implementation:**
-```python
-def precision_at_k(retrieved_docs, relevant_docs, k=5):
-    top_k = retrieved_docs[:k]
-    relevant_in_top_k = len(set(top_k) & set(relevant_docs))
-    return relevant_in_top_k / k
-```
-
 **Current Performance:**
-- Precision@1: 0%
-- Precision@3: 9.3%
-- Precision@5: 10.8%
-- Precision@10: 7.8%
+- Precision@1: 0.0% (no relevant document at position 1)
+- Precision@3: 10.7% (moderate)
+- **Precision@5: 11.2% (low - main optimization target)**
+- Precision@10: 7.98% (decreases with more documents)
 
----
+**Interpretation:** System struggles to rank relevant documents first
 
 ### Recall@k
 
@@ -123,83 +102,61 @@ def precision_at_k(retrieved_docs, relevant_docs, k=5):
 Recall@k = (Relevant Documents in Top k / Total Relevant) × 100
 ```
 
-**Implementation:**
-```python
-def recall_at_k(retrieved_docs, relevant_docs, k=5):
-    top_k = retrieved_docs[:k]
-    relevant_in_top_k = len(set(top_k) & set(relevant_docs))
-    return relevant_in_top_k / len(relevant_docs)
-```
-
 **Current Performance:**
-- Recall@1: 0%
-- Recall@3: 28%
-- Recall@5: 54%
-- Recall@10: 76%
+- Recall@1: 0.0%
+- Recall@3: 32.0%
+- **Recall@5: 56.0% (reasonable recall)**
+- Recall@10: 78.0% (good recall at cost of precision)
 
----
+**Precision-Recall Tradeoff:** High recall (56% @5) but low precision (11% @5)
 
 ### Mean Average Precision (MAP)
 
 **Definition:** Average precision across all queries
 
-**Formula:**
-```
-AP = (1/R) Σ(Precision@k × Relevance@k)
-MAP = avg(AP across all queries)
-```
+**Current Performance:** 0.268
 
-**Current Performance:** 0.252
-
----
+**Interpretation:** Moderate overall retrieval quality
 
 ### Mean Reciprocal Rank (MRR)
 
 **Definition:** Average of reciprocal ranks of first relevant document
 
-**Formula:**
-```
-RR = 1 / rank_of_first_relevant_document
-MRR = avg(RR across all queries)
-```
+**Current Performance:** 0.268 (identical to MAP)
 
-**Current Performance:** 0.252
-
----
+**Interpretation:** Relevant documents not ranked high
 
 ### Context Relevance Score
 
-**Definition:** Measures how relevant retrieved context is to the question
-
-**Scale:** 0 (irrelevant) to 2 (highly relevant)
+**Definition:** Measures how relevant retrieved context is to the question (0-2 scale)
 
 **Scoring:**
-- 0: Completely irrelevant
-- 1: Somewhat relevant (mentions related concepts)
-- 2: Highly relevant (directly answers question)
+- 0: Completely irrelevant (38% of documents)
+- 1: Somewhat relevant (mentions related concepts) (18% of documents)
+- 2: Highly relevant (directly answers question) (44% of documents)
 
-**Implementation:**
-```python
-def calculate_context_relevance(context, question):
-    # Extract key concepts from question
-    question_concepts = extract_concepts(question)
-    
-    # Count concept matches in context
-    matches = sum(1 for concept in question_concepts if concept in context)
-    coverage = matches / len(question_concepts)
-    
-    # Scale to 0-2
-    if coverage >= 0.8:
-        return 2.0
-    elif coverage >= 0.4:
-        return 1.0
-    else:
-        return 0.0
-```
+**Current Performance:** Average score ~1.06 on 0-2 scale
 
-**Current Performance:** Average 0.70 (moderate relevance, scale 0-2)
+**Distribution:**
+- Score 0: 38% of retrieved documents
+- Score 1: 18% of retrieved documents
+- Score 2: 44% of retrieved documents
 
----
+### Medical Concept Coverage
+
+**Definition:** Percentage of medical concepts in question covered by retrieved documents
+
+**Current Performance:** 75.1%
+
+**Interpretation:** Good concept coverage but poor precision ranking
+
+### Guideline Coverage
+
+**Definition:** Whether relevant guidelines are retrieved
+
+**Current Performance:** 100.0%
+
+**Interpretation:** Always retrieves some guideline, but not necessarily the most relevant
 
 ## Reasoning Metrics
 
@@ -214,154 +171,106 @@ def calculate_context_relevance(context, question):
 4. Guideline application
 5. Answer selection with justification
 
-**Implementation:**
-```python
-def calculate_chain_completeness(reasoning_chain):
-    required_steps = [
-        "clinical presentation",
-        "symptoms|signs|findings",
-        "differential|diagnosis|condition",
-        "guideline|protocol|recommendation",
-        "answer|conclusion|therefore"
-    ]
-    
-    completeness = 0
-    for step in required_steps:
-        if re.search(step, reasoning_chain, re.IGNORECASE):
-            completeness += 1
-    
-    return completeness / len(required_steps)
-```
+**Current Performance:** 100.0%
 
-**Current Performance:** 100% (all methods produce complete chains)
-
----
+**Interpretation:** All reasoning methods produce complete chains
 
 ### Evidence Utilization Rate
 
 **Definition:** Percentage of retrieved evidence used in reasoning
 
-**Formula:**
-```
-Evidence_Utilization = (Documents Referenced in Reasoning / Total Retrieved) × 100
-```
+**Current Performance:** 100.0%
 
-**Implementation:**
-```python
-def calculate_evidence_utilization(reasoning_chain, retrieved_docs):
-    referenced_docs = 0
-    for doc in retrieved_docs:
-        if doc['guideline'] in reasoning_chain or doc['content'][:50] in reasoning_chain:
-            referenced_docs += 1
-    
-    return referenced_docs / len(retrieved_docs)
-```
+**Interpretation:** High utilization of retrieved documents
 
-**Current Performance:** 100% (high utilization)
+### Reasoning Chain Completeness
 
----
+**Definition:** Whether reasoning chain follows logical structure
 
-### Reasoning Coherence
+**Current Performance:** 1.0 (perfect)
 
-**Definition:** Measures logical flow and consistency
+**Note:** Despite complete chains, reasoning can still be incorrect
 
-**Not yet implemented** (future work: LLM-based coherence scoring)
+### COT-TOT Delta
 
----
+**Definition:** Difference in accuracy between Chain-of-Thought and Tree-of-Thought
+
+**Current Performance:** 0.0
+
+**Interpretation:** No difference observed in current evaluation
+
+### Verifier Pass Rate
+
+**Definition:** Percentage of cases where answer verification succeeds
+
+**Current Performance:** 0.0
+
+**Interpretation:** Answer verification not implemented or ineffective
 
 ## Calibration Metrics
 
 ### Brier Score
 
-**Definition:** Measures accuracy of probabilistic predictions
+**Definition:** Measures accuracy of probabilistic predictions (lower is better)
 
 **Formula:**
 ```
 Brier Score = (1/N) Σ(p - y)²
-
-where:
-  p = predicted probability
-  y = actual outcome (0 or 1)
+where p = predicted probability, y = actual outcome (0 or 1)
 ```
 
-**Interpretation:**
-- 0 = perfect calibration
-- 1 = worst calibration
+**Current Performance:** 0.254
 
-**Implementation:**
-```python
-def calculate_brier_score(confidences, correctness):
-    brier = 0
-    for conf, correct in zip(confidences, correctness):
-        y = 1 if correct else 0
-        brier += (conf - y) ** 2
-    return brier / len(confidences)
-```
+**Interpretation:** Moderate calibration, room for improvement
 
-**Current Performance:**  
-- Chain-of-Thought: 0.424
-- Tree-of-Thought: 0.344
-- Structured Medical: 0.295 (best)
-
----
+**Comparison by Method:**
+- Chain-of-Thought: 0.424 (poor)
+- Tree-of-Thought: 0.344 (moderate)
+- **Structured Medical: 0.295 (best)**
 
 ### Expected Calibration Error (ECE)
 
 **Definition:** Difference between confidence and accuracy across bins
 
-**Formula:**
-```
-ECE = Σ(|Accuracy_bin - Confidence_bin| × n_bin / N)
-```
+**Bins:** 0-10%, 10-20%, ..., 90-100%
 
-**Bins:** [0-10%, 10-20%, ..., 90-100%]
+**Current Performance:** 0.179
 
-**Implementation:**
-```python
-def calculate_ece(confidences, correctness, n_bins=10):
-    bins = np.linspace(0, 1, n_bins + 1)
-    ece = 0
-    
-    for i in range(n_bins):
-        # Get predictions in this bin
-        in_bin = (confidences >= bins[i]) & (confidences < bins[i+1])
-        
-        if in_bin.sum() > 0:
-            bin_confidence = confidences[in_bin].mean()
-            bin_accuracy = correctness[in_bin].mean()
-            ece += abs(bin_confidence - bin_accuracy) * (in_bin.sum() / len(confidences))
-    
-    return ece
-```
+**Interpretation:** Moderate miscalibration
 
-**Current Performance:**  
-- Chain-of-Thought: 0.266 (best)
+**Comparison by Method:**
+- Chain-of-Thought: 0.266
 - Tree-of-Thought: 0.310
 - Structured Medical: 0.283
 
----
+### Confidence Distribution Analysis
 
-### Confidence Distribution
-
-**Tracks prediction confidence ranges**
-
-**Example:**
+**Current Distribution (50 cases):**
 ```
-Confidence Range | Count
------------------|------
-0-10%            | 0
-10-20%           | 1
-20-30%           | 0
-30-40%           | 3
-40-50%           | 1
-50-60%           | 2
-60-70%           | 8
-70-80%           | 15
-80-90%           | 12
-90-100%          | 8
+90-100%:  7 cases (14%) - Accuracy: 85.7%
+80-90%:   1 case  (2%)  - Accuracy: 0.0%
+70-80%:   2 cases (4%)  - Accuracy: 50.0%
+60-70%:   0 cases (0%)
+50-60%:   0 cases (0%)
+40-50%:  11 cases (22%) - Accuracy: 63.6%
+30-40%:  13 cases (26%) - Accuracy: 46.2%
+20-30%:   4 cases (8%)  - Accuracy: 50.0%
+10-20%:   7 cases (14%) - Accuracy: 42.9%
+0-10%:    5 cases (10%) - Accuracy: 20.0%
 ```
 
----
+**Key Issues:**
+- 2 cases with >80% confidence but wrong answers (pitfall)
+- Low confidence cases (0-20%) have poor accuracy (20-43%)
+- Optimal confidence range: 40-90% (46-86% accuracy)
+
+### Partial Credit Accuracy
+
+**Definition:** Accuracy considering partial credit for close answers
+
+**Current Performance:** 14.0%
+
+**Interpretation:** System rarely gets "close" to correct answer
 
 ## Safety Metrics
 
@@ -369,261 +278,557 @@ Confidence Range | Count
 
 **Definition:** Percentage of answers not grounded in provided context
 
-**Detection Method:**
-```python
-def detect_hallucination(answer, reasoning_chain, context):
-    # Extract key claims from reasoning
-    claims = extract_claims(reasoning_chain)
-    
-    # Check if each claim is supported by context
-    unsupported_claims = 0
-    for claim in claims:
-        if not is_claim_supported(claim, context):
-            unsupported_claims += 1
-    
-    # Hallucination if >50% claims unsupported
-    return unsupported_claims / len(claims) > 0.5
-```
+**Current Performance:** 0.0%
 
-**Current Performance:** 0.0% (strict prompting successful)
-
----
+**Interpretation:** Strict prompting prevents hallucination
 
 ### Dangerous Error Count
 
 **Definition:** Answers that could lead to patient harm
 
-**Categories:**
-- Contraindicated treatment
-- Missed critical diagnosis
-- Delayed urgent intervention
-- Incorrect drug dosing
+**Current Performance:** 2 dangerous errors
 
-**Current Performance:** 0 dangerous errors
+**Interpretation:** Critical safety concern
 
----
+### Contraindication Check Accuracy
+
+**Definition:** Accuracy in identifying treatment contraindications
+
+**Current Performance:** 0.0%
+
+**Interpretation:** Critical gap - system doesn't check contraindications
+
+### Urgency Recognition Accuracy
+
+**Definition:** Accuracy in identifying urgent/emergent conditions
+
+**Current Performance:** 0.0%
+
+**Interpretation:** Critical gap - doesn't recognize time-sensitive conditions
 
 ### Safety Score
 
-**Definition:** Composite safety metric
+**Definition:** Composite safety metric (higher is better)
 
-**Formula:**
+**Formula:** 
 ```
 Safety_Score = 1 - (Hallucination_Rate + Dangerous_Error_Rate) / 2
 ```
 
-**Current Performance:** 1.0 (perfect)
+**Current Performance:** 0.96
 
----
+**Interpretation:** Good overall safety but critical gaps in specific areas
 
-## Confusion Matrix Analysis
+### "Cannot Answer" Misuse Rate
 
-### Answer-Level Confusion Matrix
+**Definition:** Rate of inappropriate "cannot answer" responses
 
-**Visualization:** 4x4 matrix (A/B/C/D predicted vs true)
+**Current Performance:** 4.0% (2/50 cases)
 
-![Confusion Matrix](../reports/charts/confusion_matrix.png)
+**Interpretation:** Occasional inappropriate uncertainty
 
-**Features:**
-- Green-bordered diagonal for correct predictions
-- Color intensity shows frequency
-- Annotations show counts
+## Classification Metrics
 
-**Implementation:**
-```python
-# src/evaluation/condition_confusion_analyzer.py
+### Per-Option Performance
 
-def visualize_confusion_matrix(results, output_path):
-    # Create 4x4 matrix for answers
-    answer_labels = ['A', 'B', 'C', 'D']
-    answer_cm = np.zeros((4, 4), dtype=int)
-    
-    for result in results:
-        true_idx = answer_labels.index(result['gold_answer'])
-        pred_idx = answer_labels.index(result['predicted_answer'])
-        answer_cm[true_idx, pred_idx] += 1
-    
-    # Plot heatmap
-    plt.figure(figsize=(10, 8))
-    sns.heatmap(answer_cm, annot=True, fmt='d', cmap='Blues',
-                xticklabels=answer_labels, yticklabels=answer_labels)
-    
-    # Highlight diagonal
-    for i in range(4):
-        plt.gca().add_patch(Rectangle((i, i), 1, 1, fill=False, 
-                                      edgecolor='green', lw=3))
-    
-    plt.xlabel('Predicted Answer')
-    plt.ylabel('True Answer')
-    plt.title('Answer Confusion Matrix')
-    plt.savefig(output_path, dpi=300, bbox_inches='tight')
+```
+Option A:
+- Precision: 47.6%
+- Recall: 90.9%
+- F1: 62.5%
+- Support: 11 cases
+
+Option B:
+- Precision: 40.0%
+- Recall: 30.8%
+- F1: 34.8%
+- Support: 13 cases
+
+Option C:
+- Precision: 75.0%
+- Recall: 64.3%
+- F1: 69.2%
+- Support: 14 cases
+
+Option D:
+- Precision: 71.4%
+- Recall: 41.7%
+- F1: 52.6%
+- Support: 12 cases
 ```
 
----
+### Macro Averages
 
-### Condition-Level Confusion Analysis
+- **Macro Precision:** 58.5%
+- **Macro Recall:** 56.9%
+- **Macro F1:** 54.8%
+- **Weighted F1:** 54.8%
+- **Balanced Accuracy:** 56.9%
 
-**Medical Similarity Groups:**
-1. Respiratory infections (Pneumonia, Bronchitis, URI)
-2. Respiratory obstructive (Asthma, COPD)
-3. Cardiac ischemic (ACS, Angina, MI)
-4. Cardiac failure (Heart Failure, Cardiogenic shock)
-5. Cardiac arrhythmia (Atrial Fibrillation, VT, SVT)
-6. Stroke (Ischemic stroke, Hemorrhagic stroke, TIA)
-7. Thrombotic (DVT, Pulmonary Embolism)
-8. Infection systemic (Sepsis, Bacteremia)
-9. Infection urinary (UTI, Pyelonephritis)
-10. Gastrointestinal bleeding (Upper GI bleed, Lower GI bleed)
-11. Gastrointestinal inflammatory (Pancreatitis, Gastritis)
-12. Renal (AKI, CKD, Nephritis)
-13. Metabolic diabetes (Type 1 DM, Type 2 DM, DKA)
-14. Hepatic (Cirrhosis, Hepatitis, Liver failure)
-15. Rheumatologic (RA, SLE, Gout)
-16. Hypertensive (Hypertension, Hypertensive emergency)
+### Confusion Matrix (Predicted vs True)
 
-**Error Classification:**
-- **Similar-condition error:** Predicted and true conditions in same group
-- **Unrelated-condition error:** Different groups
-
-**Example:**
 ```
-Predicted: Pneumonia (Respiratory infection)
-True: Bronchitis (Respiratory infection)
-→ Similar-condition error
-
-Predicted: Heart Failure (Cardiac failure)
-True: Pneumonia (Respiratory infection)
-→ Unrelated-condition error
+True\Pred |   A   B   C   D
+----------------------------
+A         |  10   0   0   1
+B         |   7   4   1   1
+C         |   3   2   9   0
+D         |   1   4   2   5
 ```
 
-**Current Performance:**
-- Similar-condition errors: 33.3%
-- Unrelated-condition errors: 66.7%
+**Key Patterns:**
+- Option A: High recall (91%) but lower precision (48%)
+- Option B: Worst performance (F1 34.8%)
+- Option C: Best performance (F1 69.2%)
+- Systematic confusion patterns visible
 
----
-
-## Error Analysis
+## Deep Error Analysis
 
 ### Error Categorization
 
-**Retrieval Failures:**
-- Relevant guideline not retrieved
-- Low-quality context
+#### Reasoning Errors (16 cases - 64% of errors)
 
-**Current:** 0% (all cases have relevant context)
+**Description:** System retrieved relevant info but made incorrect reasoning
 
-**Reasoning Failures:**
-- Incorrect interpretation of symptoms
-- Missing differential diagnosis
-- Guideline misapplication
+**Root Causes:**
+- Insufficient chain-of-thought reasoning steps
+- Failure to properly weight evidence from multiple sources
+- Over-reliance on single retrieved document
+- Missing critical symptom analysis
 
-**Current:** 100% of errors
+**Example:** Q_082 - 95% confidence but wrong answer
 
----
+#### Knowledge Errors (8 cases - 32% of errors)
 
-### Error Breakdown by Concept
+**Description:** System has incorrect medical knowledge or interpretation
 
-**Medical Domain Distribution:**
+**Root Causes:**
+- Incorrect interpretation of medical guidelines
+- Missing context about patient-specific factors
+- Failure to consider contraindications
+- Incorrect application of treatment protocols
+
+**Example:** Q_032 - 7.1% confidence, wrong treatment selection
+
+### Performance Segmentation Analysis
+
+#### By Medical Category:
+
 ```
-Cardiovascular: 8 errors
-Respiratory: 5 errors
-Gastrointestinal: 3 errors
-Infectious: 2 errors
-Renal: 1 error
-Metabolic: 1 error
+Gastroenterology:    71.4% accuracy (5/7)
+Endocrine:           66.7% accuracy (4/6)
+Cardiovascular:      54.5% accuracy (6/11)
+Respiratory:         62.5% accuracy (5/8)
+Nephrology:          66.7% accuracy (2/3)
+Critical Care:      100.0% accuracy (1/1)
+Hematology:          33.3% accuracy (1/3)
+Rheumatology:        33.3% accuracy (1/3)
+Psychiatry:          33.3% accuracy (1/3)
+Infectious Disease:   0.0% accuracy (0/3) - Critical gap
+Neurology:            0.0% accuracy (0/2) - Critical gap
 ```
 
----
+#### By Question Type:
 
-### Top Confusion Pairs
+- **Diagnosis:** 52.2% accuracy (24/46)
+- **Treatment:** 100.0% accuracy (2/2) - but only 2 cases
+- **Other:** 0.0% accuracy (0/2)
 
-**Most Common Confusions:**
-1. Heart Failure ↔ Angina (3 cases)
-2. DVT ↔ Pulmonary Embolism (2 cases)
-3. Gastritis ↔ GI Bleed (2 cases)
-4. Pneumonia ↔ COPD Exacerbation (1 case)
-5. AKI ↔ CKD (1 case)
+#### By Complexity:
 
----
+- **Simple:** 58.3% accuracy (7/12)
+- **Moderate:** 52.0% accuracy (13/25)
+- **Complex:** 46.2% accuracy (6/13)
 
-## Visualization
+#### By Relevance Level:
 
-### Confusion Matrix Heatmap
+- **High relevance:** 44.8% accuracy (13/29)
+- **Medium relevance:** 80.0% accuracy (8/10) - Best
+- **Low relevance:** 45.5% accuracy (5/11)
 
-Generated at: `reports/charts/confusion_matrix.png`
+#### By Confidence Range:
+
+- **90-100%:** 85.7% accuracy (6/7) - High confidence usually correct
+- **40-50%:** 63.6% accuracy (7/11)
+- **30-40%:** 46.2% accuracy (6/13)
+- **0-10%:** 20.0% accuracy (1/5) - Low confidence usually wrong
+
+### Major Pitfalls Identified
+
+#### Pitfall 1: Overconfident Wrong Answers
+
+- **Count:** 2 cases (>80% confidence but incorrect)
+- **Severity:** High
+- **Examples:** Q_082 (95% confidence wrong), Q_085 (88% confidence wrong)
+- **Solution:** Implement confidence calibration and uncertainty estimation
+
+#### Pitfall 2: Missing Critical Symptoms
+
+- **Count:** 20 cases (40% of total)
+- **Severity:** Medium
+- **Description:** Reasoning fails to consider important symptoms
+- **Solution:** Enhance symptom extraction and ensure all symptoms considered
+
+#### Pitfall 3: Medical Terminology Misunderstanding
+
+- **Count:** 24 cases (48% of total)
+- **Severity:** Medium
+- **Description:** Fails to properly interpret medical abbreviations/terms
+- **Solution:** Add medical terminology expansion and abbreviation resolution
+
+### Root Cause Analysis
+
+**Primary Causes of 52% Accuracy Ceiling:**
+
+1. **Dataset Imbalance:**
+   - Cardiology dominance (70% confusion matrix)
+   - Diagnosis bias (92% diagnosis questions)
+   - Missing treatment/safety scenarios
+
+2. **Retrieval Precision Issues:**
+   - 11.2% precision@5 too low
+   - Relevant documents not ranked first
+   - High recall but poor precision
+
+3. **Reasoning Limitations:**
+   - Insufficient differential diagnosis consideration
+   - Missing symptom analysis
+   - No contraindication checking
+
+4. **Calibration Problems:**
+   - Overconfident wrong answers (2 cases)
+   - Poor low-confidence accuracy (20%)
+   - Brier score 0.254 needs improvement
+
+## Multi-Dimensional Visualization
+
+### Performance Summary Dashboard
+
+**Generated at:** `reports/charts/performance_summary.png`
+
+**Components:**
+- Accuracy Comparison: Tree-of-Thought vs other methods
+- Retrieval Metrics: Precision-Recall tradeoff visualization
+- Calibration Plot: Confidence vs accuracy across bins
+- Category Performance: Heatmap by medical specialty
+- Error Distribution: Pie chart of error types
+
+### Confusion Matrix Visualization
+
+**Generated at:** `reports/charts/confusion_matrix.png`
 
 **Features:**
-- 4x4 answer matrix (A/B/C/D)
-- Color gradient (blue intensity)
-- Annotated counts
-- Green-bordered diagonal
+- 4×4 answer matrix (A/B/C/D predicted vs true)
+- Color intensity shows frequency
+- Green-bordered diagonal for correct predictions
+- Annotations with counts and percentages
+- Row/column totals
 
----
+### Error Analysis Charts
 
-### Performance Summary
+**Generated at:** `reports/charts/error_analysis.png`
 
-Generated at: `reports/charts/performance_summary.png`
+**Components:**
+- Error Category Breakdown: Reasoning vs Knowledge errors
+- Performance by Category: Bar chart of accuracy per medical specialty
+- Confidence-Accuracy Plot: Scatter plot with calibration line
+- Pitfalls Summary: Visual representation of major issues
 
-**Panels:**
-1. Accuracy bar chart
-2. Retrieval metrics (Precision/Recall)
-3. Calibration (Brier/ECE)
-4. Safety metrics
+### Category Performance Heatmap
 
----
+**Shows performance across multiple dimensions:**
+- **X-axis:** Medical categories (Cardio, GI, Endo, etc.)
+- **Y-axis:** Question types (Diagnosis, Treatment, Management)
+- **Color:** Accuracy percentage
+- **Size:** Number of cases
+- **Insights:** Clear patterns of strong/weak areas
 
-## Evaluation Reports
+## Evaluation Reports Structure
 
 ### JSON Output Format
 
-**File:** `reports/new_dataset_eval_N_cases.json`
+**File:** `reports/evaluation_results.json`
 
 ```json
 {
-    "overall_metrics": {
-        "accuracy": 0.60,
-        "total_questions": 50,
-        "correct": 30,
-        "incorrect": 20
+  "metadata": {
+    "evaluation_date": "2025-12-11T04:06:17.777485",
+    "total_cases": 50,
+    "split": "all",
+    "evaluation_time_seconds": 5432.80569434166,
+    "reasoning_method": "Advanced-structured (Tree-of-Thought variant)"
+  },
+  
+  "accuracy_metrics": {
+    "exact_match_accuracy": 0.52,
+    "semantic_accuracy": 0.52,
+    "partial_credit_accuracy": 0.14,
+    "correct_predictions": 26,
+    "incorrect_predictions": 24
+  },
+  
+  "retrieval_metrics": {
+    "precision_at_k": {"1": 0.0, "3": 0.1067, "5": 0.1120, "10": 0.0798},
+    "recall_at_k": {"1": 0.0, "3": 0.32, "5": 0.56, "10": 0.78},
+    "map_score": 0.2677,
+    "mrr": 0.2677,
+    "context_relevance_scores": [...],
+    "medical_concept_coverage": 0.7508,
+    "guideline_coverage": 1.0,
+    "avg_query_time_ms": 9.6
+  },
+  
+  "reasoning_metrics": {
+    "reasoning_chain_completeness": 1.0,
+    "evidence_utilization_rate": 1.0,
+    "hallucination_rate": 0.0,
+    "cannot_answer_misuse_rate": 0.04,
+    "method_accuracy": {"Advanced-structured": 0.52},
+    "cot_tot_delta": 0.0,
+    "verifier_pass_rate": 0.0
+  },
+  
+  "calibration_metrics": {
+    "brier_score": 0.2543,
+    "expected_calibration_error": 0.1786,
+    "confidence_distribution": {
+      "90-100%": 7, "40-50%": 11, "0-10%": 5,
+      "30-40%": 13, "70-80%": 2, "20-30%": 4,
+      "10-20%": 7, "80-90%": 1
+    }
+  },
+  
+  "safety_metrics": {
+    "dangerous_error_count": 2,
+    "contraindication_check_accuracy": 0.0,
+    "urgency_recognition_accuracy": 0.0,
+    "safety_score": 0.96
+  },
+  
+  "classification_metrics": {
+    "macro_precision": 0.5851,
+    "macro_recall": 0.5691,
+    "macro_f1": 0.5479,
+    "weighted_f1": 0.5481,
+    "balanced_accuracy": 0.5691,
+    "confusion_matrix": {...},
+    "option_distribution": {...}
+  },
+  
+  "performance_segmentation": {
+    "by_category": {...},
+    "by_question_type": {...},
+    "by_complexity": {...},
+    "by_relevance_level": {...},
+    "by_confidence_range": {...}
+  },
+  
+  "error_analysis": {
+    "error_categories": {
+      "reasoning": {
+        "count": 16,
+        "root_causes": [...],
+        "proposed_solutions": [...]
+      },
+      "knowledge": {
+        "count": 8,
+        "root_causes": [...],
+        "proposed_solutions": [...]
+      }
     },
-    "retrieval_metrics": {
-        "precision_at_5": 0.04,
-        "recall_at_5": 0.20,
-        "map": 0.118,
-        "mrr": 0.215,
-        "avg_context_relevance": 0.428
-    },
-    "reasoning_metrics": {
-        "chain_completeness": 1.0,
-        "evidence_utilization": 1.0
-    },
-    "calibration_metrics": {
-        "brier_score": 0.385,
-        "ece": 0.46,
-        "confidence_distribution": {...}
-    },
-    "safety_metrics": {
-        "hallucination_rate": 0.0,
-        "dangerous_errors": 0,
-        "safety_score": 1.0
-    },
-    "error_analysis": {
-        "retrieval_failures": 0,
-        "reasoning_failures": 20,
-        "high_confidence_errors": 5
-    },
-    "per_question_results": [...]
+    "pitfalls": [
+      {
+        "pitfall": "Overconfident Wrong Answers",
+        "count": 2,
+        "severity": "high",
+        "examples": [...],
+        "solution": "Implement confidence calibration..."
+      }
+    ]
+  },
+  
+  "recommendations": [
+    "Enhance reasoning chain completeness with more structured steps",
+    "Implement evidence aggregation with confidence weighting",
+    "Expand medical knowledge base with additional guidelines",
+    "Add medical safety checks for contraindications",
+    "Implement confidence calibration to reduce overconfident wrong answers",
+    "Add query expansion with medical terminology",
+    "Improve cross-encoder reranking with medical domain fine-tuning",
+    "Implement active learning to identify difficult cases"
+  ],
+  
+  "chart_paths": {
+    "performance_summary": "reports/charts/performance_summary.png",
+    "confusion_matrix": "reports/charts/confusion_matrix.png",
+    "error_analysis": "reports/charts/error_analysis.png"
+  }
 }
+```
+
+## Evaluation Tools and Scripts
+
+### Main Evaluation Script
+
+```bash
+# Run comprehensive evaluation
+python src/evaluation/evaluate_pipeline.py \
+    --dataset data/processed/questions/questions_1.json \
+    --output reports/evaluation_results.json \
+    --charts-dir reports/charts/ \
+    --reasoning-method tree_of_thought \
+    --top-k 25
+
+# Options:
+# --reasoning-method: chain_of_thought, tree_of_thought, structured_medical
+# --top-k: Number of documents to retrieve (default: 25)
+# --confidence-calibration: Apply calibration model
+# --save-reasoning-chains: Save detailed reasoning for analysis
+```
+
+### Comparative Evaluation
+
+```bash
+# Compare all reasoning methods
+python src/evaluation/compare_reasoning_methods.py \
+    --dataset data/processed/questions/questions_1.json \
+    --methods chain_of_thought tree_of_thought structured_medical \
+    --output reports/reasoning_comparison.json
+
+# Generate comparison charts
+python src/evaluation/visualize_comparison.py \
+    --input reports/reasoning_comparison.json \
+    --output reports/charts/method_comparison.png
+```
+
+### Error Analysis Tool
+
+```python
+# Deep error analysis
+from src.evaluation.error_analyzer import ErrorAnalyzer
+
+analyzer = ErrorAnalyzer(evaluation_results)
+analysis = analyzer.analyze()
+
+# Get specific insights
+print(f"Major pitfalls: {analysis['pitfalls']}")
+print(f"Worst performing categories: {analysis['weak_categories']}")
+print(f"Confidence calibration issues: {analysis['calibration_issues']}")
+
+# Generate improvement recommendations
+recommendations = analyzer.generate_recommendations(
+    focus_areas=['accuracy', 'safety', 'calibration']
+)
+```
+
+## Continuous Evaluation Framework
+
+### Automated Evaluation Pipeline
+
+```yaml
+# config/evaluation_pipeline.yaml
+evaluation:
+  schedule: "weekly"  # or "on-commit", "daily"
+  
+  datasets:
+    - name: "main_dataset"
+      path: "data/processed/questions/questions_1.json"
+      split: "all"
+    
+    - name: "validation_set"
+      path: "data/validation/validation_set.json"
+      split: "validation"
+  
+  metrics:
+    required:
+      - "accuracy"
+      - "precision_at_5"
+      - "recall_at_5"
+      - "brier_score"
+      - "safety_score"
+    
+    optional:
+      - "reasoning_coherence"
+      - "hallucination_rate"
+      - "response_time"
+  
+  thresholds:
+    accuracy: {min: 0.50, target: 0.65}
+    precision_at_5: {min: 0.10, target: 0.16}
+    brier_score: {max: 0.30, target: 0.22}
+    safety_score: {min: 0.95, target: 0.98}
+  
+  alerts:
+    - metric: "accuracy"
+      condition: "< 0.45"
+      severity: "critical"
+      action: "notify_team"
+    
+    - metric: "dangerous_error_count"
+      condition: "> 0"
+      severity: "critical"
+      action: "block_deployment"
+    
+    - metric: "precision_at_5"
+      condition: "< 0.08"
+      severity: "warning"
+      action: "log_issue"
+```
+
+### Performance Monitoring Dashboard
+
+**Components:**
+- Real-time Metrics: Accuracy, precision, recall, safety score
+- Trend Analysis: Performance over time
+- Error Tracking: New error patterns detection
+- A/B Testing: Compare optimization strategies
+- Alert System: Notify on performance degradation
+
+## Related Documentation
+
+- **Retrieval Evaluation Results** - Detailed retrieval performance
+- **Reasoning Method Comparison** - Method performance analysis
+- **Error Analysis Report** - Deep dive into errors
+- **Improvement Recommendations** - Based on evaluation findings
+
+## Key Insights from Evaluation
+
+### Strengths
+
+- Good reasoning chain completeness (100%)
+- High evidence utilization (100%)
+- No hallucination (0%)
+- Good safety score (0.96)
+- Tree-of-Thought best method (52% accuracy)
+
+### Critical Issues
+
+- Low retrieval precision (11.2% @5)
+- No contraindication checking (0% accuracy)
+- No urgency recognition (0% accuracy)
+- Overconfident wrong answers (2 cases)
+- Specialty imbalance (Infectious Disease, Neurology 0%)
+
+## Optimization Priorities
+
+1. **Immediate:** Improve retrieval precision (target 16%)
+2. **High:** Add safety checks (contraindications, urgency)
+3. **High:** Implement confidence calibration
+4. **Medium:** Address dataset imbalances
+5. **Medium:** Enhance symptom extraction
+
+## Success Metrics for Next Evaluation
+
+```
+Target Metrics for Next Evaluation:
+- Overall Accuracy: 58% (+6% improvement)
+- Precision@5: 14% (+2.8% improvement)
+- Brier Score: 0.23 (-0.024 improvement)
+- Safety Metrics: >0% for contraindication/urgency
+- Overconfident Errors: 0 (eliminate)
 ```
 
 ---
 
-## Related Documentation
-
-- [Evaluation Documentation](evaluation_documentation.md)
-- [Part 2: RAG Implementation](part_2_rag_implementation.md)
-- [Part 4: Experiments](part_4_experiments.md)
-
----
-
-**Documentation Author:** Shreya Uprety
+**Documentation Author:** Shreya Uprety  
+**Evaluation Reference:** 2025-12-11 Comprehensive Medical QA Evaluation

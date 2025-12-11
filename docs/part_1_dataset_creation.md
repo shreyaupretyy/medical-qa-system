@@ -1,7 +1,6 @@
 # Part 1: Dataset Creation
 
 **Author:** Shreya Uprety  
-**Last Updated:** December 11, 2025
 
 ---
 

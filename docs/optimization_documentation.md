@@ -1,7 +1,6 @@
 # Optimization Documentation
 
 **Author:** Shreya Uprety  
-**Last Updated:** December 11, 2025
 
 ---
 
